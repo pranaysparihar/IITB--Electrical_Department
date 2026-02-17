@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
-import { Zap, Car, Battery, Cpu, Wind, Gauge, ChevronRight, ExternalLink } from 'lucide-react';
+import { Zap, Car, Battery, Cpu, Wind, Gauge, ChevronRight, ExternalLink, PlayCircle } from 'lucide-react';
 
 export function ResearchSection() {
   const ref = useRef(null);
@@ -21,7 +21,6 @@ export function ResearchSection() {
         'Thermal management of EV powertrains',
       ],
       color: 'from-blue-500 to-cyan-500',
-      papers: 2,
     },
     {
       icon: Zap,
@@ -35,7 +34,6 @@ export function ResearchSection() {
         'Multi-phase motor drives',
       ],
       color: 'from-purple-500 to-pink-500',
-      papers: 3,
     },
     {
       icon: Battery,
@@ -49,7 +47,6 @@ export function ResearchSection() {
         'Grid-to-vehicle (G2V) and V2G systems',
       ],
       color: 'from-green-500 to-teal-500',
-      papers: 4,
     },
     {
       icon: Cpu,
@@ -63,7 +60,6 @@ export function ResearchSection() {
         'Adaptive parameter estimation',
       ],
       color: 'from-orange-500 to-red-500',
-      papers: 2,
     },
     {
       icon: Wind,
@@ -77,7 +73,6 @@ export function ResearchSection() {
         'Hybrid renewable energy systems',
       ],
       color: 'from-indigo-500 to-blue-500',
-      papers: 3,
     },
     {
       icon: Gauge,
@@ -91,12 +86,17 @@ export function ResearchSection() {
         'Position and velocity feedback systems',
       ],
       color: 'from-pink-500 to-rose-500',
-      papers: 1,
     },
   ];
 
+  const presentations = [
+    { title: 'Keynote at IEEE ECCE 2024', duration: '45 min', thumbnail: 'bg-blue-100' },
+    { title: 'Seminar on EV Technologies', duration: '1 hr 15 min', thumbnail: 'bg-green-100' },
+    { title: 'Workshop on Wide Bandgap Devices', duration: '30 min', thumbnail: 'bg-purple-100' },
+  ];
+
   return (
-    <section ref={ref} id="research" className="py-24 bg-gradient-to-b from-white to-[#f8fafc]">
+    <section ref={ref} id="research" className="py-24 bg-gradient-to-b from-white to-[#f8fafc] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -105,95 +105,103 @@ export function ResearchSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">
-            Research Areas
+            Research
           </h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
             Pioneering innovations in electric machines, power electronics, and motor control systems
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {researchAreas.map((area, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
-            >
-              <div
-                className={`bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#06b6d4]/10 cursor-pointer ${
-                  expandedCard === index ? 'ring-2 ring-[#06b6d4]' : ''
-                }`}
-                onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+        {/* R&D Activities */}
+        <div id="research-activities" className="mb-24 scroll-mt-28">
+          <h3 className="text-3xl font-bold text-[#0f172a] mb-12 border-l-4 border-[#06b6d4] pl-4">R&D Activities</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {researchAreas.map((area, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group"
               >
-                {/* Card Header */}
-                <div className="p-6">
-                  <div
-                    className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${area.color} mb-4 transform group-hover:scale-110 transition-transform`}
-                  >
-                    <area.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#0f172a] mb-2 group-hover:text-[#06b6d4] transition-colors">
-                    {area.title}
-                  </h3>
-                  <p className="text-sm text-[#06b6d4] mb-3">{area.subtitle}</p>
-                  <p className="text-[#475569] text-sm leading-relaxed">
-                    {area.description}
-                  </p>
-                  
-                  {/* Paper count badge */}
-                  {area.papers > 0 && (
-                    <div className="mt-4 inline-flex items-center gap-2 text-xs text-[#475569] bg-[#f8fafc] px-3 py-1.5 rounded-full">
-                      <ExternalLink className="w-3 h-3" />
-                      <span>{area.papers} recent publication{area.papers > 1 ? 's' : ''}</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Expandable Details */}
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: expandedCard === index ? 'auto' : 0,
-                    opacity: expandedCard === index ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                <div
+                  className={`bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#06b6d4]/10 cursor-pointer ${expandedCard === index ? 'ring-2 ring-[#06b6d4]' : ''
+                    }`}
+                  onClick={() => setExpandedCard(expandedCard === index ? null : index)}
                 >
-                  <div className="px-6 pb-6 border-t border-gray-100 pt-4">
-                    <h4 className="text-sm font-semibold text-[#0f172a] mb-3">
-                      Key Focus Areas:
-                    </h4>
-                    <ul className="space-y-2">
-                      {area.details.map((detail, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-sm text-[#475569]"
-                        >
-                          <ChevronRight className="w-4 h-4 text-[#06b6d4] flex-shrink-0 mt-0.5" />
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="p-6">
+                    <div
+                      className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${area.color} mb-4 transform group-hover:scale-110 transition-transform`}
+                    >
+                      <area.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#0f172a] mb-2 group-hover:text-[#06b6d4] transition-colors">
+                      {area.title}
+                    </h3>
+                    <p className="text-sm text-[#06b6d4] mb-3">{area.subtitle}</p>
+                    <p className="text-[#475569] text-sm leading-relaxed">
+                      {area.description}
+                    </p>
                   </div>
-                </motion.div>
 
-                {/* Expand Indicator */}
-                <div className="px-6 pb-4">
-                  <button className="text-sm text-[#06b6d4] hover:text-[#0891b2] flex items-center gap-1 transition-colors">
-                    {expandedCard === index ? 'Show less' : 'Learn more'}
-                    <ChevronRight
-                      className={`w-4 h-4 transition-transform ${
-                        expandedCard === index ? 'rotate-90' : ''
-                      }`}
-                    />
-                  </button>
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: expandedCard === index ? 'auto' : 0,
+                      opacity: expandedCard === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 border-t border-gray-100 pt-4">
+                      <h4 className="text-sm font-semibold text-[#0f172a] mb-3">
+                        Key Focus Areas:
+                      </h4>
+                      <ul className="space-y-2">
+                        {area.details.map((detail, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2 text-sm text-[#475569]"
+                          >
+                            <ChevronRight className="w-4 h-4 text-[#06b6d4] flex-shrink-0 mt-0.5" />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+
+                  <div className="px-6 pb-4">
+                    <button className="text-sm text-[#06b6d4] hover:text-[#0891b2] flex items-center gap-1 transition-colors">
+                      {expandedCard === index ? 'Show less' : 'Learn more'}
+                      <ChevronRight
+                        className={`w-4 h-4 transition-transform ${expandedCard === index ? 'rotate-90' : ''
+                          }`}
+                      />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        {/* Presentation & Videos */}
+        <div id="research-presentation" className="scroll-mt-28">
+          <h3 className="text-3xl font-bold text-[#0f172a] mb-12 border-l-4 border-[#06b6d4] pl-4">Presentation & Videos</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {presentations.map((item, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className={`aspect-video rounded-xl mb-4 relative overflow-hidden flex items-center justify-center ${item.thumbnail} group-hover:shadow-lg transition-all`}>
+                  <PlayCircle className="w-16 h-16 text-white/80 group-hover:text-white group-hover:scale-110 transition-all drop-shadow-md" />
+                </div>
+                <h4 className="font-semibold text-lg text-[#0f172a] mb-2 group-hover:text-[#06b6d4] transition-colors">{item.title}</h4>
+                <p className="text-sm text-[#64748b]">{item.duration}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

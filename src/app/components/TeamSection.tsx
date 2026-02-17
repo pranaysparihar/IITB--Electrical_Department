@@ -1,53 +1,41 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Mail, Linkedin, GraduationCap } from 'lucide-react';
+import { Mail, Linkedin, GraduationCap, Briefcase, User } from 'lucide-react';
 
 export function TeamSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const faculty = [
+  const professors = [
     {
       name: 'Dr. Sarah Chen',
       role: 'Principal Investigator',
-      title: 'Professor of Computer Science',
-      interests: 'AI, Machine Learning, Computer Vision',
+      title: 'Professor of Electrical Engineering',
+      interests: 'Power Electronics, Renewable Energy',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
     },
     {
       name: 'Dr. Michael Rodriguez',
       role: 'Co-Principal Investigator',
       title: 'Associate Professor',
-      interests: 'Robotics, Autonomous Systems, Control Theory',
+      interests: 'Electric Drives, Control Systems',
       image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop',
     },
   ];
 
-  const researchers = [
+  const programManagers = [
     {
       name: 'Dr. Emily Watson',
-      role: 'Senior Researcher',
-      interests: 'Natural Language Processing, Dialogue Systems',
+      role: 'Senior Program Manager',
+      interests: 'Project Management, Industry Collaboration',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
     },
     {
-      name: 'Dr. James Liu',
-      role: 'Senior Researcher',
-      interests: 'Edge Computing, IoT, Distributed Systems',
+      name: 'James Liu',
+      role: 'Lab Manager',
+      interests: 'Resource Allocation, Safety Compliance',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    },
-    {
-      name: 'Dr. Priya Patel',
-      role: 'Postdoctoral Researcher',
-      interests: 'Computational Biology, Bioinformatics',
-      image: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop',
-    },
-    {
-      name: 'Dr. Alex Kim',
-      role: 'Postdoctoral Researcher',
-      interests: 'Quantum Computing, Optimization',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
     },
   ];
 
@@ -57,36 +45,42 @@ export function TeamSection() {
       role: 'PhD Candidate',
       interests: 'Reinforcement Learning, Multi-agent Systems',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+      type: 'PhD'
     },
     {
       name: 'David Thompson',
       role: 'PhD Candidate',
       interests: 'Computer Vision, 3D Reconstruction',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+      type: 'PhD'
     },
     {
       name: 'Aisha Mohammed',
       role: 'PhD Candidate',
       interests: 'Federated Learning, Privacy-Preserving AI',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
+      type: 'PhD'
     },
     {
       name: 'Ryan Park',
       role: 'PhD Candidate',
       interests: 'Robotics, Motion Planning',
       image: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop',
+      type: 'PhD'
     },
     {
       name: 'Sophie Anderson',
-      role: 'MS Student',
+      role: 'M.Tech Student',
       interests: 'Deep Learning, Generative Models',
       image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop',
+      type: 'Masters'
     },
     {
       name: 'Liam Chen',
-      role: 'MS Student',
+      role: 'M.Tech Student',
       interests: 'Big Data Analytics, Stream Processing',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
+      type: 'Masters'
     },
   ];
 
@@ -106,7 +100,7 @@ export function TeamSection() {
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          
+
           {/* Social Links */}
           <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
             <button className="flex-1 bg-white/90 backdrop-blur-sm text-[#0f172a] py-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2">
@@ -129,7 +123,7 @@ export function TeamSection() {
             <p className="text-xs text-[#64748b] mb-3">{person.title}</p>
           )}
           <div className="flex items-start gap-2 text-xs text-[#475569]">
-            <GraduationCap className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" />
+            {person.type ? <GraduationCap className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" /> : <Briefcase className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" />}
             <p>{person.interests}</p>
           </div>
         </div>
@@ -138,7 +132,7 @@ export function TeamSection() {
   );
 
   return (
-    <section ref={ref} id="team" className="py-24 bg-gradient-to-b from-[#f8fafc] to-white">
+    <section ref={ref} id="team" className="py-24 bg-gradient-to-b from-[#f8fafc] to-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,34 +142,42 @@ export function TeamSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">Our Team</h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
-            A diverse group of researchers, engineers, and students pushing the boundaries
-            of technology
+            A diverse group of faculty, staff, and students collaborating to solve complex problems
           </p>
         </motion.div>
 
-        {/* Faculty */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-[#0f172a] mb-8">Faculty</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl">
-            {faculty.map((person, index) => (
+        {/* Professors */}
+        <div id="team-professors" className="mb-20 scroll-mt-28">
+          <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
+            <User className="text-[#06b6d4] w-6 h-6" />
+            <h3 className="text-3xl font-bold text-[#0f172a]">Professors</h3>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {professors.map((person, index) => (
               <PersonCard key={index} person={person} delay={index * 0.1} />
             ))}
           </div>
         </div>
 
-        {/* Researchers */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-[#0f172a] mb-8">Researchers</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {researchers.map((person, index) => (
+        {/* Program Managers */}
+        <div id="team-managers" className="mb-20 scroll-mt-28">
+          <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
+            <Briefcase className="text-[#06b6d4] w-6 h-6" />
+            <h3 className="text-3xl font-bold text-[#0f172a]">Program Managers</h3>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programManagers.map((person, index) => (
               <PersonCard key={index} person={person} delay={0.2 + index * 0.1} />
             ))}
           </div>
         </div>
 
         {/* Students */}
-        <div>
-          <h3 className="text-2xl font-semibold text-[#0f172a] mb-8">Graduate Students</h3>
+        <div id="team-students" className="scroll-mt-28">
+          <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
+            <GraduationCap className="text-[#06b6d4] w-6 h-6" />
+            <h3 className="text-3xl font-bold text-[#0f172a]">Students</h3>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {students.map((person, index) => (
               <PersonCard key={index} person={person} delay={0.4 + index * 0.05} />

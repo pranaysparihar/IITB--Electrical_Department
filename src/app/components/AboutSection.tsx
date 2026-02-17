@@ -1,47 +1,41 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Target, Lightbulb, Globe, Award } from 'lucide-react';
+import { User, Briefcase, GraduationCap, Award, Video } from 'lucide-react';
 
 export function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const milestones = [
-    { year: '2015', event: 'Lab Founded', description: 'Established with focus on AI research' },
-    { year: '2017', event: 'First Major Grant', description: '$2M NSF funding secured' },
-    { year: '2019', event: 'Industry Partnerships', description: 'Collaborations with Fortune 500 companies' },
-    { year: '2021', event: 'Research Expansion', description: 'Expanded to robotics and IoT' },
-    { year: '2023', event: 'Global Recognition', description: 'Best Research Lab award' },
+  const bio = "Dr. [Name] is a Professor in the Department of Electrical Engineering at IIT Bombay. His research interests include Power Electronics, Electric Drives, and Renewable Energy Systems. He has over 20 years of experience in academia and industry.";
+
+  const experience = [
+    { role: 'Professor', organization: 'IIT Bombay', period: '2015 - Present' },
+    { role: 'Associate Professor', organization: 'IIT Bombay', period: '2010 - 2015' },
+    { role: 'Assistant Professor', organization: 'IIT Delhi', period: '2005 - 2010' },
   ];
 
-  const focusAreas = [
-    {
-      icon: Target,
-      title: 'Mission-Driven',
-      description: 'Solving real-world problems through innovative research and development',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation First',
-      description: 'Pushing boundaries in AI, ML, and computational systems',
-    },
-    {
-      icon: Globe,
-      title: 'Global Impact',
-      description: 'Collaborating with institutions and industry leaders worldwide',
-    },
-    {
-      icon: Award,
-      title: 'Excellence',
-      description: 'Committed to the highest standards of research integrity',
-    },
+  const education = [
+    { degree: 'Ph.D. in Electrical Engineering', institution: 'University of Wisconsin-Madison', year: '2005' },
+    { degree: 'M.Tech in Power Systems', institution: 'IIT Bombay', year: '2000' },
+    { degree: 'B.E. in Electrical Engineering', institution: 'University of Mumbai', year: '1998' },
+  ];
+
+  const awards = [
+    'IEEE Fellow, 2023',
+    'Best Paper Award, IEEE ECCE 2022',
+    'Excellence in Teaching Award, IIT Bombay 2020',
+  ];
+
+  const teachingVideos = [
+    { title: 'Introduction to Power Electronics', url: '#', views: '15K' },
+    { title: 'Advanced Electric Drives', url: '#', views: '10K' },
+    { title: 'Grid Integration of Renewables', url: '#', views: '8K' },
   ];
 
   return (
-    <section ref={ref} id="about" className="py-24 bg-white">
+    <section ref={ref} id="about" className="py-24 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -49,104 +43,106 @@ export function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">
-            About the Lab
+            About
           </h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
-            A world-class research facility dedicated to advancing the frontiers of technology
-            and creating transformative solutions
+            Professor Bio and Academic Background
           </p>
         </motion.div>
 
-        {/* Two Column Layout */}
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          {/* Left Column - Overview */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-2xl font-semibold text-[#0f172a] mb-6">Our Vision</h3>
-            <p className="text-[#475569] mb-6 leading-relaxed">
-              The Electric Machines & Drives Laboratory at IIT Bombay's Electrical Engineering
-              Department is at the forefront of electric mobility and sustainable energy
-              research. Our work spans motor design, power electronics, and intelligent control
-              systems for electric vehicles, renewable energy, and industrial applications.
-            </p>
-            <p className="text-[#475569] leading-relaxed">
-              Through collaboration with leading automotive manufacturers, energy companies, and
-              research institutions, we develop practical solutions that address India's growing
-              demand for efficient, sustainable electric transportation and power systems.
-            </p>
-          </motion.div>
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Sidebar Navigation/Menu for About (Optional visual aid, but the main nav handles scrolling) */}
 
-          {/* Right Column - Focus Areas */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-6"
-          >
-            {focusAreas.map((area, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-gradient-to-br from-[#f8fafc] to-white p-6 rounded-xl border border-gray-200 hover:border-[#06b6d4] transition-all hover:shadow-lg"
-              >
-                <area.icon className="w-8 h-8 text-[#06b6d4] mb-3" />
-                <h4 className="font-semibold text-[#0f172a] mb-2">{area.title}</h4>
-                <p className="text-sm text-[#64748b]">{area.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+          <div className="md:col-span-3 space-y-16">
 
-        {/* Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <h3 className="text-2xl font-semibold text-[#0f172a] mb-8 text-center">
-            Our Journey
-          </h3>
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-[#06b6d4] to-transparent hidden md:block" />
-
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  className={`flex items-center gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
-                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-[#06b6d4] font-semibold mb-2">
-                        {milestone.year}
-                      </div>
-                      <h4 className="font-semibold text-[#0f172a] mb-2">
-                        {milestone.event}
-                      </h4>
-                      <p className="text-[#64748b] text-sm">{milestone.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Timeline Dot */}
-                  <div className="hidden md:block w-4 h-4 bg-[#06b6d4] rounded-full border-4 border-white shadow-lg relative z-10" />
-
-                  <div className="flex-1 hidden md:block" />
-                </motion.div>
-              ))}
+            {/* Bio */}
+            <div id="about-bio" className="scroll-mt-28">
+              <div className="flex items-center gap-3 mb-6">
+                <User className="text-[#06b6d4] w-8 h-8" />
+                <h3 className="text-2xl font-bold text-[#0f172a]">Bio</h3>
+              </div>
+              <p className="text-[#475569] leading-relaxed text-lg bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                {bio}
+              </p>
             </div>
+
+            {/* Work Experience */}
+            <div id="about-experience" className="scroll-mt-28">
+              <div className="flex items-center gap-3 mb-6">
+                <Briefcase className="text-[#06b6d4] w-8 h-8" />
+                <h3 className="text-2xl font-bold text-[#0f172a]">Work Experience</h3>
+              </div>
+              <div className="space-y-4">
+                {experience.map((exp, index) => (
+                  <div key={index} className="flex flex-col md:flex-row md:items-center justify-between p-6 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow">
+                    <div>
+                      <h4 className="font-semibold text-lg text-[#0f172a]">{exp.role}</h4>
+                      <p className="text-[#64748b]">{exp.organization}</p>
+                    </div>
+                    <span className="text-[#06b6d4] font-medium mt-2 md:mt-0 bg-[#06b6d4]/10 px-3 py-1 rounded-full w-fit">
+                      {exp.period}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Education */}
+            <div id="about-education" className="scroll-mt-28">
+              <div className="flex items-center gap-3 mb-6">
+                <GraduationCap className="text-[#06b6d4] w-8 h-8" />
+                <h3 className="text-2xl font-bold text-[#0f172a]">Education</h3>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {education.map((edu, index) => (
+                  <div key={index} className="p-6 bg-[#f8fafc] rounded-xl border border-gray-200">
+                    <div className="text-[#06b6d4] font-bold text-xl mb-2">{edu.year}</div>
+                    <h4 className="font-semibold text-[#0f172a] mb-1">{edu.degree}</h4>
+                    <p className="text-[#64748b] text-sm">{edu.institution}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Awards */}
+            <div id="about-awards" className="scroll-mt-28">
+              <div className="flex items-center gap-3 mb-6">
+                <Award className="text-[#06b6d4] w-8 h-8" />
+                <h3 className="text-2xl font-bold text-[#0f172a]">Awards and Fellowship</h3>
+              </div>
+              <ul className="space-y-3">
+                {awards.map((award, index) => (
+                  <li key={index} className="flex items-center gap-3 text-[#475569] text-lg">
+                    <span className="w-2 h-2 bg-[#06b6d4] rounded-full" />
+                    {award}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Teaching Videos */}
+            <div id="about-teaching" className="scroll-mt-28">
+              <div className="flex items-center gap-3 mb-6">
+                <Video className="text-[#06b6d4] w-8 h-8" />
+                <h3 className="text-2xl font-bold text-[#0f172a]">Teaching Videos</h3>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {teachingVideos.map((video, index) => (
+                  <div key={index} className="group cursor-pointer">
+                    <div className="bg-gray-200 aspect-video rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
+                      <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-[#06b6d4] border-b-[8px] border-b-transparent ml-1" />
+                      </div>
+                    </div>
+                    <h4 className="font-semibold text-[#0f172a] group-hover:text-[#06b6d4] transition-colors">{video.title}</h4>
+                    <p className="text-sm text-[#64748b]">{video.views} views</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

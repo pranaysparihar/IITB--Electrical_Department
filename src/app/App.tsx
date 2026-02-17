@@ -6,7 +6,7 @@ import { ResearchSection } from '@/app/components/ResearchSection';
 import { ProjectsSection } from '@/app/components/ProjectsSection';
 import { TeamSection } from '@/app/components/TeamSection';
 import { PublicationsSection } from '@/app/components/PublicationsSection';
-import { NewsSection } from '@/app/components/NewsSection';
+import { FacilitiesSection } from '@/app/components/FacilitiesSection';
 import { ContactSection } from '@/app/components/ContactSection';
 import { Footer } from '@/app/components/Footer';
 
@@ -15,17 +15,19 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // The order here should match the rendered order for accurate scroll spying
       const sections = [
         'home',
         'about',
         'research',
         'projects',
-        'team',
+        'facilities',
         'publications',
-        'news',
+        'team',
         'contact',
       ];
-      
+
+      // Offset to account for fixed header
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -52,20 +54,35 @@ export default function App() {
   const handleNavigate = (section: string) => {
     if (section === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const element = document.getElementById(section);
-      if (element) {
-        const offsetTop = element.offsetTop - 80; // Account for fixed header
-        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-      }
+      setActiveSection('home');
+      return;
     }
-    setActiveSection(section);
+
+    let element = document.getElementById(section);
+
+    // If exact ID (subsection) not found, try finding parent section
+    if (!element && section.includes('-')) {
+      const parentSection = section.split('-')[0];
+      element = document.getElementById(parentSection);
+    }
+
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      // We don't necessarily update activeSection here, let the scroll spy do it
+      // Or we can update it immediately for responsiveness
+      setActiveSection(section);
+    } else {
+      // If checking for subsection (e.g. 'about-bio'), check if parent exists
+      // This is mainly for safety, though IDs should match
+      console.warn(`Section element not found: ${section}`);
+    }
   };
 
   return (
     <div className="min-h-screen bg-white">
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
-      
+
       <main>
         <div id="home">
           <HeroSection onNavigate={handleNavigate} />
@@ -73,9 +90,9 @@ export default function App() {
         <AboutSection />
         <ResearchSection />
         <ProjectsSection />
-        <TeamSection />
+        <FacilitiesSection />
         <PublicationsSection />
-        <NewsSection />
+        <TeamSection />
         <ContactSection />
       </main>
 
