@@ -15,7 +15,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // The order here should match the rendered order for accurate scroll spying
+      // The order here should match the rendered order for accurate scroll
       const sections = [
         'home',
         'about',
