@@ -1,97 +1,100 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
-interface NavigationProps {
-  activeSection: string;
-  onNavigate: (section: string) => void;
-}
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface NavItem {
-  id: string;
+  id: string; // The path to navigate to
   label: string;
   type: 'link' | 'dropdown';
   children?: { label: string; id: string }[];
 }
 
-export function Navigation({ activeSection, onNavigate }: NavigationProps) {
+export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   const navItems: NavItem[] = [
-    { id: 'home', label: 'Home', type: 'link' },
+    { id: '/', label: 'Home', type: 'link' },
     {
-      id: 'about',
+      id: '/about',
       label: 'About',
       type: 'dropdown',
       children: [
-        { label: 'Bio', id: 'about-bio' },
-        { label: 'Work Experience', id: 'about-experience' },
-        { label: 'Education', id: 'about-education' },
-        { label: 'Awards and Fellowship', id: 'about-awards' },
-        { label: 'Teaching Videos', id: 'about-teaching' },
+        { label: 'Lab Description', id: '/about#about-lab' },
+        { label: 'Bio', id: '/about#about-bio' },
+        { label: 'Work Experience', id: '/about#about-experience' },
+        { label: 'Education', id: '/about#about-education' },
+        { label: 'Awards and Fellowship', id: '/about#about-awards' },
+        { label: 'Teaching Videos', id: '/about#about-teaching' },
       ]
     },
     {
-      id: 'research',
-      label: 'Research',
-      type: 'dropdown',
-      children: [
-        { label: 'R&D Activities', id: 'research-activities' },
-        { label: 'Presentation & Videos', id: 'research-presentation' },
-      ]
-    },
-    {
-      id: 'projects',
-      label: 'Projects',
-      type: 'dropdown',
-      children: [
-        { label: 'Current Projects', id: 'projects-current' },
-        { label: 'Closed Projects', id: 'projects-closed' },
-      ]
-    },
-    {
-      id: 'facilities',
-      label: 'Facilities',
-      type: 'dropdown',
-      children: [
-        { label: 'Facilities', id: 'facilities-overview' },
-        { label: 'EV Lab', id: 'facilities-ev' },
-        { label: 'Power Electronics Lab', id: 'facilities-power' },
-        { label: 'Medium Voltage Lab', id: 'facilities-medium' },
-      ]
-    },
-    {
-      id: 'publications',
+      id: '/publications',
       label: 'Publications',
       type: 'dropdown',
       children: [
-        { label: 'Journals', id: 'publications-journals' },
-        { label: 'Conferences', id: 'publications-conferences' },
-        { label: 'Patent', id: 'publications-patents' },
+        { label: 'R&D Activities', id: '/publications#research-activities' },
+        { label: 'Presentation & Videos', id: '/publications#research-presentation' },
+        { label: 'Journals', id: '/publications#publications-journals' },
+        { label: 'Conferences', id: '/publications#publications-conferences' },
+        { label: 'Patent', id: '/publications#publications-patents' },
       ]
     },
     {
-      id: 'team',
+      id: '/projects',
+      label: 'Projects',
+      type: 'dropdown',
+      children: [
+        { label: 'Current Projects', id: '/projects#projects-current' },
+        { label: 'Closed Projects', id: '/projects#projects-closed' },
+      ]
+    },
+    {
+      id: '/facilities',
+      label: 'Facilities',
+      type: 'dropdown',
+      children: [
+        { label: 'Facilities', id: '/facilities#facilities-overview' },
+        { label: 'EV Lab', id: '/facilities#facilities-ev' },
+        { label: 'Power Electronics Lab', id: '/facilities#facilities-power' },
+        { label: 'Medium Voltage Lab', id: '/facilities#facilities-medium' },
+      ]
+    },
+    {
+      id: '/team',
       label: 'Team',
       type: 'dropdown',
       children: [
-        { label: 'Professors', id: 'team-professors' },
-        { label: 'Program Managers', id: 'team-managers' },
-        { label: 'Students', id: 'team-students' },
+        { label: 'Professors', id: '/team#team-professors' },
+        { label: 'Program Managers', id: '/team#team-managers' },
+        { label: 'Students', id: '/team#team-students' },
       ]
     },
-    { id: 'contact', label: 'Contact Us', type: 'link' },
+    { id: '#contact', label: 'Contact Us', type: 'link' },
   ];
 
-  const handleNavigate = (section: string) => {
+  const handleNavigate = (path: string) => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    // Small timeout to ensure the menu state updates and doesn't block UI thread or conflict with scroll
-    // on mobile devices
+
     setTimeout(() => {
-      onNavigate(section);
+      if (path === '#contact') {
+        const contactEl = document.getElementById('contact');
+        if (contactEl) {
+          window.scrollTo({ top: contactEl.offsetTop - 80, behavior: 'smooth' });
+        }
+      } else if (path.includes('#')) {
+        const [pathname, hash] = path.split('#');
+        navigate({ pathname: pathname, hash: hash });
+      } else {
+        navigate(path);
+      }
     }, 100);
   };
 
@@ -108,6 +111,13 @@ export function Navigation({ activeSection, onNavigate }: NavigationProps) {
     }, 150);
   };
 
+  // Helper function to check if a nav item is active
+  const isActive = (itemPath: string) => {
+    if (itemPath === '/') return currentPath === '/';
+    if (itemPath === '#contact') return false; // Handled as anchor
+    return currentPath === itemPath;
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -119,7 +129,7 @@ export function Navigation({ activeSection, onNavigate }: NavigationProps) {
           {/* Logo */}
           <button
             type="button"
-            onClick={() => handleNavigate('home')}
+            onClick={() => handleNavigate('/')}
             className="flex items-center gap-2 group"
           >
             <div className="h-12 w-12 md:h-14 md:w-14 relative overflow-hidden flex items-center justify-center">
@@ -150,16 +160,16 @@ export function Navigation({ activeSection, onNavigate }: NavigationProps) {
               >
                 <button
                   type="button"
-                  onClick={() => item.type === 'link' ? handleNavigate(item.id) : undefined}
-                  className={`px-3 py-2 rounded-lg transition-all relative flex items-center gap-1 text-sm font-medium ${activeSection === item.id || (activeSection.startsWith(item.id + '-') && item.type === 'dropdown')
-                      ? 'text-[#06b6d4]'
-                      : 'text-[#475569] hover:text-[#0f172a]'
+                  onClick={() => item.type === 'link' ? handleNavigate(item.id) : handleNavigate(item.id)}
+                  className={`px-3 py-2 rounded-lg transition-all relative flex items-center gap-1 text-sm font-medium ${isActive(item.id)
+                    ? 'text-[#06b6d4]'
+                    : 'text-[#475569] hover:text-[#0f172a]'
                     }`}
                 >
                   {item.label}
                   {item.type === 'dropdown' && <ChevronDown size={14} className="group-hover/nav-item:rotate-180 transition-transform duration-200" />}
 
-                  {activeSection === item.id && item.type === 'link' && (
+                  {isActive(item.id) && (
                     <motion.div
                       layoutId="activeSection"
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#06b6d4]"
@@ -183,7 +193,10 @@ export function Navigation({ activeSection, onNavigate }: NavigationProps) {
                           <button
                             key={child.id}
                             type="button"
-                            onClick={() => handleNavigate(child.id)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleNavigate(child.id);
+                            }}
                             className="block w-full text-left px-4 py-2.5 text-sm text-[#475569] hover:bg-gray-50 hover:text-[#06b6d4] transition-colors"
                           >
                             {child.label}
@@ -224,18 +237,23 @@ export function Navigation({ activeSection, onNavigate }: NavigationProps) {
                     <button
                       type="button"
                       onClick={() => handleNavigate(item.id)}
-                      className={`block w-full text-left px-4 py-3 rounded-lg transition-colors font-medium ${activeSection === item.id
-                          ? 'bg-[#06b6d4]/10 text-[#06b6d4]'
-                          : 'text-[#475569] hover:bg-gray-100'
+                      className={`block w-full text-left px-4 py-3 rounded-lg transition-colors font-medium ${isActive(item.id)
+                        ? 'bg-[#06b6d4]/10 text-[#06b6d4]'
+                        : 'text-[#475569] hover:bg-gray-100'
                         }`}
                     >
                       {item.label}
                     </button>
                   ) : (
                     <div>
-                      <div className="px-4 py-2 font-semibold text-[#0f172a] text-lg border-b border-gray-100 mb-2">
+                      <button
+                        type="button"
+                        onClick={() => handleNavigate(item.id)}
+                        className={`w-full text-left px-4 py-2 font-semibold text-lg border-b border-gray-100 mb-2 transition-colors ${isActive(item.id) ? 'text-[#06b6d4]' : 'text-[#0f172a]'
+                          }`}
+                      >
                         {item.label}
-                      </div>
+                      </button>
                       <div className="space-y-1 ml-2">
                         {item.children?.map((child) => (
                           <button

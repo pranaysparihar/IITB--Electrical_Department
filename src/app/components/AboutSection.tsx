@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { User, Briefcase, GraduationCap, Award, Video } from 'lucide-react';
+import { User, Briefcase, GraduationCap, Award, Video, FlaskConical } from 'lucide-react';
 
 export function AboutSection() {
   const ref = useRef(null);
@@ -46,7 +46,7 @@ export function AboutSection() {
             About
           </h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
-            Professor Bio and Academic Background
+            Lab Details, Professor Bio, and Academic Background
           </p>
         </motion.div>
 
@@ -54,6 +54,17 @@ export function AboutSection() {
           {/* Sidebar Navigation/Menu for About (Optional visual aid, but the main nav handles scrolling) */}
 
           <div className="md:col-span-3 space-y-16">
+
+            {/* Lab Description */}
+            <div id="about-lab" className="scroll-mt-28">
+              <div className="flex items-center gap-3 mb-6">
+                <FlaskConical className="text-[#06b6d4] w-8 h-8" />
+                <h3 className="text-2xl font-bold text-[#0f172a]">Lab Description</h3>
+              </div>
+              <p className="text-[#475569] leading-relaxed text-lg bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                The Electric Machines & Drives (EM&D) Laboratory at IIT Bombay is at the forefront of research in electric mobility, power electronics, and renewable energy integration. We focus on theoretical analysis, advanced simulation, and practical hardware prototyping to create highly efficient, reliable, and intelligent electrical systems for future transport and grid applications. Our goal is to drive innovation that supports a sustainable energy future.
+              </p>
+            </div>
 
             {/* Bio */}
             <div id="about-bio" className="scroll-mt-28">
