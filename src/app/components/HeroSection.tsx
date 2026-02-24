@@ -28,7 +28,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
             backgroundPosition: '0 0, 30px 30px',
           }}
         />
-        
+
         {/* Floating Particles */}
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -92,7 +92,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
-            onClick={() => onNavigate('research')}
+            onClick={() => onNavigate('publications')}
             className="group px-8 py-4 bg-[#06b6d4] text-white rounded-lg hover:bg-[#0891b2] transition-all shadow-lg hover:shadow-xl hover:shadow-[#06b6d4]/20 flex items-center justify-center gap-2"
           >
             Explore Research
