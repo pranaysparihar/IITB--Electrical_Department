@@ -1,8 +1,41 @@
 import { HeroSection } from '@/app/components/HeroSection';
 import { ContactSection } from '@/app/components/ContactSection';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+function RNDSlideshow() {
+    const images = [
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
+    ];
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <div className="w-full h-full relative overflow-hidden rounded-3xl">
+            <AnimatePresence mode="wait">
+                <motion.img
+                    key={currentIndex}
+                    src={images[currentIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+            </AnimatePresence>
+        </div>
+    );
+}
 
 export default function HomePage() {
     const sections = [
@@ -16,7 +49,7 @@ export default function HomePage() {
             imagePlaceholder: 'bg-indigo-100',
         },
         {
-            title: 'Publications & Research',
+            title: 'Research & Development',
             desc: 'We actively publish our findings in top-tier journals and conferences. Explore our extensive database of research activities, presentations, and patented technologies that are shaping the future of power electronics.',
             icon: BookOpen,
             link: '/publications',
@@ -112,7 +145,7 @@ export default function HomePage() {
                                         to={item.link}
                                         className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${item.bg} ${item.color} hover:brightness-95`}
                                     >
-                                        Learn More about {item.title.split(' ')[0]}
+                                        Know More about {item.title.split(' ')[0]}
                                         <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 </motion.div>
@@ -124,16 +157,21 @@ export default function HomePage() {
                                     transition={{ duration: 0.6 }}
                                     className="flex-1 w-full"
                                 >
-                                    {/* Abstract placeholder graphic mimicking the theme */}
-                                    <div className={`aspect-[4/3] rounded-3xl ${item.imagePlaceholder} bg-opacity-30 border border-black/5 flex items-center justify-center relative overflow-hidden`}>
-                                        <motion.div
-                                            animate={{ rotate: 360 }}
-                                            transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-                                            className={`absolute w-full h-full opacity-20`}
-                                            style={{ backgroundImage: 'radial-gradient(circle at center, currentColor 2px, transparent 2px)', backgroundSize: '24px 24px', color: 'currentColor' }}
-                                        />
-                                        <item.icon className={`w-32 h-32 ${item.color} opacity-20 absolute`} />
-                                    </div>
+                                    {item.title === 'R&D' ? (
+                                        <div className="aspect-[4/3] rounded-3xl flex items-center justify-center relative shadow-lg overflow-hidden">
+                                            <RNDSlideshow />
+                                        </div>
+                                    ) : (
+                                        <div className={`aspect-[4/3] rounded-3xl ${item.imagePlaceholder} bg-opacity-30 border border-black/5 flex items-center justify-center relative overflow-hidden`}>
+                                            <motion.div
+                                                animate={{ rotate: 360 }}
+                                                transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
+                                                className={`absolute w-full h-full opacity-20`}
+                                                style={{ backgroundImage: 'radial-gradient(circle at center, currentColor 2px, transparent 2px)', backgroundSize: '24px 24px', color: 'currentColor' }}
+                                            />
+                                            <item.icon className={`w-32 h-32 ${item.color} opacity-20 absolute`} />
+                                        </div>
+                                    )}
                                 </motion.div>
 
                             </div>

@@ -13,7 +13,7 @@ interface NavItem {
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,19 +24,11 @@ export function Navigation() {
     {
       id: '/about',
       label: 'About',
-      type: 'dropdown',
-      children: [
-        { label: 'Lab Description', id: '/about#about-lab' },
-        { label: 'Bio', id: '/about#about-bio' },
-        { label: 'Work Experience', id: '/about#about-experience' },
-        { label: 'Education', id: '/about#about-education' },
-        { label: 'Awards and Fellowship', id: '/about#about-awards' },
-        { label: 'Teaching Videos', id: '/about#about-teaching' },
-      ]
+      type: 'link',
     },
     {
       id: '/publications',
-      label: 'Publications',
+      label: 'Research',
       type: 'dropdown',
       children: [
         { label: 'R&D Activities', id: '/publications#research-activities' },
@@ -87,7 +79,10 @@ export function Navigation() {
       if (path === '#contact') {
         const contactEl = document.getElementById('contact');
         if (contactEl) {
-          window.scrollTo({ top: contactEl.offsetTop - 80, behavior: 'smooth' });
+          const y = contactEl.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          navigate({ pathname: '/', hash: 'contact' });
         }
       } else if (path.includes('#')) {
         const [pathname, hash] = path.split('#');
