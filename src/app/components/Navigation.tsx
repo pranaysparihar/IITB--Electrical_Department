@@ -33,9 +33,7 @@ export function Navigation() {
       children: [
         { label: 'R&D Activities', id: '/publications#research-activities' },
         { label: 'Presentation & Videos', id: '/publications#research-presentation' },
-        { label: 'Journals', id: '/publications#publications-journals' },
-        { label: 'Conferences', id: '/publications#publications-conferences' },
-        { label: 'Patent', id: '/publications#publications-patents' },
+        { label: 'Publications', id: '/publications#publications' },
       ]
     },
     {
