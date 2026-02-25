@@ -1,7 +1,7 @@
 import { HeroSection } from '@/app/components/HeroSection';
 import { ContactSection } from '@/app/components/ContactSection';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -13,15 +13,23 @@ function RNDSlideshow() {
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 3000);
+            nextSlide();
+        }, 5000);
         return () => clearInterval(timer);
     }, []);
 
     return (
-        <div className="w-full h-full relative overflow-hidden rounded-3xl">
+        <div className="w-full h-full relative overflow-hidden rounded-3xl group">
             <AnimatePresence mode="wait">
                 <motion.img
                     key={currentIndex}
@@ -33,6 +41,31 @@ function RNDSlideshow() {
                     className="absolute inset-0 w-full h-full object-cover"
                 />
             </AnimatePresence>
+
+            {/* Navigation Arrows */}
+            <button
+                onClick={(e) => { e.preventDefault(); prevSlide(); }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100"
+            >
+                <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+                onClick={(e) => { e.preventDefault(); nextSlide(); }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100"
+            >
+                <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Dots */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {images.map((_, idx) => (
+                    <button
+                        key={idx}
+                        onClick={(e) => { e.preventDefault(); setCurrentIndex(idx); }}
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${idx === currentIndex ? 'bg-white scale-110 shadow-sm' : 'bg-white/50 hover:bg-white/80'}`}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
@@ -157,7 +190,7 @@ export default function HomePage() {
                                     transition={{ duration: 0.6 }}
                                     className="flex-1 w-full"
                                 >
-                                    {item.title === 'R&D' ? (
+                                    {item.title === 'Research & Development' ? (
                                         <div className="aspect-[4/3] rounded-3xl flex items-center justify-center relative shadow-lg overflow-hidden">
                                             <RNDSlideshow />
                                         </div>
