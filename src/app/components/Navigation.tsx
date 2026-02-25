@@ -54,6 +54,7 @@ export function Navigation() {
         { label: 'EV Lab', id: '/facilities#facilities-ev' },
         { label: 'Power Electronics Lab', id: '/facilities#facilities-power' },
         { label: 'Medium Voltage Lab', id: '/facilities#facilities-medium' },
+        { label: 'Renewable Energy Lab', id: '/facilities#facilities-renewable' },
       ]
     },
     {

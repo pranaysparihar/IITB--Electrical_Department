@@ -1,11 +1,12 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef } from 'react';
-import { ArrowRight, Zap, Car, Battery } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { ArrowRight, Zap, Car, Battery, Wind, X } from 'lucide-react';
 
 export function FacilitiesSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
+    const [selectedGallery, setSelectedGallery] = useState<any>(null);
 
     const evLab = {
         title: 'Electric Vehicle Lab',
@@ -28,30 +29,42 @@ export function FacilitiesSection() {
         features: ['11kV Grid Simulator', 'MV Drive Testbed', 'Partial Discharge Detector']
     };
 
+    const renewableLab = {
+        title: 'Renewable Energy Lab',
+        description: 'Dedicated to the integration of renewable energy sources such as solar and wind into the electrical grid. Features microgrid simulators and advanced control systems for energy management.',
+        imageUrl: 'https://images.unsplash.com/photo-1509391366360-120953a15865?w=800&h=600&fit=crop',
+        features: ['Microgrid Emulator', 'Solar PV Simulator', 'Wind Turbine Generator']
+    };
+
     const LabCard = ({ lab, id, icon: Icon }: { lab: any, id: string, icon: any }) => (
-        <div id={id} className="scroll-mt-28 mb-16 last:mb-0">
-            <div className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
-                <div className="relative h-64 md:h-full overflow-hidden">
+        <div id={id} className="scroll-mt-28 mb-8">
+            <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+                <div className="relative h-64 overflow-hidden flex-shrink-0">
                     <img src={lab.imageUrl} alt={lab.title} className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
                     <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-lg shadow-sm">
                         <Icon className="w-6 h-6 text-[#06b6d4]" />
                     </div>
                 </div>
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-1">
                     <h3 className="text-2xl font-bold text-[#0f172a] mb-4">{lab.title}</h3>
-                    <p className="text-[#475569] mb-6 leading-relaxed">{lab.description}</p>
-                    <h4 className="font-semibold text-[#0f172a] mb-3">Key Equipment:</h4>
-                    <ul className="space-y-2 mb-6">
-                        {lab.features.map((feature: string, idx: number) => (
-                            <li key={idx} className="flex items-center gap-2 text-sm text-[#475569]">
-                                <div className="w-1.5 h-1.5 bg-[#06b6d4] rounded-full" />
-                                {feature}
-                            </li>
-                        ))}
-                    </ul>
-                    <button className="text-[#06b6d4] font-medium inline-flex items-center gap-2 hover:gap-3 transition-all">
-                        View Gallery <ArrowRight className="w-4 h-4" />
-                    </button>
+                    <p className="text-[#475569] mb-6 leading-relaxed flex-1">{lab.description}</p>
+                    <div className="mt-auto">
+                        <h4 className="font-semibold text-[#0f172a] mb-3">Key Equipment:</h4>
+                        <ul className="space-y-2 mb-6">
+                            {lab.features.map((feature: string, idx: number) => (
+                                <li key={idx} className="flex items-center gap-2 text-sm text-[#475569]">
+                                    <div className="w-1.5 h-1.5 bg-[#06b6d4] rounded-full" />
+                                    {feature}
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={() => setSelectedGallery(lab)}
+                            className="text-[#06b6d4] font-medium inline-flex items-center gap-2 hover:gap-3 transition-all"
+                        >
+                            View Gallery <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,11 +94,49 @@ export function FacilitiesSection() {
                     </p>
                 </div>
 
-                <LabCard lab={evLab} id="facilities-ev" icon={Car} />
-                <LabCard lab={powerLab} id="facilities-power" icon={Zap} />
-                <LabCard lab={mediumVoltageLab} id="facilities-medium" icon={Battery} />
-
+                <div className="grid md:grid-cols-2 gap-8">
+                    <LabCard lab={evLab} id="facilities-ev" icon={Car} />
+                    <LabCard lab={powerLab} id="facilities-power" icon={Zap} />
+                    <LabCard lab={mediumVoltageLab} id="facilities-medium" icon={Battery} />
+                    <LabCard lab={renewableLab} id="facilities-renewable" icon={Wind} />
+                </div>
             </div>
+
+            <AnimatePresence>
+                {selectedGallery && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedGallery(null)}
+                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden z-[101]"
+                        >
+                            <button
+                                onClick={() => setSelectedGallery(null)}
+                                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            <div className="relative aspect-video">
+                                <img src={selectedGallery.imageUrl} alt={selectedGallery.title} className="w-full h-full object-cover" />
+                            </div>
+
+                            <div className="p-6">
+                                <h3 className="text-2xl font-bold text-[#0f172a] mb-2">{selectedGallery.title} Gallery</h3>
+                                <p className="text-[#64748b]">More high-resolution lab images would go here. For now, showing the featured image.</p>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
