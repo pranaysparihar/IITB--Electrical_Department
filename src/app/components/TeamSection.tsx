@@ -24,20 +24,7 @@ export function TeamSection() {
     },
   ];
 
-  const programManagers = [
-    {
-      name: 'Dr. Emily Watson',
-      role: 'Senior Program Manager',
-      interests: 'Project Management, Industry Collaboration',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
-    },
-    {
-      name: 'James Liu',
-      role: 'Lab Manager',
-      interests: 'Resource Allocation, Safety Compliance',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    },
-  ];
+
 
   const students = [
     {
@@ -159,18 +146,7 @@ export function TeamSection() {
           </div>
         </div>
 
-        {/* Program Managers */}
-        <div id="team-managers" className="mb-20 scroll-mt-28">
-          <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
-            <Briefcase className="text-[#06b6d4] w-6 h-6" />
-            <h3 className="text-3xl font-bold text-[#0f172a]">Program Managers</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programManagers.map((person, index) => (
-              <PersonCard key={index} person={person} delay={0.2 + index * 0.1} />
-            ))}
-          </div>
-        </div>
+
 
         {/* Students */}
         <div id="team-students" className="scroll-mt-28">

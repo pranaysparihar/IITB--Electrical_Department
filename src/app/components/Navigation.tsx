@@ -50,7 +50,6 @@ export function Navigation() {
       label: 'Facilities',
       type: 'dropdown',
       children: [
-        { label: 'Facilities', id: '/facilities#facilities-overview' },
         { label: 'EV Lab', id: '/facilities#facilities-ev' },
         { label: 'Power Electronics Lab', id: '/facilities#facilities-power' },
         { label: 'Medium Voltage Lab', id: '/facilities#facilities-medium' },
@@ -63,7 +62,6 @@ export function Navigation() {
       type: 'dropdown',
       children: [
         { label: 'Professors', id: '/team#team-professors' },
-        { label: 'Program Managers', id: '/team#team-managers' },
         { label: 'Students', id: '/team#team-students' },
       ]
     },
