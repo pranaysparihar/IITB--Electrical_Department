@@ -121,16 +121,7 @@ export default function HomePage() {
 
     return (
         <div>
-            <HeroSection onNavigate={(section) => {
-                if (section === 'contact') {
-                    const contactEl = document.getElementById('contact');
-                    if (contactEl) {
-                        window.scrollTo({ top: contactEl.offsetTop - 80, behavior: 'smooth' });
-                    }
-                } else {
-                    window.location.hash = `#/${section}`;
-                }
-            }} />
+            <HeroSection />
 
             <div className="bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 text-center">

@@ -1,55 +1,8 @@
 import { motion } from 'motion/react';
-import { ArrowRight, FlaskConical } from 'lucide-react';
-
-interface HeroSectionProps {
-  onNavigate: (section: string) => void;
-}
-
-export function HeroSection({ onNavigate }: HeroSectionProps) {
+import { FlaskConical } from 'lucide-react';
+export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 opacity-20"
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'linear',
-          }}
-          style={{
-            backgroundImage:
-              'linear-gradient(45deg, #06b6d4 25%, transparent 25%, transparent 75%, #06b6d4 75%, #06b6d4), linear-gradient(45deg, #06b6d4 25%, transparent 25%, transparent 75%, #06b6d4 75%, #06b6d4)',
-            backgroundSize: '60px 60px',
-            backgroundPosition: '0 0, 30px 30px',
-          }}
-        />
-
-        {/* Floating Particles */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-[#06b6d4]/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -85,26 +38,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           electronics, and intelligent control systems
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <button
-            onClick={() => onNavigate('publications')}
-            className="group px-8 py-4 bg-[#06b6d4] text-white rounded-lg hover:bg-[#0891b2] transition-all shadow-lg hover:shadow-xl hover:shadow-[#06b6d4]/20 flex items-center justify-center gap-2"
-          >
-            Explore Research
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button
-            onClick={() => onNavigate('contact')}
-            className="px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all border border-white/20 backdrop-blur-sm"
-          >
-            Contact the Lab
-          </button>
-        </motion.div>
 
         {/* Stats */}
         <motion.div

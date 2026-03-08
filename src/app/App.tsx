@@ -10,6 +10,7 @@ import PublicationsPage from '@/app/pages/Publications';
 import ProjectsPage from '@/app/pages/Projects';
 import TeamPage from '@/app/pages/Team';
 import FacilitiesPage from '@/app/pages/Facilities';
+import NewsPage from '@/app/pages/News';
 
 function ScrollHandler() {
   const { pathname, hash } = useLocation();
@@ -48,6 +49,7 @@ export default function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/facilities" element={<FacilitiesPage />} />
+            <Route path="/news" element={<NewsPage />} />
           </Routes>
         </main>
 

@@ -36,24 +36,15 @@ export function Navigation() {
         { label: 'Publications', id: '/publications#publications' },
       ]
     },
-    {
-      id: '/projects',
-      label: 'Projects',
-      type: 'dropdown',
-      children: [
-        { label: 'Current Projects', id: '/projects#projects-current' },
-        { label: 'Closed Projects', id: '/projects#projects-closed' },
-      ]
-    },
+    { id: '/projects', label: 'Projects', type: 'link' },
     {
       id: '/facilities',
       label: 'Facilities',
       type: 'dropdown',
       children: [
-        { label: 'EV Lab', id: '/facilities#facilities-ev' },
-        { label: 'Power Electronics Lab', id: '/facilities#facilities-power' },
+        { label: 'C1973 EV Lab', id: '/facilities#facilities-ev' },
         { label: 'Medium Voltage Lab', id: '/facilities#facilities-medium' },
-        { label: 'Renewable Energy Lab', id: '/facilities#facilities-renewable' },
+        { label: 'Power Electronics Lab', id: '/facilities#facilities-power' },
       ]
     },
     {
@@ -65,6 +56,7 @@ export function Navigation() {
         { label: 'Students', id: '/team#team-students' },
       ]
     },
+    { id: '/news', label: 'News', type: 'link' },
     { id: '#contact', label: 'Contact Us', type: 'link' },
   ];
 
