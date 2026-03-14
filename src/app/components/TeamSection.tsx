@@ -1,28 +1,41 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Mail, Linkedin, GraduationCap, Briefcase, User } from 'lucide-react';
+import sandeepPhoto from '../../assets/sandeep_anand.png';
+import { 
+  Dialog, 
+  DialogContent, 
+} from './ui/dialog';
 
 export function TeamSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
+  const [selectedPerson, setSelectedPerson] = useState<any>(null);
+
   const professors = [
     {
-      name: 'Dr. Sarah Chen',
-      role: 'Principal Investigator',
-      title: 'Professor of Electrical Engineering',
-      interests: 'Power Electronics, Renewable Energy',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
-    },
-    {
-      name: 'Dr. Michael Rodriguez',
-      role: 'Co-Principal Investigator',
-      title: 'Associate Professor',
-      interests: 'Electric Drives, Control Systems',
-      image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop',
+      name: 'Sandeep Anand',
+      role: 'Professor',
+      title: 'Dept. of Electrical Engineering, Indian Institute of Technology Bombay',
+      interests: 'Power Electronics, Electric Vehicles Drive Train and Chargers, Wide Bandgap Devices (GaN and SiC) based Power Converters, Circuits for Interfacing Alternate Sources (Solar PV, Battery, Fuel Cells), and Reliability of Power Electronic Circuits',
+      image: sandeepPhoto,
+      linkedin: 'https://www.linkedin.com/in/sandeep-anand-b82128b/',
+      email: 'me.sandeepanand@gmail.com',
+      about: `I am a faculty member in the Department of Electrical Engineering, IITB, India. Before this, I was at IITK, during 2013-2020. I was also a visiting scholar at WSU, Pullman, US, and Queen's University, Kingston, CA during Summer 2018 and Winter 2018, respectively. During 2012-13, I worked at Cosmic Circuits Pvt. Ltd., Bangalore on new product development for solar PV systems. During 2007-08, I worked at Emerson Network Power India (Now Vertiv Co), Mumbai on the development of digital controllers for medium power online UPS systems.
+
+I received Ph.D. and B.Tech degrees in EE from IITB in 2013 and 2007, respectively.
+
+I work in the area of Power Electronics, wherein my research interests are Electric Vehicles Drive Train and Chargers, Wide Bandgap Devices (GaN and SiC) based Power Converters, Circuits for Interfacing Alternate Sources (Solar PV, Battery, Fuel Cells), and Reliability of Power Electronic Circuits`
     },
   ];
+
+  const handlePhotoClick = (person: any) => {
+    if (person.about) {
+      setSelectedPerson(person);
+    }
+  };
 
 
 
@@ -71,16 +84,19 @@ export function TeamSection() {
     },
   ];
 
-  const PersonCard = ({ person, delay }: { person: any; delay: number }) => (
+  const PersonCard = ({ person, delay, onPhotoClick }: { person: any; delay: number; onPhotoClick?: (p: any) => void }) => (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay }}
       className="group"
     >
-      <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-[#06b6d4]/10 transition-all hover:border-[#06b6d4]/50">
+      <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-[#06b6d4]/10 transition-all hover:border-[#06b6d4]/50 h-full flex flex-col">
         {/* Image */}
-        <div className="relative overflow-hidden aspect-square">
+        <div 
+          className={`relative overflow-hidden aspect-square ${onPhotoClick && person.about ? 'cursor-pointer' : ''}`}
+          onClick={() => onPhotoClick?.(person)}
+        >
           <img
             src={person.image}
             alt={person.name}
@@ -90,28 +106,38 @@ export function TeamSection() {
 
           {/* Social Links */}
           <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <button className="flex-1 bg-white/90 backdrop-blur-sm text-[#0f172a] py-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2">
+            <a 
+              href={`mailto:${person.email || 'emdlab@ee.iitb.ac.in'}`}
+              onClick={(e) => e.stopPropagation()}
+              className="flex-1 bg-white/90 backdrop-blur-sm text-[#0f172a] py-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2"
+            >
               <Mail className="w-4 h-4" />
               <span className="text-sm">Email</span>
-            </button>
-            <button className="bg-white/90 backdrop-blur-sm text-[#0f172a] p-2 rounded-lg hover:bg-white transition-colors">
+            </a>
+            <a 
+              href={person.linkedin || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white/90 backdrop-blur-sm text-[#0f172a] p-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center shrink-0 w-10"
+            >
               <Linkedin className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
 
         {/* Info */}
-        <div className="p-6">
+        <div className="p-6 flex-1 flex flex-col">
           <h3 className="font-semibold text-[#0f172a] mb-1 group-hover:text-[#06b6d4] transition-colors">
             {person.name}
           </h3>
           <p className="text-sm text-[#06b6d4] mb-3">{person.role}</p>
           {person.title && (
-            <p className="text-xs text-[#64748b] mb-3">{person.title}</p>
+            <p className="text-xs text-[#64748b] mb-3 leading-relaxed">{person.title}</p>
           )}
-          <div className="flex items-start gap-2 text-xs text-[#475569]">
+          <div className="mt-auto flex items-start gap-2 text-xs text-[#475569]">
             {person.type ? <GraduationCap className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" /> : <Briefcase className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" />}
-            <p>{person.interests}</p>
+            <p className="line-clamp-3">{person.interests}</p>
           </div>
         </div>
       </div>
@@ -119,7 +145,8 @@ export function TeamSection() {
   );
 
   return (
-    <section ref={ref} id="team" className="py-24 bg-gradient-to-b from-[#f8fafc] to-white scroll-mt-20">
+    <>
+      <section ref={ref} id="team" className="py-24 bg-gradient-to-b from-[#f8fafc] to-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -141,7 +168,7 @@ export function TeamSection() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {professors.map((person, index) => (
-              <PersonCard key={index} person={person} delay={index * 0.1} />
+              <PersonCard key={index} person={person} delay={index * 0.1} onPhotoClick={handlePhotoClick} />
             ))}
           </div>
         </div>
@@ -156,11 +183,74 @@ export function TeamSection() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {students.map((person, index) => (
-              <PersonCard key={index} person={person} delay={0.4 + index * 0.05} />
+              <PersonCard key={index} person={person} delay={0.4 + index * 0.05} onPhotoClick={handlePhotoClick} />
             ))}
           </div>
         </div>
       </div>
     </section>
+
+      <Dialog open={!!selectedPerson} onOpenChange={(open: boolean) => !open && setSelectedPerson(null)}>
+        <DialogContent className="max-w-2xl bg-white p-0 overflow-hidden border-none shadow-2xl">
+          <div className="relative">
+            <div className="h-32 bg-gradient-to-r from-[#0f172a] to-[#06b6d4]" />
+            <div className="absolute top-16 left-8 flex items-end gap-6">
+              <div className="w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-white">
+                <img 
+                  src={selectedPerson?.image} 
+                  alt={selectedPerson?.name} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="mb-2">
+                <h3 className="text-2xl font-bold text-[#0f172a]">{selectedPerson?.name}</h3>
+                <p className="text-[#06b6d4] font-medium">{selectedPerson?.role}</p>
+              </div>
+            </div>
+            
+            <div className="pt-20 px-8 pb-8">
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-sm font-bold text-[#64748b] uppercase tracking-wider mb-2">About</h4>
+                  <div className="text-[#475569] leading-relaxed whitespace-pre-wrap">
+                    {selectedPerson?.about}
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
+                  <div>
+                    <h4 className="text-sm font-bold text-[#64748b] uppercase tracking-wider mb-2">Title</h4>
+                    <p className="text-sm text-[#475569]">{selectedPerson?.title}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-[#64748b] uppercase tracking-wider mb-2">Links</h4>
+                    <div className="flex gap-4">
+                      {selectedPerson?.linkedin && (
+                        <a 
+                          href={selectedPerson.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#64748b] hover:text-[#06b6d4] transition-colors"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                      )}
+                      {selectedPerson?.email && (
+                        <a 
+                          href={`mailto:${selectedPerson.email}`} 
+                          className="text-[#64748b] hover:text-[#06b6d4] transition-colors"
+                        >
+                          <Mail className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
