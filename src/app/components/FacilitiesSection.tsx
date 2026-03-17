@@ -1,7 +1,10 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
-import { ArrowRight, Zap, Car, Battery, Wind, X } from 'lucide-react';
+// Removed Wind icon from this import
+import { ArrowRight, Zap, Car, Battery, X } from 'lucide-react';
+import evlImage from '../../assets/Facilities/EVLinterior.jpeg';
+import mvImage from '../../assets/Facilities/MediumVoltageLab.png';
 
 export function FacilitiesSection() {
     const ref = useRef(null);
@@ -11,7 +14,7 @@ export function FacilitiesSection() {
     const evLab = {
         title: 'Electric Vehicle Lab',
         description: 'A state-of-the-art facility dedicated to the testing and development of electric vehicle powertrains, including battery management systems, on-board chargers, and traction motors. Equipped with dynamometers and battery cycling stations.',
-        imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&h=600&fit=crop',
+        imageUrl: evlImage,
         features: ['200kW Motor Dynamometer', 'Battery Pack Testing Chamber', 'HIL Simulation Setup']
     };
 
@@ -25,15 +28,8 @@ export function FacilitiesSection() {
     const mediumVoltageLab = {
         title: 'Medium Voltage Lab',
         description: 'Specialized for research on medium voltage drives and grid-connected converters. The lab houses high-power supplies and protection systems for testing commercial-scale electrical equipment.',
-        imageUrl: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800&h=600&fit=crop',
+        imageUrl: mvImage,
         features: ['11kV Grid Simulator', 'MV Drive Testbed', 'Partial Discharge Detector']
-    };
-
-    const renewableLab = {
-        title: 'Renewable Energy Lab',
-        description: 'Dedicated to the integration of renewable energy sources such as solar and wind into the electrical grid. Features microgrid simulators and advanced control systems for energy management.',
-        imageUrl: 'https://images.unsplash.com/photo-1509391366360-120953a15865?w=800&h=600&fit=crop',
-        features: ['Microgrid Emulator', 'Solar PV Simulator', 'Wind Turbine Generator']
     };
 
     const LabCard = ({ lab, id, icon: Icon }: { lab: any, id: string, icon: any }) => (
@@ -94,11 +90,11 @@ export function FacilitiesSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                {/* Grid changed to 3 columns on larger screens to look centered since we have 3 items now */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <LabCard lab={evLab} id="facilities-ev" icon={Car} />
                     <LabCard lab={powerLab} id="facilities-power" icon={Zap} />
                     <LabCard lab={mediumVoltageLab} id="facilities-medium" icon={Battery} />
-                    <LabCard lab={renewableLab} id="facilities-renewable" icon={Wind} />
                 </div>
             </div>
 

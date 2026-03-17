@@ -3,9 +3,9 @@ import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { Mail, Linkedin, GraduationCap, Briefcase, User } from 'lucide-react';
 import sandeepPhoto from '../../assets/sandeep_anand.png';
-import { 
-  Dialog, 
-  DialogContent, 
+import {
+  Dialog,
+  DialogContent,
 } from './ui/dialog';
 
 export function TeamSection() {
@@ -55,7 +55,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       type: 'PhD'
     },
     {
-      name: 'Aisha Mohammed',
+      name: 'Varun Lala',
       role: 'PhD Candidate',
       interests: 'Federated Learning, Privacy-Preserving AI',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
@@ -93,7 +93,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
     >
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-[#06b6d4]/10 transition-all hover:border-[#06b6d4]/50 h-full flex flex-col">
         {/* Image */}
-        <div 
+        <div
           className={`relative overflow-hidden aspect-square ${onPhotoClick && person.about ? 'cursor-pointer' : ''}`}
           onClick={() => onPhotoClick?.(person)}
         >
@@ -106,7 +106,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
 
           {/* Social Links */}
           <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <a 
+            <a
               href={`mailto:${person.email || 'emdlab@ee.iitb.ac.in'}`}
               onClick={(e) => e.stopPropagation()}
               className="flex-1 bg-white/90 backdrop-blur-sm text-[#0f172a] py-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2"
@@ -114,7 +114,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
               <Mail className="w-4 h-4" />
               <span className="text-sm">Email</span>
             </a>
-            <a 
+            <a
               href={person.linkedin || '#'}
               target="_blank"
               rel="noopener noreferrer"
@@ -147,48 +147,48 @@ I work in the area of Power Electronics, wherein my research interests are Elect
   return (
     <>
       <section ref={ref} id="team" className="py-24 bg-gradient-to-b from-[#f8fafc] to-white scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">Our Team</h2>
-          <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
-            A diverse group of faculty, staff, and students collaborating to solve complex problems
-          </p>
-        </motion.div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4">Our Team</h2>
+            <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
+              A diverse group of faculty, staff, and students collaborating to solve complex problems
+            </p>
+          </motion.div>
 
-        {/* Professors */}
-        <div id="team-professors" className="mb-20 scroll-mt-28">
-          <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
-            <User className="text-[#06b6d4] w-6 h-6" />
-            <h3 className="text-3xl font-bold text-[#0f172a]">Professors</h3>
+          {/* Professors */}
+          <div id="team-professors" className="mb-20 scroll-mt-28">
+            <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
+              <User className="text-[#06b6d4] w-6 h-6" />
+              <h3 className="text-3xl font-bold text-[#0f172a]">Professor</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {professors.map((person, index) => (
+                <PersonCard key={index} person={person} delay={index * 0.1} onPhotoClick={handlePhotoClick} />
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {professors.map((person, index) => (
-              <PersonCard key={index} person={person} delay={index * 0.1} onPhotoClick={handlePhotoClick} />
-            ))}
+
+
+
+          {/* Students */}
+          <div id="team-students" className="scroll-mt-28">
+            <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
+              <GraduationCap className="text-[#06b6d4] w-6 h-6" />
+              <h3 className="text-3xl font-bold text-[#0f172a]">Students</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {students.map((person, index) => (
+                <PersonCard key={index} person={person} delay={0.4 + index * 0.05} onPhotoClick={handlePhotoClick} />
+              ))}
+            </div>
           </div>
         </div>
-
-
-
-        {/* Students */}
-        <div id="team-students" className="scroll-mt-28">
-          <div className="flex items-center gap-3 mb-8 border-b border-gray-200 pb-2">
-            <GraduationCap className="text-[#06b6d4] w-6 h-6" />
-            <h3 className="text-3xl font-bold text-[#0f172a]">Students</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {students.map((person, index) => (
-              <PersonCard key={index} person={person} delay={0.4 + index * 0.05} onPhotoClick={handlePhotoClick} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
       <Dialog open={!!selectedPerson} onOpenChange={(open: boolean) => !open && setSelectedPerson(null)}>
         <DialogContent className="max-w-2xl bg-white p-0 overflow-hidden border-none shadow-2xl">
@@ -196,9 +196,9 @@ I work in the area of Power Electronics, wherein my research interests are Elect
             <div className="h-32 bg-gradient-to-r from-[#0f172a] to-[#06b6d4]" />
             <div className="absolute top-16 left-8 flex items-end gap-6">
               <div className="w-32 h-32 rounded-2xl border-4 border-white overflow-hidden shadow-lg bg-white">
-                <img 
-                  src={selectedPerson?.image} 
-                  alt={selectedPerson?.name} 
+                <img
+                  src={selectedPerson?.image}
+                  alt={selectedPerson?.name}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -207,7 +207,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
                 <p className="text-[#06b6d4] font-medium">{selectedPerson?.role}</p>
               </div>
             </div>
-            
+
             <div className="pt-20 px-8 pb-8">
               <div className="space-y-6">
                 <div>
@@ -216,7 +216,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
                     {selectedPerson?.about}
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
                   <div>
                     <h4 className="text-sm font-bold text-[#64748b] uppercase tracking-wider mb-2">Title</h4>
@@ -226,18 +226,18 @@ I work in the area of Power Electronics, wherein my research interests are Elect
                     <h4 className="text-sm font-bold text-[#64748b] uppercase tracking-wider mb-2">Links</h4>
                     <div className="flex gap-4">
                       {selectedPerson?.linkedin && (
-                        <a 
-                          href={selectedPerson.linkedin} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href={selectedPerson.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-[#64748b] hover:text-[#06b6d4] transition-colors"
                         >
                           <Linkedin className="w-5 h-5" />
                         </a>
                       )}
                       {selectedPerson?.email && (
-                        <a 
-                          href={`mailto:${selectedPerson.email}`} 
+                        <a
+                          href={`mailto:${selectedPerson.email}`}
                           className="text-[#64748b] hover:text-[#06b6d4] transition-colors"
                         >
                           <Mail className="w-5 h-5" />

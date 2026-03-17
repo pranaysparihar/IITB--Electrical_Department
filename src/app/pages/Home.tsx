@@ -73,7 +73,7 @@ function RNDSlideshow() {
 export default function HomePage() {
     const sections = [
         {
-            title: 'About The Lab',
+            title: 'About The Group',
             desc: 'The Electric Machines & Drives (EM&D) Laboratory focuses on pushing the boundaries of electric mobility, renewable energy systems, and advanced power convertors. Discover the academic background and vision of our leadership.',
             icon: GraduationCap,
             link: '/about',
