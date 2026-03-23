@@ -52,7 +52,7 @@ export function Navigation() {
       label: 'Team',
       type: 'dropdown',
       children: [
-        { label: 'Professors', id: '/team#team-professors' },
+        { label: 'Professor', id: '/team#team-professors' },
         { label: 'Students', id: '/team#team-students' },
       ]
     },
