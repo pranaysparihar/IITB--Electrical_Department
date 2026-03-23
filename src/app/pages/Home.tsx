@@ -73,8 +73,8 @@ function RNDSlideshow() {
 export default function HomePage() {
     const sections = [
         {
-            title: 'About The Group',
-            desc: 'The Electric Machines & Drives (EM&D) Laboratory focuses on pushing the boundaries of electric mobility, renewable energy systems, and advanced power convertors. Discover the academic background and vision of our leadership.',
+            title: 'About Group',
+            desc: 'The research group led by Prof. Sandeep Anand at IIT Bombay focuses on advanced power electronics with applications in electric mobility and sustainable energy systems. The group’s work spans electric vehicle drivertrain and charging technologies, wide bandgap (GaN and SiC)–based power converters, and circuits for integrating renewable and alternate energy sources such as solar PV, batteries, and fuel cells. The group combines fundamental research with practical, industry-relevant solutions.',
             icon: GraduationCap,
             link: '/about',
             color: 'text-indigo-500',
@@ -82,8 +82,8 @@ export default function HomePage() {
             imagePlaceholder: 'bg-indigo-100',
         },
         {
-            title: 'Research & Development',
-            desc: 'We actively publish our findings in top-tier journals and conferences. Explore our extensive database of research activities, presentations, and patented technologies that are shaping the future of power electronics.',
+            title: 'R&D',
+            desc: 'Our R&D activities span advanced power electronics for electric mobility and sustainable energy systems, driving innovation through focused research and real-world applications. The group actively contributes to leading journals and conferences, showcasing impactful publications and technical presentations to the global research community.',
             icon: BookOpen,
             link: '/publications',
             color: 'text-cyan-500',
@@ -92,7 +92,7 @@ export default function HomePage() {
         },
         {
             title: 'Projects',
-            desc: 'Our work is supported by various leading funding agencies. Discover our current and successfully closed research projects driving practical innovation in real-world electric machines.',
+            desc: 'Our lab focuses on the development and analysis of advanced power electronic converters for efficient energy conversion and control in applications such as electric vehicles, renewable energy systems, and battery-integrated systems. We emphasize the use of modern technologies, including wide bandgap devices (SiC/GaN), to enhance system performance and efficiency. Our work also involves designing reliable power electronic circuits for interfacing energy sources such as solar PV and batteries, with a focus on improving overall system efficiency, power quality, and reliability.',
             icon: FolderKanban,
             link: '/projects',
             color: 'text-emerald-500',
@@ -101,7 +101,7 @@ export default function HomePage() {
         },
         {
             title: 'Facilities',
-            desc: 'Our laboratory is equipped with state-of-the-art instruments across EV, Power Electronics, and Medium Voltage. We provide hands-on environments for rigorous testing and groundbreaking hardware development.',
+            desc: 'The department hosts specialized laboratories that support advanced research, experimentation, and technology development in core areas of electrical engineering. Key facilities include the C1973 EV Powertrain Lab, Medium Voltage Lab, and Power Electronics Lab enabling research in electric mobility, power systems, and computational electromagnetics.',
             icon: FlaskConical,
             link: '/facilities',
             color: 'text-amber-500',
@@ -109,8 +109,8 @@ export default function HomePage() {
             imagePlaceholder: 'bg-amber-100',
         },
         {
-            title: 'Our Team',
-            desc: 'A vibrant community of brilliant professors, dedicated program managers, and passionate students. Meet the minds that collaborate daily to bring our ambitious research visions to life.',
+            title: 'Team',
+            desc: 'Our team comprises dedicated researchers and students, including Ph.D. scholars and M.Tech candidates, working in the field of Power Electronics. The group brings together strong theoretical knowledge and practical expertise to address challenges in modern energy systems. With a collaborative approach, the team focuses on developing innovative solutions while fostering a research-driven and learning-oriented environment.',
             icon: Users,
             link: '/team',
             color: 'text-rose-500',
@@ -131,7 +131,7 @@ export default function HomePage() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-[#0f172a] mb-6"
                     >
-                        Welcome to EM&D Lab
+                        Welcome HiPER Lab
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -140,7 +140,7 @@ export default function HomePage() {
                         transition={{ delay: 0.1 }}
                         className="text-xl text-[#64748b] max-w-3xl mx-auto leading-relaxed"
                     >
-                        We focus on cutting edge research spanning electric vehicles, renewable energy integration, and advanced power electronics. Explore our impact areas below.
+                        We focus on cutting-edge research in electric mobility, renewable energy integration, and high-efficiency power conversion technologies.
                     </motion.p>
                 </div>
 

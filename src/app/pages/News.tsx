@@ -7,7 +7,7 @@ export default function NewsPage() {
             id: 1,
             title: "Lab Awarded New Research Grant for EV Technologies",
             date: "March 15, 2026",
-            summary: "Our EM&D Lab has successfully secured a major grant to further research in advanced power converters for electric vehicles.",
+            summary: "Our HiPER Lab has successfully secured a major grant to further research in advanced power converters for electric vehicles.",
             category: "Grant",
             link: "#"
         },
@@ -39,7 +39,7 @@ export default function NewsPage() {
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6">Lab News</h1>
                     <p className="text-xl text-[#64748b] max-w-3xl">
-                        Stay updated with the latest announcements, publications, and milestones from the EM&D Laboratory.
+                        Stay updated with the latest announcements, publications, and milestones from the HiPER Laboratory.
                     </p>
                 </motion.div>
 

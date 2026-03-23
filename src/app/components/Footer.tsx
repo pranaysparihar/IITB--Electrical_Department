@@ -28,7 +28,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-[#06b6d4]/20 rounded-lg flex items-center justify-center">
                 <FlaskConical className="w-6 h-6 text-[#06b6d4]" />
               </div>
-              <span className="text-xl font-semibold">EM&D Lab</span>
+              <span className="text-xl font-semibold">HiPER Lab</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-2">
               Electric Machines & Drives Laboratory

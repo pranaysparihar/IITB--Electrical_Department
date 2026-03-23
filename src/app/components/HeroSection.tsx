@@ -23,9 +23,9 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
         >
-          Electric Machines &
+          Welcome to
           <br />
-          <span className="text-[#06b6d4]">Drives Laboratory</span>
+          <span className="text-[#06b6d4]">HiPER Lab</span>
         </motion.h1>
 
         <motion.p
@@ -34,8 +34,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Advancing electric mobility through innovative research in motor design, power
-          electronics, and intelligent control systems
+          Research group led by Prof. Sandeep Anand specializing in advanced power electronics and sustainable energy systems.
         </motion.p>
 
 

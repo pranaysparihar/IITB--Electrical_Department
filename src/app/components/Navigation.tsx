@@ -128,7 +128,7 @@ export function Navigation() {
                 IIT Bombay
               </span>
               <span className="text-xs md:text-sm font-medium text-[#64748b]">
-                EM&D Lab
+                HiPER Lab
               </span>
             </div>
           </button>

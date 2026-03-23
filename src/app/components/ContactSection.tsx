@@ -11,17 +11,17 @@ export function ContactSection() {
     {
       icon: MapPin,
       title: 'Location',
-      details: ['Room 116, EE Department', 'Indian Institute of Technology Bombay', 'Powai, Mumbai - 400076, India'],
+      details: ['Ground Floor, Dept of Electrical Engineering', 'IIT Bombay, Powai, Mumbai 400 076', 'India'],
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['emdlab@ee.iitb.ac.in', 'pi@iitb.ac.in'],
+      details: ['sa@ee.iitb.ac.in'],
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 (22) 2576-XXXX', 'Lab: +91 (22) 2576-YYYY'],
+      details: ['(O): +91-22-2576-7409'],
     },
   ];
 
