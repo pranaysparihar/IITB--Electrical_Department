@@ -36,7 +36,12 @@ export function AboutSection() {
                 <h3 className="text-2xl font-bold text-[#0f172a]">Lab Description</h3>
               </div>
               <p className="text-[#475569] leading-relaxed text-lg bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                The Electric Machines & Drives (EM&D) Laboratory at IIT Bombay is at the forefront of research in electric mobility, power electronics, and renewable energy integration. We focus on theoretical analysis, advanced simulation, and practical hardware prototyping to create highly efficient, reliable, and intelligent electrical systems for future transport and grid applications. Our goal is to drive innovation that supports a sustainable energy future.
+                The HiPER Lab (High Performance Power Electronics Research Lab) at the Indian Institute of Technology Bombay, led by Prof. Sandeep Anand, is at the forefront of research in advanced power electronics, driving innovation in electric mobility and sustainable energy systems. <br /> <br />
+
+                The lab focuses on the design and development of next-generation electric vehicle (EV) drivetrains and charging technologies, alongside high-performance power converters based on wide bandgap semiconductor devices such as GaN and SiC. Its research also extends to intelligent power electronic interfaces for integrating renewable and alternative energy sources, including solar photovoltaic (PV) systems, batteries, and fuel cells.<br /> <br />
+
+
+                Through close alignment with emerging industry needs and national initiatives in EV powertrains and photovoltaic systems, HiPER Lab seamlessly bridges fundamental research with practical implementation—delivering impactful, scalable, and industry-relevant solutions for the future of energy and mobility.
               </p>
             </div>
 
