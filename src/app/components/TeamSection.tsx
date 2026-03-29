@@ -3,6 +3,12 @@ import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { Mail, Linkedin, GraduationCap, Briefcase, User } from 'lucide-react';
 import sandeepPhoto from '../../assets/sandeep_anand.png';
+import nikhilphoto from '../../assets/Team/Nikhil_Bhardwaj.jpg';
+import akashphoto from '../../assets/Team/Akash_Gangwar.jpeg';
+import saurabhphoto from '../../assets/Team/Saurabh_Singh.png';
+import narendraphoto from '../../assets/Team/Narendra.jpeg';
+import shazebphoto from '../../assets/Team/Mohd_Shazeb.png';
+import sagnikphoto from '../../assets/Team/Sagnik_Banerjee.jpeg';
 import {
   Dialog,
   DialogContent,
@@ -10,72 +16,72 @@ import {
 
 // Moved out of TeamSection to prevent remounting on every render
 const PersonCard = ({ person, delay, isInView, onPhotoClick }: { person: any; delay: number; isInView: boolean; onPhotoClick?: (p: any) => void }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay }}
-      className="group"
-    >
-      <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-[#06b6d4]/10 transition-all hover:border-[#06b6d4]/50 h-full flex flex-col">
-        {/* Image */}
-        <div
-          role={onPhotoClick && person.about ? "button" : undefined}
-          tabIndex={onPhotoClick && person.about ? 0 : undefined}
-          className={`relative overflow-hidden aspect-square ${onPhotoClick && person.about ? 'cursor-pointer' : ''}`}
-          onClick={() => onPhotoClick?.(person)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onPhotoClick?.(person);
-            }
-          }}
-        >
-          <img
-            src={person.image}
-            alt={person.name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.5, delay }}
+    className="group"
+  >
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-[#06b6d4]/10 transition-all hover:border-[#06b6d4]/50 h-full flex flex-col">
+      {/* Image */}
+      <div
+        role={onPhotoClick && person.about ? "button" : undefined}
+        tabIndex={onPhotoClick && person.about ? 0 : undefined}
+        className={`relative overflow-hidden aspect-square ${onPhotoClick && person.about ? 'cursor-pointer' : ''}`}
+        onClick={() => onPhotoClick?.(person)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onPhotoClick?.(person);
+          }
+        }}
+      >
+        <img
+          src={person.image}
+          alt={person.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-          {/* Social Links */}
-          <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <a
-              href={`mailto:${person.email || 'sa@ee.iitb.ac.in'}`}
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 bg-white/90 backdrop-blur-sm text-[#0f172a] py-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2"
-            >
-              <Mail className="w-4 h-4" />
-              <span className="text-sm">Email</span>
-            </a>
-            <a
-              href={person.linkedin || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white/90 backdrop-blur-sm text-[#0f172a] p-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center shrink-0 w-10"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Info */}
-        <div className="p-6 flex-1 flex flex-col">
-          <h3 className="font-semibold text-[#0f172a] mb-1 group-hover:text-[#06b6d4] transition-colors">
-            {person.name}
-          </h3>
-          <p className="text-sm text-[#06b6d4] mb-3">{person.role}</p>
-          {person.title && (
-            <p className="text-xs text-[#64748b] mb-3 leading-relaxed">{person.title}</p>
-          )}
-          <div className="mt-auto flex items-start gap-2 text-xs text-[#475569]">
-            {person.type === 'PhD' || person.type === 'Masters' ? <GraduationCap className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" /> : <Briefcase className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" />}
-            <p className="line-clamp-3">{person.interests}</p>
-          </div>
+        {/* Social Links */}
+        <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          <a
+            href={`mailto:${person.email || 'sa@ee.iitb.ac.in'}`}
+            onClick={(e) => e.stopPropagation()}
+            className="flex-1 bg-white/90 backdrop-blur-sm text-[#0f172a] py-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2"
+          >
+            <Mail className="w-4 h-4" />
+            <span className="text-sm">Email</span>
+          </a>
+          <a
+            href={person.linkedin || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white/90 backdrop-blur-sm text-[#0f172a] p-2 rounded-lg hover:bg-white transition-colors flex items-center justify-center shrink-0 w-10"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
         </div>
       </div>
-    </motion.div>
-  );
+
+      {/* Info */}
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className="font-semibold text-[#0f172a] mb-1 group-hover:text-[#06b6d4] transition-colors">
+          {person.name}
+        </h3>
+        <p className="text-sm text-[#06b6d4] mb-3">{person.role}</p>
+        {person.title && (
+          <p className="text-xs text-[#64748b] mb-3 leading-relaxed">{person.title}</p>
+        )}
+        <div className="mt-auto flex items-start gap-2 text-xs text-[#475569]">
+          {person.type === 'PhD' || person.type === 'Masters' ? <GraduationCap className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" /> : <Briefcase className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#94a3b8]" />}
+          <p className="line-clamp-3">{person.interests}</p>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
 export function TeamSection() {
   const ref = useRef(null);
@@ -108,7 +114,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       about: 'I am a Ph.D. student in the Department of Electrical Engineering at the Indian Institute of Technology Bombay (IIT Bombay), India. My research interests include reliability studies of SiC power devices. I completed my M.Tech in Electrical Engineering from the Indian Institute of Science (IISc), Bengaluru, India. Prior to that, I earned my B.Tech degree in Electrical Engineering from the Malaviya National Institute of Technology (MNIT) Jaipur, India. I have also carried out part of my research at The Ohio State University, Columbus, Ohio, USA, as an IITB–OSU Frontier Scholar.',
       email: 'nikhil.b255@gmail.com',
       linkedin: 'https://www.linkedin.com/in/nikhil-bhardwaj-93077123/',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
+      image: nikhilphoto,
     },
     {
       name: 'Akash Gangwar',
@@ -118,7 +124,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       about: 'I am a Ph.D. student in the Department of Electrical Engineering at the Indian Institute of Technology Bombay (IIT Bombay), specializing in Power Electronics. My research focuses on wide bandgap (WBG) devices, particularly GaN and SiC, with the goal of improving their application in solar photovoltaic (PV) inverters. I completed my M.Tech in Power Systems from the National Institute of Technology Tiruchirappalli (NIT Trichy), Tamil Nadu, in 2021, where my research project involved the design and analysis of a three-level LLC resonant converter integrated with an active front-end converter. Prior to that, I earned my B.Tech degree in Electrical and Electronics Engineering from ABES Engineering College, Ghaziabad, in 2018.',
       email: 'akashgangwar452@gmail.com',
       linkedin: 'https://www.linkedin.com/in/akashgangwar452/',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
+      image: akashphoto,
     },
     {
       name: 'Saurabh Singh',
@@ -128,7 +134,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       about: 'I am a PhD student in the Department of Electrical Engineering at the Indian Institute of Technology Bombay, Mumbai, India. My research interests include control, condition monitoring, and reliability improvement of EV motor drives. I earned my B.Tech. degree in Electrical Engineering from the Indian Institute of Technology Patna, India, in 2021.',
       email: 'saurabhsingh.ss1295@gmail.com',
       linkedin: 'https://www.linkedin.com/in/saurabh-singh-76183b237',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop'
+      image: saurabhphoto,
     },
     {
       name: 'Varun Lal',
@@ -158,7 +164,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       about: 'I am an M.Tech (Class of 2027) student at the Centre for Systems and Control, IIT Bombay, and currently working as a Project Research Assistant in the Department of Electrical Engineering. I am involved in an Anusandhan National Research Foundation (ANRF) funded project titled “Design and Development of a 20 kW SiC-based Traction Inverter." During my tenure as project staff, I have worked on PCB reliability, onboard chargers for electric vehicles, and motor controllers for two-wheeler EVs. I earned my B.Tech degree in Electrical Engineering from Walchand College of Engineering in 2022.',
       email: 'narendra18muley@gmail.com',
       linkedin: 'http://linkedin.com/in/narendra18',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop'
+      image: narendraphoto,
     },
     {
       name: 'Mohd Shazeb',
@@ -168,7 +174,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       about: 'I am an M.Tech student in Power Electronics at the Indian Institute of Technology Bombay (IIT Bombay). My research interests lie in Power Electronics, with a focus on motor drive systems and high-power converter design. I have worked on the design and development of a 5 kW motor controller and am currently involved in the design and development of a SiC-based 20 kW motor controller aimed at achieving high efficiency and high-performance operation. I completed my B.Tech in Electrical Engineering from Aligarh Muslim University in 2024.',
       email: 'shazeb@iitb.ac.in',
       linkedin: 'https://www.linkedin.com/in/mohd-shazeb-6706ba293',
-      image: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=400&h=400&fit=crop'
+      image: shazebphoto,
     },
     {
       name: 'Sagnik Banerjee',
@@ -178,7 +184,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       about: 'I am currently a Master’s student in Power Electronics and Power Systems at IIT Bombay, focusing on the design and development of medium-voltage grid-connected converters. I completed my B.Tech in Electrical Engineering from Institute of Engineering and Management, Kolkata in 2022. Prior to joining IIT Bombay, I worked as a Lead Engineer in Testing and Commissioning at Tata Power Renewable Energy Limited.',
       email: '24m1114@iitb.ac.in',
       linkedin: 'https://www.linkedin.com/in/sagnik-banerjee-17646519a',
-      image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=400&h=400&fit=crop'
+      image: sagnikphoto,
     },
   ];
 
@@ -233,9 +239,9 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       </section>
 
       <Dialog open={!!selectedPerson} onOpenChange={(open: boolean) => !open && setSelectedPerson(null)}>
-        <DialogContent 
-            onCloseAutoFocus={(e) => e.preventDefault()}
-            className="max-w-2xl bg-white p-0 overflow-hidden border-none shadow-2xl"
+        <DialogContent
+          onCloseAutoFocus={(e) => e.preventDefault()}
+          className="max-w-2xl bg-white p-0 overflow-hidden border-none shadow-2xl"
         >
           <div className="relative">
             <div className="h-32 bg-gradient-to-r from-[#0f172a] to-[#06b6d4]" />
