@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Twitter, Mail, FlaskConical } from 'lucide-react';
+import { Github, Linkedin, Youtube, Mail, FlaskConical } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Youtube, href: 'https://www.youtube.com/@C1973EVPowertrainlab', label: 'YouTube' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Mail, href: '#', label: 'Email' },

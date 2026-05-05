@@ -5,12 +5,12 @@ import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap,
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-function RNDSlideshow() {
-    const images = [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
-    ];
+// Dynamically import all images from the respective folders
+const aboutImages = Object.values(import.meta.glob('../../assets/About Group/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
+const rndImages = Object.values(import.meta.glob('../../assets/R&D/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
+const projectImages = Object.values(import.meta.glob('../../assets/Facilities/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
+
+function Slideshow({ images }: { images: string[] }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
@@ -22,14 +22,17 @@ function RNDSlideshow() {
     };
 
     useEffect(() => {
+        if (images.length <= 1) return;
         const timer = setInterval(() => {
             nextSlide();
         }, 5000);
         return () => clearInterval(timer);
-    }, []);
+    }, [images.length]);
+
+    if (images.length === 0) return null;
 
     return (
-        <div className="w-full h-full relative overflow-hidden rounded-3xl group">
+        <div className="w-full h-full relative overflow-hidden rounded-3xl group shadow-lg">
             <AnimatePresence mode="wait">
                 <motion.img
                     key={currentIndex}
@@ -43,29 +46,33 @@ function RNDSlideshow() {
             </AnimatePresence>
 
             {/* Navigation Arrows */}
-            <button
-                onClick={(e) => { e.preventDefault(); prevSlide(); }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100"
-            >
-                <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-                onClick={(e) => { e.preventDefault(); nextSlide(); }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100"
-            >
-                <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Dots */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {images.map((_, idx) => (
+            {images.length > 1 && (
+                <>
                     <button
-                        key={idx}
-                        onClick={(e) => { e.preventDefault(); setCurrentIndex(idx); }}
-                        className={`w-2.5 h-2.5 rounded-full transition-all ${idx === currentIndex ? 'bg-white scale-110 shadow-sm' : 'bg-white/50 hover:bg-white/80'}`}
-                    />
-                ))}
-            </div>
+                        onClick={(e) => { e.preventDefault(); prevSlide(); }}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100"
+                    >
+                        <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                        onClick={(e) => { e.preventDefault(); nextSlide(); }}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all opacity-0 group-hover:opacity-100"
+                    >
+                        <ChevronRight className="w-6 h-6" />
+                    </button>
+
+                    {/* Dots */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                        {images.map((_, idx) => (
+                            <button
+                                key={idx}
+                                onClick={(e) => { e.preventDefault(); setCurrentIndex(idx); }}
+                                className={`w-2.5 h-2.5 rounded-full transition-all ${idx === currentIndex ? 'bg-white scale-110 shadow-sm' : 'bg-white/50 hover:bg-white/80'}`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 }
@@ -79,7 +86,7 @@ export default function HomePage() {
             link: '/about',
             color: 'text-indigo-500',
             bg: 'bg-indigo-50',
-            imagePlaceholder: 'bg-indigo-100',
+            images: aboutImages,
         },
         {
             title: 'R&D',
@@ -88,7 +95,7 @@ export default function HomePage() {
             link: '/publications',
             color: 'text-cyan-500',
             bg: 'bg-cyan-50',
-            imagePlaceholder: 'bg-cyan-100',
+            images: rndImages,
         },
         {
             title: 'Projects',
@@ -97,25 +104,7 @@ export default function HomePage() {
             link: '/projects',
             color: 'text-emerald-500',
             bg: 'bg-emerald-50',
-            imagePlaceholder: 'bg-emerald-100',
-        },
-        {
-            title: 'Facilities',
-            desc: 'The department hosts specialized laboratories that support advanced research, experimentation, and technology development in core areas of electrical engineering. Key facilities include the C1973 EV Powertrain Lab, Medium Voltage Lab, and Power Electronics Lab enabling research in electric mobility, power systems, and computational electromagnetics.',
-            icon: FlaskConical,
-            link: '/facilities',
-            color: 'text-amber-500',
-            bg: 'bg-amber-50',
-            imagePlaceholder: 'bg-amber-100',
-        },
-        {
-            title: 'Team',
-            desc: 'Our team comprises dedicated researchers and students, including Ph.D. scholars and M.Tech candidates, working in the field of Power Electronics. The group brings together strong theoretical knowledge and practical expertise to address challenges in modern energy systems. With a collaborative approach, the team focuses on developing innovative solutions while fostering a research-driven and learning-oriented environment.',
-            icon: Users,
-            link: '/team',
-            color: 'text-rose-500',
-            bg: 'bg-rose-50',
-            imagePlaceholder: 'bg-rose-100',
+            images: projectImages,
         }
     ];
 
@@ -181,21 +170,9 @@ export default function HomePage() {
                                     transition={{ duration: 0.6 }}
                                     className="flex-1 w-full"
                                 >
-                                    {item.title === 'Research & Development' ? (
-                                        <div className="aspect-[4/3] rounded-3xl flex items-center justify-center relative shadow-lg overflow-hidden">
-                                            <RNDSlideshow />
-                                        </div>
-                                    ) : (
-                                        <div className={`aspect-[4/3] rounded-3xl ${item.imagePlaceholder} bg-opacity-30 border border-black/5 flex items-center justify-center relative overflow-hidden`}>
-                                            <motion.div
-                                                animate={{ rotate: 360 }}
-                                                transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-                                                className={`absolute w-full h-full opacity-20`}
-                                                style={{ backgroundImage: 'radial-gradient(circle at center, currentColor 2px, transparent 2px)', backgroundSize: '24px 24px', color: 'currentColor' }}
-                                            />
-                                            <item.icon className={`w-32 h-32 ${item.color} opacity-20 absolute`} />
-                                        </div>
-                                    )}
+                                    <div className="aspect-[4/3] rounded-3xl relative shadow-2xl overflow-hidden bg-gray-100">
+                                        <Slideshow images={item.images} />
+                                    </div>
                                 </motion.div>
 
                             </div>

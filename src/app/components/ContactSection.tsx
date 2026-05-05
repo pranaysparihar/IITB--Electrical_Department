@@ -52,7 +52,7 @@ export function ContactSection() {
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all flex flex-col items-center text-center group"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#06b6d4]/20 to-[#06b6d4]/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <info.icon className="w-8 h-8 text-[#06b6d4]" />
               </div>
               <h4 className="text-xl font-semibold text-[#0f172a] mb-4">{info.title}</h4>
@@ -72,17 +72,20 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-2xl overflow-hidden h-[400px] relative w-full shadow-lg"
+          className="rounded-2xl overflow-hidden h-[400px] w-full shadow-lg"
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white">
-              <MapPin className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg opacity-75">Interactive Map</p>
-              <p className="text-sm opacity-60 mt-2">EE Department, IIT Bombay</p>
-            </div>
-          </div>
-          {/* You can replace this with an actual embedded map iframe later */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.160105389659!2d72.9164874!3d19.1319889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7f67f8bf8b3%3A0x254d4ac58e28820c!2sDepartment%20of%20Electrical%20Engineering!5e0!3m2!1sen!2sin!4v1714800000000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="EE Department IIT Bombay Map"
+          />
         </motion.div>
+
       </div>
     </section>
   );
