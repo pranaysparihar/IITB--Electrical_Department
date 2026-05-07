@@ -24,138 +24,453 @@ export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
+    // PI PROJECTS - ACTIVE
     {
-      title: 'High-Efficiency In-Wheel Motor for EVs',
-      description: 'Development of a compact permanent magnet motor with integrated power electronics for direct-drive electric vehicles, achieving 96% peak efficiency.',
+      title: 'E-RIDES (e-node for EVs at IITB)',
+      description: 'Establishment of a PEMD theme e-node for EVs at IITB under ANRF. Leading IITB team and 3 work packages.',
       status: 'ongoing',
-      tags: ['PM Motor', 'EV', 'In-Wheel Drive'],
-      funding: 'SERB',
-      year: '2024-2026',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Sarah Chen', 'Ryan Park', 'Liam Chen']
-    },
-    {
-      title: 'SiC-Based Fast Charger for Electric Vehicles',
-      description: 'Design and implementation of a 50kW bidirectional DC fast charger using silicon carbide MOSFETs with vehicle-to-grid (V2G) capability.',
-      status: 'ongoing',
-      tags: ['Power Electronics', 'SiC', 'Fast Charging'],
-      funding: 'DST',
-      year: '2023-2025',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Michael Rodriguez', 'Aisha Mohammed']
-    },
-    {
-      title: 'AI-Based Predictive Maintenance for Industrial Motors',
-      description: 'Machine learning algorithms for real-time condition monitoring and predictive fault diagnosis in three-phase induction motors.',
-      status: 'ongoing',
-      tags: ['AI', 'Condition Monitoring', 'Induction Motor'],
-      funding: 'Industry Sponsored',
-      year: '2024-2026',
+      tags: ['EV', 'PEMD', 'Principal Investigator'],
+      funding: 'ANRF',
+      year: '2025-2028',
       paperLink: '',
       hasPaper: false,
-      participants: ['Dr. Sarah Chen', 'Maria Gonzalez', 'Sophie Anderson']
+      participants: ['Prof. Kishore Chatterjee (Overall Lead PI)', 'Prof. Sandeep Anand (Lead PI at IITB)']
     },
     {
-      title: 'Modular Multi-Level Converter for HVDC',
-      description: 'Development of advanced control strategies for MMC-based HVDC systems with enhanced fault ride-through capability.',
+      title: 'Research on WBG Devices and Circuits',
+      description: 'Enhancing inverter efficiency and performance using Wide Bandgap devices and circuits.',
       status: 'ongoing',
-      tags: ['Power Electronics', 'HVDC', 'Grid Integration'],
-      funding: 'CPRI',
-      year: '2023-2025',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Michael Rodriguez', 'David Thompson']
+      tags: ['WBG', 'Inverter', 'Principal Investigator'],
+      funding: 'Hyundai Motor Company (HMC)',
+      year: '2025-2026',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
     },
     {
-      title: 'Switched Reluctance Motor for EV Traction',
-      description: 'Design optimization and torque ripple minimization of 4-phase SRM for electric vehicle applications using finite element analysis.',
-      status: 'completed',
-      tags: ['SRM', 'Motor Design', 'FEA'],
-      funding: 'ARAI',
-      year: '2021-2023',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Emily Watson', 'Ryan Park']
+      title: 'Wide Bandgap Power Electronics for EVs',
+      description: 'Development of robust and high density SiC based motor controller for electric cars.',
+      status: 'ongoing',
+      tags: ['SiC', 'EV', 'Motor Controller', 'Principal Investigator'],
+      funding: 'Mr. Lalit Keshre',
+      year: '2024-2025',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
     },
     {
-      title: 'Wireless Charging System for Electric Buses',
-      description: 'Dynamic wireless power transfer system with 20kW charging capability for opportunity charging at bus stops.',
+      title: 'Young Faculty Research Fellowship (YFRF) Grant',
+      description: 'Fellowship grant under Visvesvaraya Ph.D Scheme for Electronics & IT (Phase-2).',
+      status: 'ongoing',
+      tags: ['Fellowship', 'MeitY', 'Principal Investigator'],
+      funding: 'MeitY',
+      year: '2025-2029',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'PMSM Controllers for Electric 2/3 Wheelers',
+      description: 'Design and development of efficient PMSM controllers specifically for light electric vehicles.',
+      status: 'ongoing',
+      tags: ['PMSM', 'EV', 'Motor Control', 'Principal Investigator'],
+      funding: 'TRC Deeptech, IIT Bombay',
+      year: '2024-2025',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+
+    // PI PROJECTS - COMPLETED
+    {
+      title: 'GaN based Inverter / Motor Controller',
+      description: 'Design and implementation of high-performance GaN based motor controllers.',
       status: 'completed',
-      tags: ['Wireless Charging', 'WPT', 'E-Bus'],
-      funding: 'MNRE',
+      tags: ['GaN', 'Inverter', 'Principal Investigator'],
+      funding: 'Class of 73 Legacy Project',
+      year: '2024-2025',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Study of DC-link Capacitor Reduction',
+      description: 'Research into techniques for reducing the size and cost of DC-link capacitors in power converters.',
+      status: 'completed',
+      tags: ['Capacitor', 'Power Electronics', 'Principal Investigator'],
+      funding: 'Cummins Technologies India Pvt Ltd',
+      year: '2024',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Establishing the C’73 EV Powertrain Laboratory',
+      description: 'Infrastructure development and establishment of a dedicated EV powertrain research facility.',
+      status: 'completed',
+      tags: ['Lab Setup', 'EV', 'Principal Investigator'],
+      funding: 'Class of 73 Legacy Project',
+      year: '2023-2024',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Reference Design and Prototype for EV Charger',
+      description: 'Development of an efficient reference design and prototype for electric vehicle charging stations.',
+      status: 'completed',
+      tags: ['EV Charger', 'Infineon', 'Principal Investigator'],
+      funding: 'Cypress Semiconductor / Infineon',
+      year: '2022-2024',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'DC-DC Converter for EV Charging Application',
+      description: 'Specialized DC-DC converter design optimized for fast charging environments.',
+      status: 'completed',
+      tags: ['DC-DC', 'EV Charging', 'Principal Investigator'],
+      funding: 'Log9 Materials Scientific Pvt Ltd',
+      year: '2022-2023',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Integration of On-board Charger and APM',
+      description: 'Integrating onboard charger and auxiliary power module for light electric vehicles.',
+      status: 'completed',
+      tags: ['Integrated Charger', 'EV', 'Principal Investigator'],
+      funding: 'Varroc Engineering Limited',
+      year: '2022-2023',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Power Drive Train for Heavy Vehicles',
+      description: 'Simulation, reliability study, and power density optimization for heavy vehicle drivetrains.',
+      status: 'completed',
+      tags: ['Heavy Vehicles', 'Drive Train', 'Principal Investigator'],
+      funding: 'Cummins Technologies India Pvt Ltd',
+      year: '2022-2023',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'E-mode GaN HEMT based Solar Inverter',
+      description: 'Development of a single phase solar inverter with smart gate driver using GaN HEMT.',
+      status: 'completed',
+      tags: ['GaN', 'Solar Inverter', 'Principal Investigator'],
+      funding: 'DST-SERD',
+      year: '2021-2024',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'FOC for Sinusoidal EMF PM Hub Motor',
+      description: 'Implementation of Field Oriented Control for permanent magnet hub motors with sinusoidal EMF.',
+      status: 'completed',
+      tags: ['FOC', 'Hub Motor', 'Principal Investigator'],
+      funding: 'India Nippon Electricals Limited',
+      year: '2022-2023',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Digital Current Controlled Source',
+      description: 'Design and development of high-precision digital current controlled sources.',
+      status: 'completed',
+      tags: ['Digital Control', 'Principal Investigator'],
+      funding: 'VAS Spectrometers PVT. LTD.',
+      year: '2021-2022',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Enabling GaN-based Power Converters',
+      description: 'Facility setup and research plan implementation for advanced GaN power electronic converters.',
+      status: 'completed',
+      tags: ['GaN', 'Facility Setup', 'Principal Investigator'],
+      funding: 'IIT Bombay',
       year: '2020-2023',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Sarah Chen', 'James Liu']
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
     },
     {
-      title: 'DFIG-Based Wind Energy System',
-      description: 'Advanced control strategies for doubly-fed induction generators with grid fault ride-through and power quality enhancement.',
-      status: 'ongoing',
-      tags: ['DFIG', 'Wind Energy', 'Grid Integration'],
-      funding: 'MNRE',
-      year: '2023-2026',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Michael Rodriguez', 'Liam Chen']
-    },
-    {
-      title: 'Sensorless Control of PMSM Drives',
-      description: 'Implementation of observer-based sensorless vector control for permanent magnet synchronous motors across wide speed range.',
+      title: 'Performance Enhancement using GaN-HEMT',
+      description: 'Research into improving power electronic circuit performance through wide bandgap devices.',
       status: 'completed',
-      tags: ['PMSM', 'Sensorless Control', 'FOC'],
-      funding: 'CSIR',
+      tags: ['GaN-HEMT', 'Power Electronics', 'Principal Investigator'],
+      funding: 'SERB, Govt. of India',
       year: '2019-2022',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Sarah Chen', 'Aisha Mohammed']
-    },
-    {
-      title: 'Thermal Management in EV Battery Packs',
-      description: 'Novel liquid cooling strategies and thermal modeling for lithium-ion battery packs in electric vehicles.',
-      status: 'ongoing',
-      tags: ['Battery', 'Thermal Management', 'EV'],
-      funding: 'ISRO',
-      year: '2024-2027',
       paperLink: '',
       hasPaper: false,
-      participants: ['Dr. Emily Watson', 'David Thompson']
+      participants: ['Prof. Sandeep Anand']
     },
     {
-      title: 'Direct Drive Actuator for Robotics',
-      description: 'High torque density brushless DC motor with integrated encoder for industrial robotic applications.',
+      title: 'Transformer Inrush Current Minimization Device',
+      description: 'Development of a device for minimizing inrush current during transformer switching.',
       status: 'completed',
-      tags: ['BLDC', 'Actuator', 'Robotics'],
-      funding: 'Industry Sponsored',
-      year: '2020-2022',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Michael Rodriguez', 'Ryan Park']
-    },
-    {
-      title: 'Matrix Converter for Renewable Energy',
-      description: 'Direct AC-AC matrix converter topology with space vector modulation for wind and solar power conversion.',
-      status: 'ongoing',
-      tags: ['Matrix Converter', 'Renewable Energy', 'SVM'],
-      funding: 'DST',
-      year: '2023-2025',
+      tags: ['Transformer', 'Inrush Current', 'Principal Investigator'],
+      funding: 'IUSSTF - IIGP 2.0',
+      year: '2019-2020',
       paperLink: '',
       hasPaper: false,
-      participants: ['Dr. Sarah Chen', 'Sophie Anderson']
+      participants: ['Prof. Sandeep Anand']
     },
     {
-      title: 'Flywheel Energy Storage System',
-      description: 'High-speed permanent magnet motor-generator for kinetic energy storage with magnetic bearing suspension.',
+      title: 'Smart Solar Inverter for Grid Control',
+      description: 'Solar inverter design with droop characteristics and integrated DC supply for primary frequency control.',
       status: 'completed',
-      tags: ['Energy Storage', 'FESS', 'PM Motor'],
-      funding: 'DRDO',
+      tags: ['Smart Inverter', 'Grid Control', 'Principal Investigator'],
+      funding: 'NTPC Limited',
+      year: '2016-2019',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Harmonic Compensation using Solar PV Inverters',
+      description: 'Using distributed solar PV inverters for power quality enhancement and harmonic compensation.',
+      status: 'completed',
+      tags: ['Harmonics', 'Solar PV', 'Principal Investigator'],
+      funding: 'DST-CERI',
+      year: '2016-2019',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Smart Converters for Renewable Integration',
+      description: 'Research grant for developing smart power electronic converters for sustainable energy integration.',
+      status: 'completed',
+      tags: ['Renewable', 'Power Converters', 'Principal Investigator'],
+      funding: 'DST INSPIRE Fellowship',
+      year: '2013-2018',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Integrated DC-DC Solar PV Inverter',
+      description: 'Grid connected transformerless photovoltaic inverter with integrated DC-DC converter stages.',
+      status: 'completed',
+      tags: ['Photovoltaic', 'DC-DC', 'Principal Investigator'],
+      funding: 'IUSSTF - IIGP 2.0',
+      year: '2017-2018',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Over Voltage and Inrush Current Study',
+      description: 'Study to minimize transients during connection of grid-tied solar PV plants.',
+      status: 'completed',
+      tags: ['Grid Tied', 'Solar PV', 'Principal Investigator'],
+      funding: 'NTPC Limited',
+      year: '2016-2019',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'GaN based Compact DC-DC Converter',
+      description: 'Design and development of high-density compact converters for space applications.',
+      status: 'completed',
+      tags: ['GaN', 'Space Tech', 'Principal Investigator'],
+      funding: 'ISRO-STC',
+      year: '2016-2018',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Reliability Study of Battery Charger Circuit',
+      description: 'Analyzing and improving the reliability of specialized battery charger designs.',
+      status: 'completed',
+      tags: ['Battery Charger', 'Reliability', 'Principal Investigator'],
+      funding: 'ALIMCO',
+      year: '2017',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'High Reliability DC-DC Converter',
+      description: 'Integrating batteries with low voltage DC systems through high reliability converter topologies.',
+      status: 'completed',
+      tags: ['DC-DC', 'Reliability', 'Principal Investigator'],
+      funding: 'SERB FAST Track Scheme',
+      year: '2014-2017',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Harmonic Compensation using Static Regulator',
+      description: 'Addressing voltage and current harmonics in power systems using static voltage regulators.',
+      status: 'completed',
+      tags: ['Harmonics', 'SVR', 'Principal Investigator'],
+      funding: 'Emerson Network Power',
+      year: '2015-2016',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Solar PV Interfacing with LVDC System',
+      description: 'Development of power electronic converters for interfacing solar photovoltaics with low voltage DC networks.',
+      status: 'completed',
+      tags: ['Solar PV', 'LVDC', 'Principal Investigator'],
+      funding: 'IIT Kanpur',
+      year: '2013-2015',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+    {
+      title: 'Static Voltage Regulator Laboratory Prototype',
+      description: 'Development of scaled-down prototypes for testing advanced static voltage regulation strategies.',
+      status: 'completed',
+      tags: ['SVR', 'Prototype', 'Principal Investigator'],
+      funding: 'Emerson Network Power',
+      year: '2014-2015',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Prof. Sandeep Anand']
+    },
+
+    // CO-I PROJECTS - ACTIVE
+    {
+      title: 'NCPRE Phase-3',
+      description: 'National Centre for Photovoltaic Research and Education. Role: Group lead for power electronics and grid integration.',
+      status: 'ongoing',
+      tags: ['Photovoltaic', 'Grid Integration', 'Co-Investigator'],
+      funding: 'MNRE, Govt. of India',
+      year: '2023-2027',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. B.G. Fernandes (PI)', 'Dr. S. Doolla (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'FIST Grant - WBG based Converters',
+      description: 'Establishment and research in WBG based Power Electronics. Role: Lab Establishment and Research.',
+      status: 'ongoing',
+      tags: ['FIST', 'WBG', 'Co-Investigator'],
+      funding: 'DST, Govt. of India',
+      year: '2022-2027',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Head of Department (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'SUSTENANCE Project',
+      description: 'Sustainable Energy system for Achieving Novel Carbon Neutral Energy communities. Role: EV energy vertical, e-rickshaw.',
+      status: 'ongoing',
+      tags: ['Sustainability', 'EV', 'Co-Investigator'],
+      funding: 'DST, Govt. of India',
+      year: '2021-2025',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. K. Chatterjee (PI)', 'Dr. Z. Rather (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+
+    // CO-I PROJECTS - COMPLETED
+    {
+      title: 'Charging Control Of PMSM (ISG)',
+      description: 'Charging control of PMSM with FOC. Role: Power converter for Integrated Starter Generator (ISG).',
+      status: 'completed',
+      tags: ['PMSM', 'ISG', 'Co-Investigator'],
+      funding: 'SEDEMAC Mechatronics',
+      year: '2020-2021',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. Anil Kulkarni (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'Advanced Control of Intelligent DC Microgrids',
+      description: 'Research into design of power sharing controllers for DC microgrids.',
+      status: 'completed',
+      tags: ['DC Microgrid', 'Power Sharing', 'Co-Investigator'],
+      funding: 'IMPRINT-2 (DST/SERB)',
+      year: '2019-2022',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. S. R. Sahoo (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'Stability of Networked Microgrids',
+      description: 'Analysis, protection, and coordinated control of networked microgrids. Role: Hybrid Solar Inverter.',
+      status: 'completed',
+      tags: ['Microgrids', 'Stability', 'Co-Investigator'],
+      funding: 'DST (Mission Innovation)',
       year: '2018-2021',
-      paperLink: MOCK_PDF_URL,
-      hasPaper: true,
-      participants: ['Dr. Michael Rodriguez', 'James Liu']
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. Saikat Chakrabarti (PI)', 'Prof. Sandeep Anand (Co-I)']
     },
+    {
+      title: 'UI-ASSIST: US-India Smart Distribution',
+      description: 'US-India collaborative for smart distribution system with storage. Role: Secondary controller, Solar Inverters.',
+      status: 'completed',
+      tags: ['UI-ASSIST', 'Smart Grid', 'Co-Investigator'],
+      funding: 'IUSSTF',
+      year: '2017-2022',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. S. C. Srivastava (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'INDO-UK Clean Energy Centre',
+      description: 'Role: Prototype development and control of DC Microgrids.',
+      status: 'completed',
+      tags: ['Clean Energy', 'DC Microgrids', 'Co-Investigator'],
+      funding: 'DST, Govt. of India',
+      year: '2017-2021',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. B. G. Fernandes (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'GaN HEMT CIRCUIT DESIGN (IMPRINT)',
+      description: 'GaN HEMT based circuit design for defense and space applications. Role: Use of GaN for power converters.',
+      status: 'completed',
+      tags: ['GaN HEMT', 'IMPRINT', 'Co-Investigator'],
+      funding: 'IMPRINT, Govt. of India',
+      year: '2017-2020',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. Yogesh Chauhan (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'Cooperative Control for DC Microgrid',
+      description: 'Research into controller design for DC Microgrids.',
+      status: 'completed',
+      tags: ['DC Microgrid', 'Cooperative Control', 'Co-Investigator'],
+      funding: 'SERB, Govt. of India',
+      year: '2015-2017',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. S. R. Sahoo (PI)', 'Prof. Sandeep Anand (Co-I)']
+    },
+    {
+      title: 'Smart City R&D Platform',
+      description: 'Development of platform for smart city projects. Role: Design of solar inverter.',
+      status: 'completed',
+      tags: ['Smart City', 'Solar Inverter', 'Co-Investigator'],
+      funding: 'Ministry of Power (MOP)',
+      year: '2014-2016',
+      paperLink: '',
+      hasPaper: false,
+      participants: ['Dr. Saikat Chakrabarti (PI)', 'Prof. Sandeep Anand (Co-I)']
+    }
   ];
 
   const currentProjects = projects.filter(p => p.status === 'ongoing');
