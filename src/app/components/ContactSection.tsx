@@ -52,7 +52,7 @@ export function ContactSection() {
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all flex flex-col items-center text-center group"
             >
-              <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#06b6d4]/10 group-hover:border-[#06b6d4]/20 transition-all">
                 <info.icon className="w-8 h-8 text-[#06b6d4]" />
               </div>
               <h4 className="text-xl font-semibold text-[#0f172a] mb-4">{info.title}</h4>

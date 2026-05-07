@@ -1,21 +1,39 @@
 import { motion } from 'motion/react';
 import { Github, Linkedin, Youtube, Mail, FlaskConical } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Research: ['Electric Vehicles', 'Motor Design', 'Power Electronics', 'Renewable Energy'],
-    Resources: ['Publications', 'Projects', 'Lab Facilities', 'Collaboration'],
-    About: ['Our Team', 'IIT Bombay', 'Electrical Engineering', 'Careers'],
-    Connect: ['Contact Us', 'Visit Lab', 'Prospective Students', 'Industry Partners'],
+    Research: [
+      { label: 'Electric Vehicles', href: '/publications#research-activities' },
+      { label: 'Motor Design', href: '/publications#research-activities' },
+      { label: 'Power Electronics', href: '/publications#research-activities' },
+      { label: 'Renewable Energy', href: '/publications#research-activities' },
+    ],
+    Resources: [
+      { label: 'Publications', href: '/publications' },
+      { label: 'Projects', href: '/projects' },
+      { label: 'Lab Facilities', href: '/facilities' },
+      { label: 'Collaboration', href: '/#contact' },
+    ],
+    About: [
+      { label: 'Our Team', href: '/team' },
+      { label: 'IIT Bombay', href: 'https://www.iitb.ac.in' },
+      { label: 'Electrical Engineering', href: 'https://www.ee.iitb.ac.in' },
+      { label: 'Careers', href: '/#contact' },
+    ],
+    Connect: [
+      { label: 'Prospective Students', href: '/#contact' },
+      { label: 'Contact Us', href: '/#contact' },
+    ],
   };
 
   const socialLinks = [
     { icon: Youtube, href: 'https://www.youtube.com/@C1973EVPowertrainlab', label: 'YouTube' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Mail, href: '#', label: 'Email' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/c1973-ev-powertrain-lab/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:sa@ee.iitb.ac.in', label: 'Email' },
   ];
 
   return (
@@ -43,6 +61,8 @@ export function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
+                  target={social.href.startsWith('http') ? "_blank" : undefined}
+                  rel={social.href.startsWith('http') ? "noopener noreferrer" : undefined}
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#06b6d4] transition-colors"
                 >
                   <social.icon className="w-5 h-5" />
@@ -54,16 +74,27 @@ export function Footer() {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links], index) => (
             <div key={category}>
-              <h3 className="font-semibold mb-4">{category}</h3>
+              <h3 className="font-semibold mb-4 text-[#06b6d4]">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-gray-400 text-sm hover:text-[#06b6d4] transition-colors"
-                    >
-                      {link}
-                    </a>
+                    {link.href.startsWith('http') ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 text-sm hover:text-[#06b6d4] transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-gray-400 text-sm hover:text-[#06b6d4] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

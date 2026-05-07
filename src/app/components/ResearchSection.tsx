@@ -20,19 +20,18 @@ export function ResearchSection() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const researchGifs = [
-    UltrafastSelfPoweredCircuit,
-    GateVoltageBasedActiveThermalControl,
-    MultiplePointsMeasurement,
-    ActiveThermalControlBuckAPD,
-    ModifiedPWMSchemeGaN,
-    GaNMultipleOutputFlyback,
-    PowerLossReductionBuckAPD,
-    Powerloss,
-    AccurateStaticIVCharacterization,
-
-    ImpactOperationalParametersdVDS,
-    HighlyEfficientGaNPVInverter,
-    ThermalStressBalancingH6,
+    UltrafastSelfPoweredCircuit, // April 2024
+    ImpactOperationalParametersdVDS, // Feb. 2024
+    HighlyEfficientGaNPVInverter, // Oct. 2023
+    GateVoltageBasedActiveThermalControl, // Sep. 2023 (IEEE)
+    ThermalStressBalancingH6, // Sep. 2023 (EPE)
+    MultiplePointsMeasurement, // June 2023
+    ActiveThermalControlBuckAPD, // Dec. 2022
+    ModifiedPWMSchemeGaN, // Nov. 2022
+    GaNMultipleOutputFlyback, // March 2022
+    Powerloss, // Sept. 2021
+    PowerLossReductionBuckAPD, // April 2021
+    AccurateStaticIVCharacterization, // Oct. 2020
   ];
 
   const researchAreas = [
@@ -46,85 +45,13 @@ export function ResearchSection() {
       image: researchGifs[0]
     },
     {
-      title: 'Gate Voltage-Based Active Thermal Control of Power Semiconductor Devices',
-      subtitle: 'Abhishek Chanekar; Nachiketa Deshmukh; Abhinav Arya; Sandeep Anand',
-      description: 'Active thermal control (ATC) is popularly used for the reduction of junction temperature swings and for enhancing the reliability of power semiconductor devices (PSDs). Gate voltage variation has the potential to be an effective method...',
-      abstract: 'Active thermal control (ATC) is popularly used for the reduction of junction temperature swings and for enhancing the reliability of power semiconductor devices (PSDs). Gate voltage variation has the potential to be an effective method for ATC by manipulation of power loss in the PSD. However, gate voltage variation in the ohmic region of static I-V characteristics does not change the power loss in PSD significantly. To address this challenge, this article proposes an ATC technique based on gate voltage variation in the saturation region of PSD. With the proposed controller, a wide range of power loss manipulation is achieved. Moreover, it avoids false triggering of desaturation protection through a suitable selection of gate voltage. The relationship between gate voltage and power loss in PSD is derived and found to be nonlinear in nature. The proposed controller compensates for this nonlinearity to achieve smooth control over the power loss in PSD. The simulation and experimental validation of the proposed controller are carried out on a laboratory prototype of a dc–dc buck converter for battery charging application. Using the proposed controller, a lifetime improvement of 43% is estimated for a typical mission profile.',
-      citation: 'Abhishek Chanekar, Nachiketa Deshmukh, Abhinav Arya, and S. Anand, "Gate Voltage Based Active Thermal Control of Power Semiconductor Devices" IEEE Transactions on Power Electronics, vol. 38, no. 9, pp. 11531-11542, Sep. 2023',
-      link: 'https://ieeexplore.ieee.org/document/10172032',
-      image: researchGifs[1]
-    },
-    {
-      title: 'Multiple Points Measurement-Based Junction Temperature Estimation of IGBT Module',
-      subtitle: 'Abhinav Arya; Abhishek Chanekar; Amit Verma; Sandeep Anand',
-      description: 'The junction temperature ( Tj ) estimation of IGBTs is critical for improving their reliability. To obtain Tj , the existing reference point temperature (RPT) measurement-based methods require the power loss information, which is difficult to obtain accurately...',
-      abstract: 'The junction temperature ( Tj ) estimation of IGBTs is critical for improving their reliability. To obtain Tj , the existing reference point temperature (RPT) measurement-based methods require the power loss information, which is difficult to obtain accurately in the real-time applications. Also, these methods utilize the thermal model of IGBT, which changes with aging, resulting in an error in Tj estimation. In this article, a Tj estimation technique is proposed, which utilizes the temperature of multiple leads/terminals of an IGBT module. Unlike the existing methods, the proposed technique does not require the information of power losses in the power semiconductor chips (PSCs). Instead, the power losses in the PSCs are additional outcome of the proposed technique. Also, even for a degraded IGBT module, the proposed technique provides an accurate Tj estimation. The proposed technique also has the capability of estimating Tj of multiple PSCs in an IGBT module simultaneously. A mathematical analysis of leads selection for the proposed technique is presented in this article. Furthermore, a comparative analysis is presented between the proposed and the conventional method for a degraded IGBT module. The simulation studies of the proposed technique are carried out in ANSYS ICEPAK software. The proposed technique is also validated on an experimental setup developed in the laboratory.',
-      citation: 'Abhinav Arya, Abhishek Chanekar, Amit Verma, and S. Anand, "Multiple Points Measurement Based Junction Temperature Estimation of IGBT Module" IEEE Journal of Emerging and Selected Topics in Power Electronics , vol. 11, no. 3, pp. 3457-3467, June 2023',
-      link: 'https://ieeexplore.ieee.org/document/10024833',
-      image: researchGifs[2]
-    },
-    {
-      title: 'Active Thermal Control for Buck Converter-Based Active Power Decoupling Circuit',
-      subtitle: 'Nachiketa Deshmukh; Abhishek Chanekar; Sandeep Anand; Soumya Ranjan Sahoo',
-      description: 'Aluminum electrolytic capacitors (AECs) and power semiconductor devices (PSDs) are typically identified as weak links in the reliable design of power converters. To eliminate the AECs from the design, active power decoupling (APD) circuits...',
-      abstract: 'Aluminum electrolytic capacitors (AECs) and power semiconductor devices (PSDs) are typically identified as weak links in the reliable design of power converters. To eliminate the AECs from the design, active power decoupling (APD) circuits are preferred in single-phase power converters. However, in an attempt to eliminate AECs, this approach introduces the latter weak link in the design, i.e., PSDs in the APD circuit. This article proposes an active thermal control technique to improve the reliability of PSDs in the buck APD circuit. The proposed technique reduces the swing in junction temperature of PSDs using noninvasive power loss modulation. The power loss in PSDs is changed by varying the average voltage across the buffer capacitor. Further, a control technique is suggested to synthesize the reference for average voltage across buffer capacitor. This controller accounts for nonlinearities and minimum/maximum limits of power loss modulation. Further, the additional energy loss due to power loss modulation is restricted to a predefined limit. The proposed technique is validated with the help of circuit simulations and experimental studies with a 500 W laboratory prototype. For the selected mission profile, an increase of 28.5% in the lifetime of PSDs in buck APD circuit is estimated.',
-      citation: 'Nachiketa Deshmukh, Abhishek Chanekar, S. Anand, and S.R. Sahoo, "Active Thermal Control for Buck Converter Based Active Power Decoupling Circuit" IEEE Transactions on Power Electronics , vol. 37, no. 12, pp. 14955-14965, Dec. 2022',
-      link: 'https://ieeexplore.ieee.org/document/9826420',
-      image: researchGifs[3]
-    },
-    {
-      title: 'Modified PWM Scheme to Reduce Reverse Conduction Loss in GaN-Based Independently Controlled Multiple Output Flyback Converter',
-      subtitle: 'Arnab Sarkar; Nachiketa Deshmukh; Sandeep Anand',
-      description: 'The recently proposed independently controlled multiple output flyback converter (ICMOFC) scheme improves cross-regulation by utilizing gallium nitride (GaN) switches with negative gate turn-off voltage. The highly inefficient reverse conduction...',
-      abstract: 'The recently proposed independently controlled multiple output flyback converter (ICMOFC) scheme improves cross-regulation by utilizing gallium nitride (GaN) switches with negative gate turn-off voltage. The highly inefficient reverse conduction (RC) of negative gate biased GaN devices leads to significant RC loss in the existing ICMOFC scheme. To mitigate this problem, this letter proposes a new pulsewidth modulation (PWM) scheme. The RC loss reduction is achieved by reducing the RC duration and RC current. The effectiveness of the proposed PWM strategy is analytically and experimentally verified using a 40-W dual output flyback converter. The results demonstrate a peak efficiency improvement of 1.26% over the existing ICMOFC scheme. Furthermore, the scheme also achieves high power density (51 W/in3) and excellent cross-regulation (0.2%).',
-      citation: 'Arnab Sarkar, Nachiketa Deshmukh, and S. Anand, "Modified PWM Scheme to Reduce Reverse Conduction Loss in GaN-based Independently Controlled Multiple Output Flyback Converter" IEEE Transactions on Power Electronics , vol. 37, no. 11, pp. 12968-12972, Nov. 2022',
-      link: 'https://ieeexplore.ieee.org/document/9795920',
-      image: researchGifs[4]
-    },
-    {
-      title: 'GaN-Based Multiple Output Flyback Converter With Independently Controlled Outputs',
-      subtitle: 'Arnab Sarkar; Bhanu Teja Vankayalapati; Sandeep Anand',
-      description: 'Several techniques are proposed in the literature to improve the cross-regulation performance of a multiple output flyback converter (MOFC). However, some drawbacks exist, first, inability to completely eliminate cross-regulation, second, reduction...',
-      abstract: 'Several techniques are proposed in the literature to improve the cross-regulation performance of a multiple output flyback converter (MOFC). However, some drawbacks exist, first, inability to completely eliminate cross-regulation, second, reduction of power density due to a high number of additional components, third, increased losses. To overcome these challenges, this article presents a scheme to independently control the outputs of an MOFC, thereby achieving an excellent cross-regulation performance over a wide range of loads, without any additional switching or magnetic component. The unique gate dependent reverse conduction characteristics of gallium nitride (GaN) high electron mobility transistor is utilized to control the flow of current to each of the output capacitors. The operational principle and the steady-state analysis are provided in detail. Moreover, design considerations, such as the switching frequency, GaN gate bias, leakage inductances, and output capacitance, are discussed, focusing on their impacts on the key design goals, particularly the efficiency, power density, and output ripple. Furthermore, SPICE simulations are used to demonstrate the improvement in cross-regulation over existing schemes. Finally, a 40 W dual output laboratory prototype is built to verify the analysis. The measured maximum cross-regulation is 0.2%, which validates the effectiveness of the scheme.',
-      citation: 'Arnab Sarkar, Bhanu Teja Vankayalapati, and S. Anand, "GaN Based Multiple Output Flyback Converter with Independently Controlled Outputs" IEEE Transactions on Industrial Electronics , vol. 69, no. 3, pp. 2565-2576, March 2022',
-      link: 'https://ieeexplore.ieee.org/document/9384186',
-      image: researchGifs[5]
-    },
-    {
-      title: 'Accurate Online Junction Temperature Estimation of IGBT Using Inflection Point Based Updated I–V Characteristics',
-      subtitle: 'Abhinav Arya; Abhishek Chanekar; Pratik Diwakar Deshmukh; Amit Verma; Sandeep Anand',
-      description: 'The junction temperature (Tj) estimation of the insulated gate bipolar transistor (IGBT) is important for reliable operation of the power converters in various applications. For Tj estimation, on-state collector-emitter voltage (vce) at higher collector currents...',
-      abstract: 'The junction temperature (Tj) estimation of the insulated gate bipolar transistor (IGBT) is important for reliable operation of the power converters in various applications. For Tj estimation, on-state collector-emitter voltage (vce) at higher collector currents (ic) is widely used temperature sensitive electrical parameter (TSEP). For real-time Tj estimation, this TSEP is calibrated using the I-V characteristics of the new IGBT. Due to bond-wire degradation, the original I-V characteristics of IGBT changes resulting in inaccurate Tj estimation. In this article, a technique is proposed to update the I-V characteristics of the degraded IGBT, without affecting the normal operation of the power converter. It is achieved by estimating the increment in bond-wire resistance (\\triangle Rcon) by using real-time samples of vce and inductor current. The mathematical analysis is also presented to find an error in estimated \\triangle Rcon. The major contributions of this article are as follows: a) it enables the accurate Tj estimation of the IGBT throughout its lifetime; and b) it also provides the parameter \\triangle Rcon, which could be utilized in condition monitoring of the IGBT. Further no additional circuitry is required. The proposed technique is validated on experimental setup, which is developed in the laboratory. The error in Tj estimation is observed within 1 °C the degraded IGBT, which shows the effectiveness of the proposed scheme.',
-      citation: 'Abhinav Arya, Abhishek Chanekar, Pratik Diwakar Deshmukh, Amit Verma, and S. Anand, "Accurate Online Junction Temperature Estimation of IGBT using Inflection Point Based Updated I-V Characteristics" IEEE Transactions on Power Electronics , vol. 36, no. 9, pp. 9826-9836, Sept. 2021',
-      link: 'https://ieeexplore.ieee.org/document/9380212',
-      image: researchGifs[6]
-    },
-    {
-      title: 'Power Loss Reduction in Buck Converter Based Active Power Decoupling Circuit',
-      subtitle: 'Nachiketa Deshmukh; Siva Prabhakar; Sandeep Anand',
-      description: 'Active power decoupling (APD) circuits enable the use of long lifetime capacitors (film or ceramic capacitors) in single-phase power converters. Owing to the inclusion of the APD circuits, the literature reports 1.5%-1.8% drop in efficiency of single-phase...',
-      abstract: 'Active power decoupling (APD) circuits enable the use of long lifetime capacitors (film or ceramic capacitors) in single-phase power converters. Owing to the inclusion of the APD circuits, the literature reports 1.5%-1.8% drop in efficiency of single-phase converter at rated power. This reduction in conversion efficiency is one of the significant challenges in the practical use of APD circuits. This article proposes an approach to reduce the power loss in the bidirectional buck converter based APD circuit. This approach is presented with the help of analytical calculations and graphical representation of operation of APD circuit. The proposed approach requires rapid variation in the average voltage of the buffer capacitor with a change in inverter power. To achieve this, an enhanced control technique is suggested with a duty ratio injection controller. The steady state and transient response of the proposed control technique are validated with simulation and experimentation. Further, the reduction in power losses realized by the proposed approach is verified with the help of a developed laboratory prototype. The proposed approach obtains up to 1% improvement in efficiency of single-phase converter at rated power, when compared with existing APD approaches.',
-      citation: 'Nachiketa Deshmukh, Siva Prabhakar, and S. Anand, "Power Loss Reduction in Buck Converter Based Active Power Decoupling Circuit" IEEE Transactions on Power Electronics, vol. 36, issue 4, pp. 4316-4325, April 2021',
-      link: 'https://ieeexplore.ieee.org/document/9200572',
-      image: researchGifs[7]
-    },
-    {
-      title: 'Methodology of an Accurate Static I–V Characterization of Power Semiconductor Devices',
-      subtitle: 'Abhinav Arya; Pankaj Kumar; Sandeep Anand',
-      description: 'Static I -Vcharacterization (SIVC) is extensively used by the researchers for evaluating the ON-state performance and real-time condition monitoring of the power semiconductor devices. The implementation of the existing SIVC setups is difficult in the...',
-      abstract: 'Static I -Vcharacterization (SIVC) is extensively used by the researchers for evaluating the ON-state performance and real-time condition monitoring of the power semiconductor devices. The implementation of the existing SIVC setups is difficult in the laboratories, due to their high cost, complex operation, and error arising in different parts of the setup. Though some of the commercial products offer good performance, their availability is limited due to the high cost. In this article, an accurate, simple and low-cost SIVC setup is suggested. The SIVC setup consists of a single-pulse test circuit (SPTC), an electrical measurement unit (EMU), and a data acquisition system (DAS). All three stages are discussed and the methods to improve measurement accuracy at each stage are discussed in this article. The key contributions of this article are simultaneous SIVC of multiple device under tests (DUTs), error analysis of EMU due to manufacturing differences in components and their temperature difference, method for selection of sample size for accurate digital acquisition of analog signal in DAS, and dV/dI condition for an accurate SIVC. The presented methodology is implemented on the experimental setup of SIVC that is developed in the laboratory. EMU of the proposed setup operates at the voltage and current measurement accuracy of ±0.05% and ±0.1%, respectively, and DAS with the voltage accuracy of ±0.1%, thereby offering good performance for SIVC. Furthermore, to validate the performance of the proposed SIVC setup, its results are compared with the commercially available Keysight curve tracer (B1505A). The results for the characterization of an IGBT and a power MOSFET are included.',
-      citation: 'A. Arya, Pankaj Kumar, and S. Anand, "Methodology of an Accurate Static I-V Characterisation of Power Semiconductor Devices" IEEE Transactions on Instrumentation and Measurement , vol. 69, issue 10, pp. 7703-7715, Oct. 2020',
-      link: 'https://ieeexplore.ieee.org/document/9050497',
-      image: researchGifs[8]
-    },
-    {
       title: 'Impact of Operational Parameters on dVDS/dt of SiC MOSFET and a Scheme for Gate Driver Resistance Selection to Limit dVDS/dt',
       subtitle: 'Aditya Aman; Abhishek Chanekar; Sandeep Anand; Anant Agarwal',
       description: 'SiC MOSFETs enable fast switching that results in the development of a high dVDS/dt across the device. High dVDS/dt is reported to accelerate the degradation of various components and cause reliability issues in many power electronics applications...',
       abstract: 'SiC MOSFETs enable fast switching that results in the development of a high dVDS/dt across the device. High dVDS/dt is reported to accelerate the degradation of various components and cause reliability issues in many power electronics applications. Further, the value of dVDS/dt is affected by various parameters that change during the operation of a power converter. Hence gate driver resistance selection process to limit dVDS/dt to a desired value, must include the impact of all the operating parameters in the selection process. However, such a methodology incorporating the impact of all key parameters i.e. (i) device current (IDS), (ii) junction temperature (TJ), and (iii) drain to source (VDS) blocking voltage, has not been reported in the literature. This manuscript first presents an analysis on the impact of these three parameters on dVDS/dt. Furthermore, this manuscript considers devices from different manufacturers and investigates the variation in their impact on dVDS/dt due to operational parameter variation. Next, it presents a scheme for gate driver resistance selection based on the aforementioned analysis. Finally, experimental results are included (i) to validate the analysis, (ii) to show the device-dependent variation in the impact on dVDS/dt, and (iii) to validate the proposed gate resistance selection scheme.',
       citation: 'Aditya Aman, Abhishek Chanekar, S. Anand, and Anant Agarwal, "Impact of Operational Parameters on dVDS/dt of SiC MOSFET and a Scheme for Gate Driver Resistance Selection to Limit dVDS/dt," 39th Annual IEEE Applied Power Electronics Conference & Exposition, APEC\'2024, Long Beach, California, USA, Feb. 2024',
-      link: 'https://ieeexplore.ieee.org/document/10509088',
-      image: researchGifs[9]
+      link: 'https://ieeexplore.ieee.org/document/10509088/',
+      image: researchGifs[1]
     },
     {
       title: 'Highly Efficient GaN-Based PV Inverter with Reduced Leakage Current',
@@ -132,8 +59,17 @@ export function ResearchSection() {
       description: 'This article presents a hybrid modulation scheme for a single-phase transformerless inverter based on H6 topology. This inverter uses Gallium-Nitride (GaN) devices to improve the efficiency and power density of the inverter. A comparative analysis...',
       abstract: 'This article presents a hybrid modulation scheme for a single-phase transformerless inverter based on H6 topology. This inverter uses Gallium-Nitride (GaN) devices to improve the efficiency and power density of the inverter. A comparative analysis is conducted on two existing modulation schemes. The impact of GaN devices on leakage current and power loss of the H6 inverter is evaluated. Among these schemes, one demonstrates a lower leakage current but higher power loss compared to the other. In this context, the proposed modulation scheme has better performance than the first scheme in terms of efficiency while also exhibiting lower leakage current than the second scheme. The operation modes of the proposed modulation scheme are described and analyzed in detail. The scheme is validated and verified using simulation studies. Furthermore, the scheme is compared with the existing literature to validate the performance of the inverter. A 3 kW PV inverter with the proposed scheme achieves an efficiency improvement of 0.35 % compared to the first scheme and a leakage reduction of 87.89 % towards the second scheme.',
       citation: 'Akash Gangwar, Nachiketa Deshmukh, Abhishek Chanekar, and S. Anand, "Highly Efficient GaN-based PV Inverter with Reduced Leakage Current," 49th Annual Conference of the IEEE Industrial Electronics Society, IECON\'2023, Singapore, Oct. 2023',
-      link: 'https://ieeexplore.ieee.org/document/10312424',
-      image: researchGifs[10]
+      link: 'https://ieeexplore.ieee.org/document/10312424/',
+      image: researchGifs[2]
+    },
+    {
+      title: 'Gate Voltage-Based Active Thermal Control of Power Semiconductor Devices',
+      subtitle: 'Abhishek Chanekar; Nachiketa Deshmukh; Abhinav Arya; Sandeep Anand',
+      description: 'Active thermal control (ATC) is popularly used for the reduction of junction temperature swings and for enhancing the reliability of power semiconductor devices (PSDs). Gate voltage variation has the potential to be an effective method...',
+      abstract: 'Active thermal control (ATC) is popularly used for the reduction of junction temperature swings and for enhancing the reliability of power semiconductor devices (PSDs). Gate voltage variation has the potential to be an effective method for ATC by manipulation of power loss in the PSD. However, gate voltage variation in the ohmic region of static I-V characteristics does not change the power loss in PSD significantly. To address this challenge, this article proposes an ATC technique based on gate voltage variation in the saturation region of PSD. With the proposed controller, a wide range of power loss manipulation is achieved. Moreover, it avoids false triggering of desaturation protection through a suitable selection of gate voltage. The relationship between gate voltage and power loss in PSD is derived and found to be nonlinear in nature. The proposed controller compensates for this nonlinearity to achieve smooth control over the power loss in PSD. The simulation and experimental validation of the proposed controller are carried out on a laboratory prototype of a dc–dc buck converter for battery charging application. Using the proposed controller, a lifetime improvement of 43% is estimated for a typical mission profile.',
+      citation: 'Abhishek Chanekar, Nachiketa Deshmukh, Abhinav Arya, and S. Anand, "Gate Voltage Based Active Thermal Control of Power Semiconductor Devices" IEEE Transactions on Power Electronics, vol. 38, no. 9, pp. 11531-11542, Sep. 2023',
+      link: 'https://ieeexplore.ieee.org/document/10172032/',
+      image: researchGifs[3]
     },
     {
       title: 'Thermal Stress Balancing for Lifetime Improvement of H6 Solar Inverter',
@@ -141,7 +77,70 @@ export function ResearchSection() {
       description: 'The thermal stress of power semiconductor devices (PSDs) of the H6 solar inverter dictates their lifetime. Two existing modulation schemes for H6 inverter are studied, and their thermal stress distribution is analyzed. It is found that unequal stress...',
       abstract: 'The thermal stress of power semiconductor devices (PSDs) of the H6 solar inverter dictates their lifetime. Two existing modulation schemes for H6 inverter are studied, and their thermal stress distribution is analyzed. It is found that unequal stress distribution exists among PSDs for both modulation strategies. This leads to the earlier failure of some PSDs than others. To address this issue, this paper proposes a hybrid modulation strategy and associated thermal controller for the lifetime enhancement of PSDs in the H6 solar inverter. The proposed thermal controller dictates the hybridization angle to equalize the thermal stress of the PSDs. The proposed technique is estimated to achieve up to 26.5% improvement in a lifetime for the selected mission profile. The impact of the proposed thermal controller on the efficiency of the converter is also studied. It is estimated that a 26.5% enhancement in lifetime is achieved for a 0.23% drop in conversion efficiency.',
       citation: 'Abhishek Chanekar, Nachiketa Deshmukh, Akash Gangwar, and S. Anand, "Thermal Stress Balancing for Lifetime Improvement of H6 Solar Inverter," 25th European Conference on Power Electronics and Applications, EPE\'23 ECCE-Europe, Aalborg, Denmark, Sep. 2023',
-      link: 'https://ieeexplore.ieee.org/document/10264669',
+      link: 'https://ieeexplore.ieee.org/document/10264669/',
+      image: researchGifs[4]
+    },
+    {
+      title: 'Multiple Points Measurement-Based Junction Temperature Estimation of IGBT Module',
+      subtitle: 'Abhinav Arya; Abhishek Chanekar; Amit Verma; Sandeep Anand',
+      description: 'The junction temperature ( Tj ) estimation of IGBTs is critical for improving their reliability. To obtain Tj , the existing reference point temperature (RPT) measurement-based methods require the power loss information, which is difficult to obtain accurately...',
+      abstract: 'The junction temperature ( Tj ) estimation of IGBTs is critical for improving their reliability. To obtain Tj , the existing reference point temperature (RPT) measurement-based methods require the power loss information, which is difficult to obtain accurately in the real-time applications. Also, these methods utilize the thermal model of IGBT, which changes with aging, resulting in an error in Tj estimation. In this article, a Tj estimation technique is proposed, which utilizes the temperature of multiple leads/terminals of an IGBT module. Unlike the existing methods, the proposed technique does not require the information of power losses in the power semiconductor chips (PSCs). Instead, the power losses in the PSCs are additional outcome of the proposed technique. Also, even for a degraded IGBT module, the proposed technique provides an accurate Tj estimation. The proposed technique also has the capability of estimating Tj of multiple PSCs in an IGBT module simultaneously. A mathematical analysis of leads selection for the proposed technique is presented in this article. Furthermore, a comparative analysis is presented between the proposed and the conventional method for a degraded IGBT module. The simulation studies of the proposed technique are carried out in ANSYS ICEPAK software. The proposed technique is also validated on an experimental setup developed in the laboratory.',
+      citation: 'Abhinav Arya, Abhishek Chanekar, Amit Verma, and S. Anand, "Multiple Points Measurement Based Junction Temperature Estimation of IGBT Module" IEEE Journal of Emerging and Selected Topics in Power Electronics , vol. 11, no. 3, pp. 3457-3467, June 2023',
+      link: 'https://ieeexplore.ieee.org/document/10024833/',
+      image: researchGifs[5]
+    },
+    {
+      title: 'Active Thermal Control for Buck Converter-Based Active Power Decoupling Circuit',
+      subtitle: 'Nachiketa Deshmukh; Abhishek Chanekar; Sandeep Anand; Soumya Ranjan Sahoo',
+      description: 'Aluminum electrolytic capacitors (AECs) and power semiconductor devices (PSDs) are typically identified as weak links in the reliable design of power converters. To eliminate the AECs from the design, active power decoupling (APD) circuits...',
+      abstract: 'Aluminum electrolytic capacitors (AECs) and power semiconductor devices (PSDs) are typically identified as weak links in the reliable design of power converters. To eliminate the AECs from the design, active power decoupling (APD) circuits are preferred in single-phase power converters. However, in an attempt to eliminate AECs, this approach introduces the latter weak link in the design, i.e., PSDs in the APD circuit. This article proposes an active thermal control technique to improve the reliability of PSDs in the buck APD circuit. The proposed technique reduces the swing in junction temperature of PSDs using noninvasive power loss modulation. The power loss in PSDs is changed by varying the average voltage across the buffer capacitor. Further, a control technique is suggested to synthesize the reference for average voltage across buffer capacitor. This controller accounts for nonlinearities and minimum/maximum limits of power loss modulation. Further, the additional energy loss due to power loss modulation is restricted to a predefined limit. The proposed technique is validated with the help of circuit simulations and experimental studies with a 500 W laboratory prototype. For the selected mission profile, an increase of 28.5% in the lifetime of PSDs in buck APD circuit is estimated.',
+      citation: 'Nachiketa Deshmukh, Abhishek Chanekar, S. Anand, and S.R. Sahoo, "Active Thermal Control for Buck Converter Based Active Power Decoupling Circuit" IEEE Transactions on Power Electronics , vol. 37, no. 12, pp. 14955-14965, Dec. 2022',
+      link: 'https://ieeexplore.ieee.org/document/9826420/',
+      image: researchGifs[6]
+    },
+    {
+      title: 'Modified PWM Scheme to Reduce Reverse Conduction Loss in GaN-Based Independently Controlled Multiple Output Flyback Converter',
+      subtitle: 'Arnab Sarkar; Nachiketa Deshmukh; Sandeep Anand',
+      description: 'The recently proposed independently controlled multiple output flyback converter (ICMOFC) scheme improves cross-regulation by utilizing gallium nitride (GaN) switches with negative gate turn-off voltage. The highly inefficient reverse conduction...',
+      abstract: 'The recently proposed independently controlled multiple output flyback converter (ICMOFC) scheme improves cross-regulation by utilizing gallium nitride (GaN) switches with negative gate turn-off voltage. The highly inefficient reverse conduction (RC) of negative gate biased GaN devices leads to significant RC loss in the existing ICMOFC scheme. To mitigate this problem, this letter proposes a new pulsewidth modulation (PWM) scheme. The RC loss reduction is achieved by reducing the RC duration and RC current. The effectiveness of the proposed PWM strategy is analytically and experimentally verified using a 40-W dual output flyback converter. The results demonstrate a peak efficiency improvement of 1.26% over the existing ICMOFC scheme. Furthermore, the scheme also achieves high power density (51 W/in3) and excellent cross-regulation (0.2%).',
+      citation: 'Arnab Sarkar, Nachiketa Deshmukh, and S. Anand, "Modified PWM Scheme to Reduce Reverse Conduction Loss in GaN-based Independently Controlled Multiple Output Flyback Converter" IEEE Transactions on Power Electronics , vol. 37, no. 11, pp. 12968-12972, Nov. 2022',
+      link: 'https://ieeexplore.ieee.org/document/9795920/',
+      image: researchGifs[7]
+    },
+    {
+      title: 'GaN-Based Multiple Output Flyback Converter With Independently Controlled Outputs',
+      subtitle: 'Arnab Sarkar; Bhanu Teja Vankayalapati; Sandeep Anand',
+      description: 'Several techniques are proposed in the literature to improve the cross-regulation performance of a multiple output flyback converter (MOFC). However, some drawbacks exist, first, inability to completely eliminate cross-regulation, second, reduction...',
+      abstract: 'Several techniques are proposed in the literature to improve the cross-regulation performance of a multiple output flyback converter (MOFC). However, some drawbacks exist, first, inability to completely eliminate cross-regulation, second, reduction of power density due to a high number of additional components, third, increased losses. To overcome these challenges, this article presents a scheme to independently control the outputs of an MOFC, thereby achieving an excellent cross-regulation performance over a wide range of loads, without any additional switching or magnetic component. The unique gate dependent reverse conduction characteristics of gallium nitride (GaN) high electron mobility transistor is utilized to control the flow of current to each of the output capacitors. The operational principle and the steady-state analysis are provided in detail. Moreover, design considerations, such as the switching frequency, GaN gate bias, leakage inductances, and output capacitance, are discussed, focusing on their impacts on the key design goals, particularly the efficiency, power density, and output ripple. Furthermore, SPICE simulations are used to demonstrate the improvement in cross-regulation over existing schemes. Finally, a 40 W dual output laboratory prototype is built to verify the analysis. The measured maximum cross-regulation is 0.2%, which validates the effectiveness of the scheme.',
+      citation: 'Arnab Sarkar, Bhanu Teja Vankayalapati, and S. Anand, "GaN Based Multiple Output Flyback Converter with Independently Controlled Outputs" IEEE Transactions on Industrial Electronics , vol. 69, no. 3, pp. 2565-2576, March 2022',
+      link: 'https://ieeexplore.ieee.org/document/9384186/',
+      image: researchGifs[8]
+    },
+    {
+      title: 'Accurate Online Junction Temperature Estimation of IGBT Using Inflection Point Based Updated I–V Characteristics',
+      subtitle: 'Abhinav Arya; Abhishek Chanekar; Pratik Diwakar Deshmukh; Amit Verma; Sandeep Anand',
+      description: 'The junction temperature (Tj) estimation of the insulated gate bipolar transistor (IGBT) is important for reliable operation of the power converters in various applications. For Tj estimation, on-state collector-emitter voltage (vce) at higher collector currents...',
+      abstract: 'The junction temperature (Tj) estimation of the insulated gate bipolar transistor (IGBT) is important for reliable operation of the power converters in various applications. For Tj estimation, on-state collector-emitter voltage (vce) at higher collector currents (ic) is widely used temperature sensitive electrical parameter (TSEP). For real-time Tj estimation, this TSEP is calibrated using the I-V characteristics of the new IGBT. Due to bond-wire degradation, the original I-V characteristics of IGBT changes resulting in inaccurate Tj estimation. In this article, a technique is proposed to update the I-V characteristics of the degraded IGBT, without affecting the normal operation of the power converter. It is achieved by estimating the increment in bond-wire resistance (\\triangle Rcon) by using real-time samples of vce and inductor current. The mathematical analysis is also presented to find an error in estimated \\triangle Rcon. The major contributions of this article are as follows: a) it enables the accurate Tj estimation of the IGBT throughout its lifetime; and b) it also provides the parameter \\triangle Rcon, which could be utilized in condition monitoring of the IGBT. Further no additional circuitry is required. The proposed technique is validated on experimental setup, which is developed in the laboratory. The error in Tj estimation is observed within 1 °C the degraded IGBT, which shows the effectiveness of the proposed scheme.',
+      citation: 'Abhinav Arya, Abhishek Chanekar, Pratik Diwakar Deshmukh, Amit Verma, and S. Anand, "Accurate Online Junction Temperature Estimation of IGBT using Inflection Point Based Updated I-V Characteristics" IEEE Transactions on Power Electronics , vol. 36, no. 9, pp. 9826-9836, Sept. 2021',
+      link: 'https://ieeexplore.ieee.org/document/9380212/',
+      image: researchGifs[9]
+    },
+    {
+      title: 'Power Loss Reduction in Buck Converter Based Active Power Decoupling Circuit',
+      subtitle: 'Nachiketa Deshmukh; Siva Prabhakar; Sandeep Anand',
+      description: 'Active power decoupling (APD) circuits enable the use of long lifetime capacitors (film or ceramic capacitors) in single-phase power converters. Owing to the inclusion of the APD circuits, the literature reports 1.5%-1.8% drop in efficiency of single-phase...',
+      abstract: 'Active power decoupling (APD) circuits enable the use of long lifetime capacitors (film or ceramic capacitors) in single-phase power converters. Owing to the inclusion of the APD circuits, the literature reports 1.5%-1.8% drop in efficiency of single-phase converter at rated power. This reduction in conversion efficiency is one of the significant challenges in the practical use of APD circuits. This article proposes an approach to reduce the power loss in the bidirectional buck converter based APD circuit. This approach is presented with the help of analytical calculations and graphical representation of operation of APD circuit. The proposed approach requires rapid variation in the average voltage of the buffer capacitor with a change in inverter power. To achieve this, an enhanced control technique is suggested with a duty ratio injection controller. The steady state and transient response of the proposed control technique are validated with simulation and experimentation. Further, the reduction in power losses realized by the proposed approach is verified with the help of a developed laboratory prototype. The proposed approach obtains up to 1% improvement in efficiency of single-phase converter at rated power, when compared with existing APD approaches.',
+      citation: 'Nachiketa Deshmukh, Siva Prabhakar, and S. Anand, "Power Loss Reduction in Buck Converter Based Active Power Decoupling Circuit" IEEE Transactions on Power Electronics, vol. 36, issue 4, pp. 4316-4325, April 2021',
+      link: 'https://ieeexplore.ieee.org/document/9200572/',
+      image: researchGifs[10]
+    },
+    {
+      title: 'Methodology of an Accurate Static I–V Characterization of Power Semiconductor Devices',
+      subtitle: 'Abhinav Arya; Pankaj Kumar; Sandeep Anand',
+      description: 'Static I -Vcharacterization (SIVC) is extensively used by the researchers for evaluating the ON-state performance and real-time condition monitoring of the power semiconductor devices. The implementation of the existing SIVC setups is difficult in the...',
+      abstract: 'Static I -Vcharacterization (SIVC) is extensively used by the researchers for evaluating the ON-state performance and real-time condition monitoring of the power semiconductor devices. The implementation of the existing SIVC setups is difficult in the laboratories, due to their high cost, complex operation, and error arising in different parts of the setup. Though some of the commercial products offer good performance, their availability is limited due to the high cost. In this article, an accurate, simple and low-cost SIVC setup is suggested. The SIVC setup consists of a single-pulse test circuit (SPTC), an electrical measurement unit (EMU), and a data acquisition system (DAS). All three stages are discussed and the methods to improve measurement accuracy at each stage are discussed in this article. The key contributions of this article are simultaneous SIVC of multiple device under tests (DUTs), error analysis of EMU due to manufacturing differences in components and their temperature difference, method for selection of sample size for accurate digital acquisition of analog signal in DAS, and dV/dI condition for an accurate SIVC. The presented methodology is implemented on the experimental setup of SIVC that is developed in the laboratory. EMU of the proposed setup operates at the voltage and current measurement accuracy of ±0.05% and ±0.1%, respectively, and DAS with the voltage accuracy of ±0.1%, thereby offering good performance for SIVC. Furthermore, to validate the performance of the proposed SIVC setup, its results are compared with the commercially available Keysight curve tracer (B1505A). The results for the characterization of an IGBT and a power MOSFET are included.',
+      citation: 'A. Arya, Pankaj Kumar, and S. Anand, "Methodology of an Accurate Static I-V Characterisation of Power Semiconductor Devices" IEEE Transactions on Instrumentation and Measurement , vol. 69, issue 10, pp. 7703-7715, Oct. 2020',
+      link: 'https://ieeexplore.ieee.org/document/9050497/',
       image: researchGifs[11]
     }
   ];
@@ -338,22 +337,6 @@ export function ResearchSection() {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Presentation & Videos */}
-        <div id="research-presentation" className="scroll-mt-28">
-          <h3 className="text-3xl font-bold text-[#0f172a] mb-12 border-l-4 border-[#06b6d4] pl-4">Presentation & Videos</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {presentations.map((item, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className={`aspect-video rounded-xl mb-4 relative overflow-hidden flex items-center justify-center ${item.thumbnail} group-hover:shadow-lg transition-all`}>
-                  <PlayCircle className="w-16 h-16 text-white/80 group-hover:text-white group-hover:scale-110 transition-all drop-shadow-md" />
-                </div>
-                <h4 className="font-semibold text-lg text-[#0f172a] mb-2 group-hover:text-[#06b6d4] transition-colors">{item.title}</h4>
-                <p className="text-sm text-[#64748b]">{item.duration}</p>
-              </div>
-            ))}
           </div>
         </div>
 

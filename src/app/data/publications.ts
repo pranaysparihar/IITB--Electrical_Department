@@ -15,6 +15,54 @@ const abstractMock = "This is a detailed abstract providing an overview of the r
 
 export const journals: Publication[] = [
   {
+    title: 'Current Circulation Strategy for Active Thermal Control in Interleaved DC-DC Converters',
+    authors: 'Abhishek Chanekar, Nachiketa Deshmukh, Abhinav Arya, S. Anand',
+    venue: 'IEEE Journal of Emerging and Selected Topics in Power Electronics',
+    year: '2026',
+    status: 'Accepted',
+    type: 'journal',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Junction Temperature based Adaptive Short Circuit Detection Technique for SiC MOSFETs',
+    authors: 'Aditya Aman, Abhishek Chanekar, S. Anand, Abhinav Arya, Anant Agarwal',
+    venue: 'IEEE Transactions on Industrial Electronics',
+    year: '2026',
+    status: 'Accepted',
+    type: 'journal',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Low Device Count Three-Port DC-DC Converter Integrating Onboard Charger and Auxiliary Power Module for Light Electric Vehicles',
+    authors: 'Siva Prabhakar, Shiladri Chakraborty, Nachiketa Deshmukh, S. Anand',
+    venue: 'IEEE Transactions on Power Electronics, vol. 41, no. 2',
+    year: '2026',
+    type: 'journal',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Rotor position error based adaptive controller for improved average torque in PMSM drives for electric vehicles',
+    authors: 'Saurabh Singh, Abhinav Arya, S. Anand, Kishore Chatterjee',
+    venue: 'IEEE Transactions on Transportation Electrification',
+    year: '2025',
+    status: 'Accepted',
+    type: 'journal',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Conductance Emulation Control for Real Power Compensation in Series-Stacked Active Power Decoupling Circuit',
+    authors: 'Nachiketa Deshmukh, Arnab Sarkar, S. Anand, Soumya Ranjan Sahoo',
+    venue: 'IEEE Journal of Emerging and Selected Topics in Power Electronics, vol. 6, no. 1, pp. 350-361',
+    year: '2024',
+    type: 'journal',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
     title: 'Ultrafast Self-Powered Circuit for Gate Driving of Normally-On Wide Bandgap Transistors',
     authors: 'Arnab Sarkar, Nachiketa Deshmukh, S. Anand',
     venue: 'IEEE Transactions on Power Electronics',
@@ -344,6 +392,132 @@ export const journals: Publication[] = [
 ];
 
 export const conferences: Publication[] = [
+  {
+    title: 'Phase Shift Modulated Secondary Resonant Tank Converters with Reduced Load Dependence for Wide Gain Applications',
+    authors: 'Rhitam Das, Siva Prabhakar, Anmol Meshram, S. Anand',
+    venue: 'IEEE Energy Conversion Congress and Exposition Europe, ECCE Europe 2026, Valencia, Spain',
+    year: '2026',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Single-Stage Integrated OBC-APM Topology with Reduced Device Count for EV Application',
+    authors: 'Anmol Meshram, Siva Prabhakar, S. Anand',
+    venue: 'International Power Electronics Conference (IPEC) - IEEE ECCE Asia’2026, Nagasaki, Japan',
+    year: '2026',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Investigation of Dynamic On-Resistance in GaN HEMTs under Single- Pulse Short-Circuit Operation',
+    authors: 'Nikhil Bhardwaj, Akash Gangwar, Yajush Sihag, S. Anand',
+    venue: 'International Exhibition and Conference for Power Electronics, Intelligent Motion, Renewable Energy and Energy Management, PCIM Europe 2026, Nürnberg, Germany',
+    year: '2026',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Technique for the Accurate Measurement of Average dv/dt of SiC MOSFET',
+    authors: 'Aditya Aman, Abhishek Chanekar, S. Anand, Abhinav Arya, Mohd. Ismail, Anant Agarwal',
+    venue: '41st Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2026, San Antonio, TX, USA',
+    year: '2026',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Enhancing Efficiency and Increasing Leakage Inductance in Aluminium Foil Winding based Transformer for Dual Active Bridge Converter',
+    authors: 'Priya, S. Anand, B.G. Fernandes',
+    venue: '41st Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2026, San Antonio, TX, USA',
+    year: '2026',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'A Low Device Count Three-Terminal Active Capacitor with Low-Side Design for Effective Second-Harmonic Ripple Suppression',
+    authors: 'Sagar De, Siva Prabhakar, S. Anand',
+    venue: '41st Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2026, San Antonio, TX, USA',
+    year: '2026',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Selection of Negative Gate Voltage for GaN HEMTs Considering Switching Oscillations and Loss Minimization',
+    authors: 'Raghavendra Venkata, S. Anand',
+    venue: 'IEEE International conference on Power Electronics, Smart Grid and Renewable Energy, PESGRE’2025, IIT Dharwad, India',
+    year: '2025',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Design of Transformer Parameters for Energy Efficiency Enhancement of Semi-Active Bridge Converter',
+    authors: 'Siva Prabhakar, Shiladri Chakraborty, Sagar De, S. Anand',
+    venue: '17th IEEE Energy Conversion Congress and Exposition Asia, ECCE Asia 2025, Bengaluru, India',
+    year: '2025',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'A Plug and Play Three Terminal Active Power Decoupling Circuit',
+    authors: 'Sagar De, Siva Prabhakar, S. Anand',
+    venue: 'International Exhibition and Conference for Power Electronics, Intelligent Motion, Renewable Energy and Energy Management, PCIM Europe 2025, Nürnberg, Germany',
+    year: '2025',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Design Parameter Selection for Efficiency Improvement of Semi-Dual Active Bridge Converter',
+    authors: 'Siva Prabhakar, Shiladri Chakraborty, S. Anand',
+    venue: '40th Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2025, Atlanta, Georgia, USA',
+    year: '2025',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Bootstrap Gate Driver for GaN-based Solar Inverter: Design Challenges and Solutions',
+    authors: 'Chirag Sarode, Akash Gangwar, Abhishek Chanekar, S. Anand',
+    venue: '11th IEEE Power Electronics, Drives and Energy Systems, PEDES’2024, Mangaluru, India',
+    year: '2024',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Methodology for Determining Critical Screening Voltage in SiC MOSFETs Through Gate Leakage Current Hysteresis',
+    authors: 'Nikhil Bhardwaj, Shiva Houshmand, Monikuntala Bhattacharya, Michael Jin, Hengyu Yu, Limeng Shi, Jiyashu Quin, Marvin White, S. Anand, Anant Agarwal',
+    venue: '11th IEEE Workshop on Wide Bandgap Power Devices and Applications, WiPDA’2024, Dayton, Ohio, USA',
+    year: '2024',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Diode Emulation Control for Efficiency Improvement of Dual Active Bridge Converters',
+    authors: 'Nachiketa Deshmukh, Kamran Asad, Mayank Deo, Pramod Chaudhary, Siva Prabhakar, Shiladri Chakraborty, S. Anand',
+    venue: 'IEEE International Communications Energy Conference, INTELEC’2024, Bangalore, India',
+    year: '2024',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
+  {
+    title: 'Extended High Efficiency Operation of Semi-Active Half-Bridge DC-DC Converter',
+    authors: 'Nachiketa Deshmukh, Kamran Asad, Mayank Deo, Pramod Chaudhary, Siva Prabhakar, Shiladri Chakraborty, S. Anand',
+    venue: 'IEEE International Communications Energy Conference, INTELEC’2024, Bangalore, India',
+    year: '2024',
+    type: 'conference',
+    link: '#',
+    abstract: abstractMock
+  },
   {
     title: 'De-Skewing Algorithm for Accurate Switching Loss Calculation in GaN HEMT',
     authors: 'Akash Gangwar, Abhishek Chanekar, S. Anand, Amit Verma',
@@ -1118,6 +1292,26 @@ export const patents: Publication[] = [
     assignee: "IIT Bombay & Varroc",
     year: "2022",
     status: "Published (Nov 2022)",
+    type: 'patent',
+    abstract: abstractMock
+  },
+  {
+    title: 'Methods and Systems for Controlling Permanent Magnet Synchronous Machine (PMSM) Motor',
+    authors: 'Saurabh Singh, Abhinav Arya, S. Anand, Kishore Chatterjee and Jasaswini Mohanty',
+    number: 'Indian Patent Application No. 202521033139',
+    assignee: 'IIT Bombay',
+    year: '2025',
+    status: 'Application Date: 03/April/2025',
+    type: 'patent',
+    abstract: abstractMock
+  },
+  {
+    title: 'Brush-less axial flux dual rotor wound field synchronous machine',
+    authors: 'Varun Lal, and S. Anand',
+    number: 'Indian Patent Application No. 202521133072',
+    assignee: 'IIT Bombay',
+    year: '2025',
+    status: 'Application Date: 29/Dec/2025 (Additional 3 design patents: 485462-001, 485463-001, 485464-001)',
     type: 'patent',
     abstract: abstractMock
   }
