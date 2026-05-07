@@ -56,6 +56,7 @@ export function Navigation() {
         { label: 'Students', id: '/team#team-students' },
       ]
     },
+    { id: '/achievements', label: 'Achievements', type: 'link' },
     { id: '/news', label: 'News', type: 'link' },
     { id: '#contact', label: 'Contact Us', type: 'link' },
   ];
