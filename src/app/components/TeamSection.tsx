@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Mail, Linkedin, GraduationCap, Briefcase, User } from 'lucide-react';
 import sandeepPhoto from '../../assets/sandeep_anand.png';
 import nikhilphoto from '../../assets/Team/Nikhil_Bhardwaj.jpg';
@@ -172,9 +173,29 @@ const GraduatedStudentCard = ({ student }: { student: any }) => (
 
 export function TeamSection() {
   const ref = useRef(null);
+  const { hash } = useLocation();
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [selectedPerson, setSelectedPerson] = useState<any>(null);
   const [activeTab, setActiveTab] = useState<'current' | 'graduated' | 'prospective'>('current');
+
+  useEffect(() => {
+    if (hash) {
+      const tab = hash.replace('#', '');
+      if (['current', 'graduated', 'prospective'].includes(tab)) {
+        setActiveTab(tab as any);
+        
+        // Scroll to the students section after a small delay to ensure tab is rendered
+        setTimeout(() => {
+          const element = document.getElementById('team-students');
+          if (element) {
+            const yOffset = -100; // Adjust for sticky header
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, [hash]);
 
   const professors = [
     {

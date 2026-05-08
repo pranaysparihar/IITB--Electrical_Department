@@ -1,7 +1,7 @@
 import { HeroSection } from '@/app/components/HeroSection';
 import { ContactSection } from '@/app/components/ContactSection';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap, ChevronLeft, ChevronRight, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -105,6 +105,15 @@ export default function HomePage() {
             color: 'text-emerald-500',
             bg: 'bg-emerald-50',
             images: projectImages,
+        },
+        {
+            title: 'Achievements',
+            desc: 'Our faculty and students have been recognized with numerous prestigious awards and fellowships, including the INSA Associate Fellowship and several Best Paper Awards at international conferences, reflecting our commitment to research excellence.',
+            icon: Trophy,
+            link: '/achievements',
+            color: 'text-amber-500',
+            bg: 'bg-amber-50',
+            images: rndImages,
         }
     ];
 

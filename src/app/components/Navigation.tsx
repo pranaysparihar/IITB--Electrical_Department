@@ -53,7 +53,9 @@ export function Navigation() {
       type: 'dropdown',
       children: [
         { label: 'Professor', id: '/team#team-professors' },
-        { label: 'Students', id: '/team#team-students' },
+        { label: 'Current Students', id: '/team#current' },
+        { label: 'Graduated Students', id: '/team#graduated' },
+        { label: 'Prospective Students', id: '/team#prospective' },
       ]
     },
     { id: '/achievements', label: 'Achievements', type: 'link' },

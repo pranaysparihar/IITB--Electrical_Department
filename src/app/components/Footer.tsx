@@ -22,10 +22,9 @@ export function Footer() {
       { label: 'Our Team', href: '/team' },
       { label: 'IIT Bombay', href: 'https://www.iitb.ac.in' },
       { label: 'Electrical Engineering', href: 'https://www.ee.iitb.ac.in' },
-      { label: 'Careers', href: '/#contact' },
     ],
     Connect: [
-      { label: 'Prospective Students', href: '/#contact' },
+      { label: 'Prospective Students', href: '/team#prospective' },
       { label: 'Contact Us', href: '/#contact' },
     ],
   };

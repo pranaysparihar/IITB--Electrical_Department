@@ -5,27 +5,27 @@ export default function NewsPage() {
     const newsItems = [
         {
             id: 1,
-            title: "Lab Awarded New Research Grant for EV Technologies",
-            date: "March 15, 2026",
-            summary: "Our HiPER Lab has successfully secured a major grant to further research in advanced power converters for electric vehicles.",
-            category: "Grant",
+            title: "Pleased to see E-RIDES featured in RISE@IITB (IRCC Newsletter, 2026 Issue 1)",
+            date: "May 1, 2026",
+            summary: "The Research and Innovation in Sciences and Engineering (RISE@IITB) newsletter by the Industrial Research & Consultancy Centre highlights the breadth of cutting-edge work at IIT Bombay, and we’re excited to see the E-RIDES initiative showcased as part of this innovation ecosystem.",
+            category: "Featured",
             link: "#"
         },
         {
             id: 2,
-            title: "Prof. Sharma Publishes Breakthrough Paper in IEEE Transactions",
-            date: "February 28, 2026",
-            summary: "A new approach to medium voltage drive systems has been published, paving the way for more efficient industrial applications.",
-            category: "Publication",
+            title: "Register Now | Power Electronics in Practice: From Magnetics to Gate Drivers",
+            date: "April 25, 2026",
+            summary: "Hands-on, simulation-based learning with IIT Bombay Faculty. July 4–25, 2026 (Weekends). Earn an IIT Bombay Certificate.",
+            category: "Course",
             link: "#"
         },
         {
             id: 3,
-            title: "New Battery Testing Facility Opened",
-            date: "January 10, 2026",
-            summary: "We are excited to announce the opening of our state-of-the-art battery testing facility, expanding our capabilities in energy storage.",
-            category: "Facility",
-            link: "#"
+            title: "E-Mobility Industry–Academia Conclave",
+            date: "April 24, 2026",
+            summary: "Gain insights into 2026 EV powertrain requirements, safety, and power electronics. Registration: https://lnkd.in/gnjq-z4c",
+            category: "Event",
+            link: "https://lnkd.in/gnjq-z4c"
         }
     ];
 
@@ -39,7 +39,7 @@ export default function NewsPage() {
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6">Lab News</h1>
                     <p className="text-xl text-[#64748b] max-w-3xl">
-                        Stay updated with the latest announcements, publications, and milestones from the HiPER Laboratory.
+                        Stay updated with the latest announcements, publications, and milestones from the HiPER Laboratory on our <a href="https://www.linkedin.com/company/c1973-ev-powertrain-lab/" target="_blank" rel="noopener noreferrer" className="text-[#06b6d4] hover:underline font-medium">LinkedIn</a>.
                     </p>
                 </motion.div>
 
@@ -68,15 +68,6 @@ export default function NewsPage() {
                                     <p className="text-[#475569] leading-relaxed mb-4 md:mb-0">
                                         {item.summary}
                                     </p>
-                                </div>
-                                <div className="shrink-0 pt-4 md:pt-0">
-                                    <a
-                                        href={item.link}
-                                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0f172a] text-white rounded-lg hover:bg-[#1e293b] transition-colors"
-                                    >
-                                        Read Info
-                                        <ExternalLink className="w-4 h-4" />
-                                    </a>
                                 </div>
                             </div>
                         </motion.div>
