@@ -113,7 +113,8 @@ export default function HomePage() {
             link: '/achievements',
             color: 'text-amber-500',
             bg: 'bg-amber-50',
-            images: rndImages,
+            images: [],
+            hideSlideshow: true,
         }
     ];
 
@@ -148,13 +149,13 @@ export default function HomePage() {
                             <div className={`flex flex-col md:flex-row items-center gap-12 lg:gap-20 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
 
                                 <motion.div
-                                    initial={{ opacity: 0, x: idx % 2 === 1 ? 40 : -40 }}
+                                    initial={{ opacity: 0, x: item.hideSlideshow ? 0 : (idx % 2 === 1 ? 40 : -40) }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6 }}
-                                    className="flex-1 w-full"
+                                    className={`flex-1 w-full ${item.hideSlideshow ? 'md:max-w-4xl mx-auto text-center' : ''}`}
                                 >
-                                    <div className={`w-16 h-16 rounded-2xl ${item.bg} flex items-center justify-center mb-6`}>
+                                    <div className={`w-16 h-16 rounded-2xl ${item.bg} flex items-center justify-center mb-6 ${item.hideSlideshow ? 'mx-auto' : ''}`}>
                                         <item.icon className={`w-8 h-8 ${item.color}`} />
                                     </div>
                                     <h3 className="text-3xl lg:text-4xl font-bold text-[#0f172a] mb-6">
@@ -172,17 +173,19 @@ export default function HomePage() {
                                     </Link>
                                 </motion.div>
 
-                                <motion.div
-                                    initial={{ opacity: 0, x: idx % 2 === 1 ? -40 : 40 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6 }}
-                                    className="flex-1 w-full"
-                                >
-                                    <div className="aspect-[4/3] rounded-3xl relative shadow-2xl overflow-hidden bg-gray-100">
-                                        <Slideshow images={item.images} />
-                                    </div>
-                                </motion.div>
+                                {!item.hideSlideshow && (
+                                    <motion.div
+                                        initial={{ opacity: 0, x: idx % 2 === 1 ? -40 : 40 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.6 }}
+                                        className="flex-1 w-full"
+                                    >
+                                        <div className="aspect-[4/3] rounded-3xl relative shadow-2xl overflow-hidden bg-gray-100">
+                                            <Slideshow images={item.images} />
+                                        </div>
+                                    </motion.div>
+                                )}
 
                             </div>
                         </div>
