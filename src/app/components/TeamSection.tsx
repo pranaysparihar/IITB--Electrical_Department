@@ -401,7 +401,13 @@ I work in the area of Power Electronics, wherein my research interests are Elect
                     </div>
                     <h3 className="text-2xl font-bold text-[#0f172a] mb-4">Join Our Research Group</h3>
                     <p className="text-[#475569] mb-8 text-lg leading-relaxed">
-                      We are always looking for motivated and talented students to join our lab. If you are passionate about power electronics, electric vehicles, wide bandgap devices, and renewable energy systems, we would love to hear from you.
+                      We are looking for motivated students/researchers, who are passionate about power electronics, to work as a full time student/researcher with us. Candidates are expected to have good academic/research credentials.
+
+                      These are ideal positions for graduating or recently graduated students looking for research experience in the area of power electronics.
+
+                      To know more about our current research interests, you may visit "overview of research" and "publications".
+
+                      In case you are interested in joining us, you may send your CV
                     </p>
                     <a
                       href="mailto:sa@ee.iitb.ac.in"
