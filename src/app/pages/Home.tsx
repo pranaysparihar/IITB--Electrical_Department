@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 // Dynamically import all images from the respective folders
 const aboutImages = Object.values(import.meta.glob('../../assets/About Group/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
 const rndImages = Object.values(import.meta.glob('../../assets/R&D/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
-const projectImages = Object.values(import.meta.glob('../../assets/Facilities/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
+const projectImages = Object.values(import.meta.glob('../../assets/Projects/*.{png,jpg,jpeg,gif,webp}', { eager: true, import: 'default' })) as string[];
 
 function Slideshow({ images }: { images: string[] }) {
     const [currentIndex, setCurrentIndex] = useState(0);
