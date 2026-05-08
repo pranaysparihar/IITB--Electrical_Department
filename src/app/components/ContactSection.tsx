@@ -59,7 +59,23 @@ export function ContactSection() {
               <div className="space-y-2">
                 {info.details.map((detail, idx) => (
                   <p key={idx} className="text-[#475569]">
-                    {detail}
+                    {info.title === 'Phone' ? (
+                      <a
+                        href={`tel:${detail.replace(/[^+\d]/g, '')}`}
+                        className="hover:text-[#06b6d4] transition-colors"
+                      >
+                        {detail}
+                      </a>
+                    ) : info.title === 'Email' ? (
+                      <a
+                        href={`mailto:${detail}`}
+                        className="hover:text-[#06b6d4] transition-colors"
+                      >
+                        {detail}
+                      </a>
+                    ) : (
+                      detail
+                    )}
                   </p>
                 ))}
               </div>
