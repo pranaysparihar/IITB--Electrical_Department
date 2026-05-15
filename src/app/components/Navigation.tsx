@@ -32,7 +32,6 @@ export function Navigation() {
       type: 'dropdown',
       children: [
         { label: 'R&D Activities', id: '/publications#research-activities' },
-        { label: 'Presentation & Videos', id: '/publications#research-presentation' },
         { label: 'Publications', id: '/publications#publications' },
       ]
     },
