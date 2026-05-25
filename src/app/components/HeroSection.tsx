@@ -23,9 +23,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
         >
-          Welcome to
-          <br />
-          <span className="text-[#06b6d4]">HiPER Lab</span>
+          Welcome
         </motion.h1>
 
         <motion.p
@@ -34,7 +32,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          The HiPER Lab (High Performance Power Electronics Research Lab) at the Indian Institute of Technology Bombay, led by Prof. Sandeep Anand, is at the forefront of research in advanced power electronics, driving innovation in electric mobility and sustainable energy systems.
+          Our research group at the Indian Institute of Technology Bombay, led by Prof. Sandeep Anand, is at the forefront of research in advanced power electronics, driving innovation in electric mobility and sustainable energy systems.
         </motion.p>
 
 
@@ -46,7 +44,7 @@ export function HeroSection() {
           className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto"
         >
           {[
-            { label: 'Active Projects', value: '8+' },
+            { label: 'Projects', value: '8+' },
             { label: 'Publications', value: '135+' },
             { label: 'Team Members', value: '16+' },
           ].map((stat, index) => (

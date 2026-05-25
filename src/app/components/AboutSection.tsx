@@ -36,13 +36,21 @@ export function AboutSection() {
                 <h3 className="text-2xl font-bold text-[#0f172a]">Lab Description</h3>
               </div>
               <p className="text-[#475569] leading-relaxed text-lg bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                The HiPER Lab (High Performance Power Electronics Research Lab) at the Indian Institute of Technology Bombay, led by Prof. Sandeep Anand, is at the forefront of research in advanced power electronics, driving innovation in electric mobility and sustainable energy systems. <br /> <br />
+                Our research group operates at the forefront of next-generation transportation and power electronics, closely collaborating with the Electric Vehicle (EV) Laboratory and the Medium Voltage (MV) Laboratory. We are dedicated to advancing the efficiency, power density, and sustainability of clean energy systems through cutting-edge hardware design and advanced control topologies. <br /> <br />
+                Our core research and development framework is divided into two primary pillars: <br></br>
 
-                The lab focuses on the design and development of next-generation electric vehicle (EV) drivetrains and charging technologies, alongside high-performance power converters based on wide bandgap semiconductor devices such as GaN and SiC. Its research also extends to intelligent power electronic interfaces for integrating renewable and alternative energy sources, including solar photovoltaic (PV) systems, batteries, and fuel cells.<br /> <br />
+                1. Electric Vehicle Powertrain & Components
+                We focus on the end-to-end optimization of EV subsystems, primarily targeting 2-wheeler, 3-wheeler, and 4-wheeler applications. Our work spans across:
+                Rare-Earth-Free Motor Design: Addressing material sustainability and supply chain vulnerabilities, we focus on developing Rare-Earth Element (REE)-free and Permanent Magnet (PM)-free electric motors. Our design methodologies strictly aim to maximize power density and operational efficiency for lightweight electric mobility.
+                Next-Generation Inverters & On-Board Chargers (OBC): We develop robust hardware solutions for inverters and OBCs. By transitioning from traditional Silicon (Si) to Wide-Bandgap (WBG) semiconductors—specifically Gallium Nitride (GaN) and Silicon Carbide (SiC)—we significantly enhance system performance, thermal management, and power density while aggressively minimizing manufacturing costs.
+                Advanced Motor Control Strategies: Beyond hardware, we design and validate sophisticated control algorithms to optimize transient performance, system-level efficiency, and overall powertrain reliability.<br /> <br />
 
 
-                Through close alignment with emerging industry needs and national initiatives in EV powertrains and photovoltaic systems, HiPER Lab seamlessly bridges fundamental research with practical implementation—delivering impactful, scalable, and industry-relevant solutions for the future of energy and mobility.
-              </p>
+                2. Medium Voltage Solid-State Transformers (SST)
+                Bridging the gap between renewable energy integration and modern grid infrastructure, our group specializes in high-power density Solid-State Transformers.
+                Silicon Carbide (SiC) Integration: Utilizing 3.3 kV SiC power MOSFETs, our SST architecture enables high-voltage operation, superior thermal performance, and exceptional efficiency under heavy thermal loads, making it ideal for next-generation medium-voltage applications.
+                Modular & Scalable Design: The system employs a highly maintainable and flexible modular approach. Each individual submodule is rated at a 2 kV DC link and handles 13.33 kW of power.
+                Grid-Scale Prototyping: By electrically stacking 15 of these identical submodules (configured with 5 submodules per phase), our research aims to realize a 200 kW SST prototype capable of seamlessly interfacing directly with an 11 kV utility grid.              </p>
             </div>
 
           </div>

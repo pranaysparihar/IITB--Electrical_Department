@@ -5,13 +5,11 @@ export interface Publication {
   assignee?: string;
   year: string;
   type: 'journal' | 'conference' | 'patent';
-  abstract?: string;
   link?: string;
   number?: string;
   status?: string;
 }
 
-const abstractMock = "This is a detailed abstract providing an overview of the research findings, methodologies used, and the overall impact of the work presented in this publication.";
 
 export const journals: Publication[] = [
   {
@@ -21,8 +19,8 @@ export const journals: Publication[] = [
     year: '2026',
     status: 'Accepted',
     type: 'journal',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11513496',
+
   },
   {
     title: 'Junction Temperature based Adaptive Short Circuit Detection Technique for SiC MOSFETs',
@@ -31,8 +29,8 @@ export const journals: Publication[] = [
     year: '2026',
     status: 'Accepted',
     type: 'journal',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11489168',
+
   },
   {
     title: 'Low Device Count Three-Port DC-DC Converter Integrating Onboard Charger and Auxiliary Power Module for Light Electric Vehicles',
@@ -40,8 +38,8 @@ export const journals: Publication[] = [
     venue: 'IEEE Transactions on Power Electronics, vol. 41, no. 2',
     year: '2026',
     type: 'journal',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11150744',
+
   },
   {
     title: 'Rotor position error based adaptive controller for improved average torque in PMSM drives for electric vehicles',
@@ -50,8 +48,8 @@ export const journals: Publication[] = [
     year: '2025',
     status: 'Accepted',
     type: 'journal',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11270999',
+
   },
   {
     title: 'Conductance Emulation Control for Real Power Compensation in Series-Stacked Active Power Decoupling Circuit',
@@ -59,8 +57,8 @@ export const journals: Publication[] = [
     venue: 'IEEE Journal of Emerging and Selected Topics in Power Electronics, vol. 6, no. 1, pp. 350-361',
     year: '2024',
     type: 'journal',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/10669758',
+
   },
   {
     title: 'Ultrafast Self-Powered Circuit for Gate Driving of Normally-On Wide Bandgap Transistors',
@@ -69,7 +67,7 @@ export const journals: Publication[] = [
     year: '2024',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/10379848/',
-    abstract: abstractMock
+
   },
   {
     title: 'Voltage Regulation and Load Sharing in DC Microgrid using Single Variable Global Average Estimation',
@@ -78,7 +76,7 @@ export const journals: Publication[] = [
     year: '2023',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/10256112',
-    abstract: abstractMock
+
   },
   {
     title: 'Gate Voltage Based Active Thermal Control of Power Semiconductor Devices',
@@ -87,7 +85,7 @@ export const journals: Publication[] = [
     year: '2023',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/10172032',
-    abstract: abstractMock
+
   },
   {
     title: 'Multiple Points Measurement Based Junction Temperature Estimation of IGBT Module',
@@ -96,7 +94,7 @@ export const journals: Publication[] = [
     year: '2023',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/10024833',
-    abstract: abstractMock
+
   },
   {
     title: 'H-Bridge Derived Topology for Dynamic on-resistance Evaluation in Power GaN HEMTs',
@@ -105,7 +103,7 @@ export const journals: Publication[] = [
     year: '2022',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9748975',
-    abstract: abstractMock
+
   },
   {
     title: 'Active Thermal Control for Buck Converter Based Active Power Decoupling Circuit',
@@ -114,7 +112,7 @@ export const journals: Publication[] = [
     year: '2022',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9826420',
-    abstract: abstractMock
+
   },
   {
     title: 'Modified PWM Scheme to Reduce Reverse Conduction Loss in GaN-based Independently Controlled Multiple Output Flyback Converter',
@@ -123,7 +121,7 @@ export const journals: Publication[] = [
     year: '2022',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9795920',
-    abstract: abstractMock
+
   },
   {
     title: 'Network-Agnostic Adaptive PQ Adjustment Control for Grid Voltage Regulation in PV Systems',
@@ -132,7 +130,7 @@ export const journals: Publication[] = [
     year: '2022',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9789564',
-    abstract: abstractMock
+
   },
   {
     title: 'Temperature Droop Based Dynamic Reactive Power Sharing Technique to Improve the Lifetime of Power Electronic Converter',
@@ -141,7 +139,7 @@ export const journals: Publication[] = [
     year: '2021',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9632415',
-    abstract: abstractMock
+
   },
   {
     title: 'GaN Based Multiple Output Flyback Converter with Independently Controlled Outputs',
@@ -150,7 +148,7 @@ export const journals: Publication[] = [
     year: '2021',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9384186',
-    abstract: abstractMock
+
   },
   {
     title: 'Accurate Online Junction Temperature Estimation of IGBT using Inflection Point Based Updated I-V Characteristics',
@@ -159,7 +157,7 @@ export const journals: Publication[] = [
     year: '2021',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9380212',
-    abstract: abstractMock
+
   },
   {
     title: 'Comparisons on Different Innovative Cascode GaN HEMT E-Mode Power Modules and Their Efficiencies on the Flyback Converter',
@@ -168,7 +166,7 @@ export const journals: Publication[] = [
     year: '2021',
     type: 'journal',
     link: 'https://www.mdpi.com/1996-1073/14/18/5966',
-    abstract: abstractMock
+
   },
   {
     title: 'A Distributed-Controlled Harmonic Virtual Impedance Loop for AC Microgrids',
@@ -177,7 +175,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9069413',
-    abstract: abstractMock
+
   },
   {
     title: 'Flux Error Function Based Controlled Switching Method for Minimizing Inrush Current in 3-Phase Transformer',
@@ -186,7 +184,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9095381',
-    abstract: abstractMock
+
   },
   {
     title: 'Power Loss Reduction in Buck Converter Based Active Power Decoupling Circuit',
@@ -195,7 +193,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9200572',
-    abstract: abstractMock
+
   },
   {
     title: 'Effect of Communication Delay on Consensus Based Secondary Controllers in DC Microgrid',
@@ -203,7 +201,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9032310',
-    abstract: abstractMock
+
   },
   {
     title: 'Coordinated Control of OLTC and Energy Storage for Voltage Regulation in Distribution Network with High PV Penetration',
@@ -211,7 +209,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9079884',
-    abstract: abstractMock
+
   },
   {
     title: 'Selection of Capacitance for Stable Operation of Low Power DC System with Constant Power Loads',
@@ -219,7 +217,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/gtd2.12060',
-    abstract: abstractMock
+
   },
   {
     title: 'Methodology of an Accurate Static I-V Characterisation of Power Semiconductor Devices',
@@ -227,7 +225,7 @@ export const journals: Publication[] = [
     year: '2020',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/9050497',
-    abstract: abstractMock
+
   },
   {
     title: 'Health Estimation of Individual Capacitors in a Bank With Reduced Sensor Requirements',
@@ -235,7 +233,7 @@ export const journals: Publication[] = [
     year: '2018',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8536870',
-    abstract: abstractMock
+
   },
   {
     title: 'Adaptive Shunt Filtering Control of UPQC for Increased Non Linear Loads',
@@ -243,7 +241,7 @@ export const journals: Publication[] = [
     year: '2019',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8637742',
-    abstract: abstractMock
+
   },
   {
     title: 'Integrated DC-DC Converter Based Grid-Connected Transformerless Photovoltaic Inverter with Extended Input Voltage Range',
@@ -251,7 +249,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8125736',
-    abstract: abstractMock
+
   },
   {
     title: 'Online Algorithms for Storage Utilization under Real-Time Pricing in Smart Grid',
@@ -259,7 +257,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://www.sciencedirect.com/science/article/pii/S0142061517319919',
-    abstract: abstractMock
+
   },
   {
     title: 'Design and Control of Single Phase Dynamic Voltage Restorer',
@@ -267,7 +265,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://www.ias.ac.in/article/fulltext/sadh/042/08/1363-1375',
-    abstract: abstractMock
+
   },
   {
     title: 'Quality Index Based Distributed Secondary Controller for Low Voltage DC Microgrid',
@@ -275,7 +273,7 @@ export const journals: Publication[] = [
     year: '2018',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8264690',
-    abstract: abstractMock
+
   },
   {
     title: 'Quasi-Online Technique for Health Monitoring of Capacitor in Single Phase Solar Inverter',
@@ -283,7 +281,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8002660',
-    abstract: abstractMock
+
   },
   {
     title: 'Ideal Current based Distributed Control to Compensate Line Impedance in DC Microgrid',
@@ -291,7 +289,7 @@ export const journals: Publication[] = [
     year: '2018',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8379568',
-    abstract: abstractMock
+
   },
   {
     title: 'Non-invasive Technique for DC-link Capacitance Estimation in Single Phase Inverters',
@@ -299,7 +297,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/8067525',
-    abstract: abstractMock
+
   },
   {
     title: 'Capacitor impedance estimation utilizing dc-link voltage oscillations in single phase inverter',
@@ -307,7 +305,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/7989807',
-    abstract: abstractMock
+
   },
   {
     title: 'Low Frequency Impedance Monitoring and Corresponding Failure Criteria for Aluminum Electrolytic Capacitors',
@@ -315,7 +313,7 @@ export const journals: Publication[] = [
     year: '2017',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/7862838',
-    abstract: abstractMock
+
   },
   {
     title: 'Evaluation of Vce at Inflection Point for Monitoring Bond Wire Degradation in Discrete Packaged IGBTs',
@@ -323,7 +321,7 @@ export const journals: Publication[] = [
     year: '2016',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/7707420',
-    abstract: abstractMock
+
   },
   {
     title: 'Lifetime Monitoring of Electrolytic Capacitor to Maximize Earnings from Grid Feeding PV System',
@@ -331,7 +329,7 @@ export const journals: Publication[] = [
     year: '2016',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/7501847',
-    abstract: abstractMock
+
   },
   {
     title: 'Online Monitoring Technique for Aluminum Electrolytic Capacitor in Solar PV Based DC System',
@@ -339,7 +337,7 @@ export const journals: Publication[] = [
     year: '2016',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/7494997',
-    abstract: abstractMock
+
   },
   {
     title: 'Transformer-less Grid Feeding Current Source Inverter for Solar Photovoltaic System',
@@ -347,7 +345,7 @@ export const journals: Publication[] = [
     year: '2014',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/6712103',
-    abstract: abstractMock
+
   },
   {
     title: 'Reduced Order Model and Stability Analysis of Low Voltage DC Microgrid',
@@ -355,7 +353,7 @@ export const journals: Publication[] = [
     year: '2012',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/6355655',
-    abstract: abstractMock
+
   },
   {
     title: 'Distributed Control to Ensure Proportional Load Sharing and Improve Voltage Regulation in Low Voltage DC Microgrids',
@@ -363,7 +361,7 @@ export const journals: Publication[] = [
     year: '2012',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/6287047',
-    abstract: abstractMock
+
   },
   {
     title: 'DC Voltage Controller for Asymmetric Twin Converter Topology Based High Power STATCOM',
@@ -371,7 +369,7 @@ export const journals: Publication[] = [
     year: '2011',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/6134650',
-    abstract: abstractMock
+
   },
   {
     title: 'Modified Droop Controller for Paralleling of DC-DC Converters in Standalone DC System',
@@ -379,7 +377,7 @@ export const journals: Publication[] = [
     year: '2012',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/6294937',
-    abstract: abstractMock
+
   },
   {
     title: 'Unique Power Electronics and Drives Experiment Bench (PEDEB) to Facilitate Learning and Research',
@@ -387,7 +385,7 @@ export const journals: Publication[] = [
     year: '2012',
     type: 'journal',
     link: 'https://ieeexplore.ieee.org/document/6213161',
-    abstract: abstractMock
+
   },
 ];
 
@@ -399,7 +397,7 @@ export const conferences: Publication[] = [
     year: '2026',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'Single-Stage Integrated OBC-APM Topology with Reduced Device Count for EV Application',
@@ -408,7 +406,7 @@ export const conferences: Publication[] = [
     year: '2026',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'Investigation of Dynamic On-Resistance in GaN HEMTs under Single- Pulse Short-Circuit Operation',
@@ -417,7 +415,7 @@ export const conferences: Publication[] = [
     year: '2026',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'Technique for the Accurate Measurement of Average dv/dt of SiC MOSFET',
@@ -425,8 +423,8 @@ export const conferences: Publication[] = [
     venue: '41st Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2026, San Antonio, TX, USA',
     year: '2026',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11516751',
+
   },
   {
     title: 'Enhancing Efficiency and Increasing Leakage Inductance in Aluminium Foil Winding based Transformer for Dual Active Bridge Converter',
@@ -434,8 +432,8 @@ export const conferences: Publication[] = [
     venue: '41st Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2026, San Antonio, TX, USA',
     year: '2026',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11516974',
+
   },
   {
     title: 'A Low Device Count Three-Terminal Active Capacitor with Low-Side Design for Effective Second-Harmonic Ripple Suppression',
@@ -443,8 +441,8 @@ export const conferences: Publication[] = [
     venue: '41st Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2026, San Antonio, TX, USA',
     year: '2026',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11516722',
+
   },
   {
     title: 'Selection of Negative Gate Voltage for GaN HEMTs Considering Switching Oscillations and Loss Minimization',
@@ -452,8 +450,8 @@ export const conferences: Publication[] = [
     venue: 'IEEE International conference on Power Electronics, Smart Grid and Renewable Energy, PESGRE’2025, IIT Dharwad, India',
     year: '2025',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/11521107',
+
   },
   {
     title: 'Design of Transformer Parameters for Energy Efficiency Enhancement of Semi-Active Bridge Converter',
@@ -462,7 +460,7 @@ export const conferences: Publication[] = [
     year: '2025',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'A Plug and Play Three Terminal Active Power Decoupling Circuit',
@@ -471,7 +469,7 @@ export const conferences: Publication[] = [
     year: '2025',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'Design Parameter Selection for Efficiency Improvement of Semi-Dual Active Bridge Converter',
@@ -480,7 +478,7 @@ export const conferences: Publication[] = [
     year: '2025',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'Bootstrap Gate Driver for GaN-based Solar Inverter: Design Challenges and Solutions',
@@ -488,8 +486,8 @@ export const conferences: Publication[] = [
     venue: '11th IEEE Power Electronics, Drives and Energy Systems, PEDES’2024, Mangaluru, India',
     year: '2024',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/10961610',
+
   },
   {
     title: 'Methodology for Determining Critical Screening Voltage in SiC MOSFETs Through Gate Leakage Current Hysteresis',
@@ -497,8 +495,8 @@ export const conferences: Publication[] = [
     venue: '11th IEEE Workshop on Wide Bandgap Power Devices and Applications, WiPDA’2024, Dayton, Ohio, USA',
     year: '2024',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/10773284',
+
   },
   {
     title: 'Diode Emulation Control for Efficiency Improvement of Dual Active Bridge Converters',
@@ -506,8 +504,8 @@ export const conferences: Publication[] = [
     venue: 'IEEE International Communications Energy Conference, INTELEC’2024, Bangalore, India',
     year: '2024',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/10679038',
+
   },
   {
     title: 'Extended High Efficiency Operation of Semi-Active Half-Bridge DC-DC Converter',
@@ -515,8 +513,8 @@ export const conferences: Publication[] = [
     venue: 'IEEE International Communications Energy Conference, INTELEC’2024, Bangalore, India',
     year: '2024',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/10679037',
+
   },
   {
     title: 'De-Skewing Algorithm for Accurate Switching Loss Calculation in GaN HEMT',
@@ -524,8 +522,8 @@ export const conferences: Publication[] = [
     venue: 'IEEE Transportation Electrification Conference and Expo., ITEC’2024, Rosemont, IL, USA',
     year: '2024',
     type: 'conference',
-    link: '#',
-    abstract: abstractMock
+    link: 'https://ieeexplore.ieee.org/document/10599060',
+
   },
   {
     title: 'Design Methodology to Improve Weighted Efficiency of Semi-Dual Active Bridge Converter',
@@ -534,7 +532,7 @@ export const conferences: Publication[] = [
     year: '2024',
     type: 'conference',
     link: '#',
-    abstract: abstractMock
+
   },
   {
     title: 'Impact of Operational Parameters on dVDS/dt of SiC MOSFET and a Scheme for Gate Driver Resistance Selection to Limit dVDS/dt',
@@ -543,7 +541,7 @@ export const conferences: Publication[] = [
     year: '2024',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10509088',
-    abstract: abstractMock
+
   },
   {
     title: 'Impact of Gate Turn-Off Voltage on Body Diode Loss of SiC MOSFET and a Scheme to Improve Light Load Efficiency of SiC Converters',
@@ -552,7 +550,7 @@ export const conferences: Publication[] = [
     year: '2023',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10384860',
-    abstract: abstractMock
+
   },
   {
     title: 'Highly Efficient GaN-based PV Inverter with Reduced Leakage Current',
@@ -561,7 +559,7 @@ export const conferences: Publication[] = [
     year: '2023',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10312424',
-    abstract: abstractMock
+
   },
   {
     title: 'Thermal Stress Balancing for Lifetime Improvement of H6 Solar Inverter',
@@ -570,7 +568,7 @@ export const conferences: Publication[] = [
     year: '2023',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10264669',
-    abstract: abstractMock
+
   },
   {
     title: 'Improving Anti-Slip Performance in Multi-Motor Single Inverter Based Heavy Electric Vehicles',
@@ -579,7 +577,7 @@ export const conferences: Publication[] = [
     year: '2023',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10186898',
-    abstract: abstractMock
+
   },
   {
     title: 'Relative Gain Array Based Decoupled Controller Design for GaN-Based Multiple Output Flyback Converter',
@@ -588,7 +586,7 @@ export const conferences: Publication[] = [
     year: '2023',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10131593',
-    abstract: abstractMock
+
   },
   {
     title: 'Design Methodology for Power-Dense and Cost-Effective Series-Stacked Active Power Decoupling Circuit',
@@ -597,7 +595,7 @@ export const conferences: Publication[] = [
     year: '2023',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/10131459',
-    abstract: abstractMock
+
   },
   {
     title: 'Effect of Communication Delay on Steady State Voltage in DC Microgrids',
@@ -606,7 +604,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/abstract/document/10069847',
-    abstract: abstractMock
+
   },
   {
     title: 'Effect of Material Resistivity and Temperature on Leakage Inductance of Medium Frequency Transformers Made of Al and Cu Foils',
@@ -615,7 +613,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9968856',
-    abstract: abstractMock
+
   },
   {
     title: 'Impact of Operational Factors on the Lifetime of Power Semiconductor Devices in Electric Vehicles',
@@ -624,7 +622,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9968712',
-    abstract: abstractMock
+
   },
   {
     title: 'Voltage Regulation Controller in DC Microgrid: Implementation Challenges and Solutions',
@@ -633,7 +631,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9968717',
-    abstract: abstractMock
+
   },
   {
     title: 'Methodology of Gate Voltage Selection for Power Loss Manipulation of Power Semiconductor Device to Achieve Enhanced Lifetime',
@@ -642,7 +640,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9948082',
-    abstract: abstractMock
+
   },
   {
     title: 'An Adaptive DC Voltage Control for SiC based Medium Voltage Photovoltaic Inverter',
@@ -651,7 +649,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9947823',
-    abstract: abstractMock
+
   },
   {
     title: 'Collector-Emitter Voltage Based Health Monitoring of Bond Wire in IGBT at Low Gate Voltage',
@@ -660,7 +658,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9947879',
-    abstract: abstractMock
+
   },
   {
     title: 'Dual Active Half Bridge Converter with Integrated Active Power Decoupling for On-Board EV Charger',
@@ -669,7 +667,7 @@ export const conferences: Publication[] = [
     year: '2022',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9715900',
-    abstract: abstractMock
+
   },
   {
     title: 'A Three Terminal Active Power Decoupling Circuit for Single-Phase Single-Stage On-Board Charger',
@@ -678,7 +676,7 @@ export const conferences: Publication[] = [
     year: '2021',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9672515',
-    abstract: abstractMock
+
   },
   {
     title: 'A LLC Resonant Converter with Wide Output Voltage Range for USB - Power Delivery',
@@ -687,7 +685,7 @@ export const conferences: Publication[] = [
     year: '2021',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9672472',
-    abstract: abstractMock
+
   },
   {
     title: 'Comparative Study of Various Communication Technologies for Secondary Controllers in DC Microgrid',
@@ -696,7 +694,7 @@ export const conferences: Publication[] = [
     year: '2021',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9670303',
-    abstract: abstractMock
+
   },
   {
     title: 'An Efficient and Compact Multi-port Power Supply for Nano-satellites',
@@ -705,7 +703,7 @@ export const conferences: Publication[] = [
     year: '2021',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9595915',
-    abstract: abstractMock
+
   },
   {
     title: 'Regenerative Snubber Based Bootstrapped Gate Driver Power Supply for Multiple Input Flyback Converter',
@@ -714,7 +712,7 @@ export const conferences: Publication[] = [
     year: '2021',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9595482',
-    abstract: abstractMock
+
   },
   {
     title: 'Lifetime Analysis of Photovoltaic Inverter Based on Geographical Site of Installation',
@@ -723,7 +721,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9379742',
-    abstract: abstractMock
+
   },
   {
     title: 'Detection of Phase Loss Fault in a Three-Phase Transformer Based Grid Feeding PV Inverter',
@@ -732,7 +730,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9379639',
-    abstract: abstractMock
+
   },
   {
     title: 'Availability Based Load Harmonic Compensation Using PV Inverter',
@@ -741,7 +739,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9379672',
-    abstract: abstractMock
+
   },
   {
     title: 'Stability Improvement of Series Stacked Buffer Circuit in Single Phase Solar Inverter',
@@ -750,7 +748,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9379650',
-    abstract: abstractMock
+
   },
   {
     title: 'DC-link Voltage Feed-Forward Controller for Buck Active Power Decoupling Circuit',
@@ -759,7 +757,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9379485',
-    abstract: abstractMock
+
   },
   {
     title: 'Conductance Emulation Based Control for Series Stacked Energy Buffer',
@@ -768,7 +766,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9379869',
-    abstract: abstractMock
+
   },
   {
     title: 'An Adaptive P-Q Management Technique For Grid Voltage Regulation Using PV Inveter',
@@ -777,7 +775,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9331760',
-    abstract: abstractMock
+
   },
   {
     title: 'A Cascaded Interleaved Bootstrapped Gate Driver Power Supply for Multilevel Photovoltaic Inverters',
@@ -786,7 +784,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9265790',
-    abstract: abstractMock
+
   },
   {
     title: 'Determination of Fault Clearing Time based on Thermal Limits of Power Semiconductor Devices in DC Microgrids',
@@ -795,7 +793,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9244316',
-    abstract: abstractMock
+
   },
   {
     title: 'Accelerated Aging Method and Lifetime Evaluation of Aluminum Electrolytic Capacitors for Power Electronic Application',
@@ -804,7 +802,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9235353',
-    abstract: abstractMock
+
   },
   {
     title: 'Low Side Switch Based Regenerative Snubber Circuit for Flyback Converter',
@@ -813,7 +811,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9236237',
-    abstract: abstractMock
+
   },
   {
     title: 'Consensus based Ideal Current Sharing Controller for DC Microgrid',
@@ -822,7 +820,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9161693',
-    abstract: abstractMock
+
   },
   {
     title: 'Gaussian Process Regression based Fault Location in DC Microgrid',
@@ -831,7 +829,7 @@ export const conferences: Publication[] = [
     year: '2020',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9042542',
-    abstract: abstractMock
+
   },
   {
     title: 'Stability of DC Microgrid for Different Reduced Communication Topologies',
@@ -840,7 +838,7 @@ export const conferences: Publication[] = [
     year: '2019',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9067705',
-    abstract: abstractMock
+
   },
   {
     title: 'Structure and Degradation of Aluminum Electrolytic Capacitors',
@@ -849,7 +847,7 @@ export const conferences: Publication[] = [
     year: '2019',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9034726',
-    abstract: abstractMock
+
   },
   {
     title: 'Communication Topology Selection for Secondary Controllers in DC Microgrid',
@@ -858,7 +856,7 @@ export const conferences: Publication[] = [
     year: '2019',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/9034875',
-    abstract: abstractMock
+
   },
   {
     title: 'Error Analysis of An Accurate Bipolar Voltage Measurement Circuit for Online Health Monitoring of IGBTs',
@@ -867,7 +865,7 @@ export const conferences: Publication[] = [
     year: '2019',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8754953',
-    abstract: abstractMock
+
   },
   {
     title: 'Reliability Comparison of DC Link Capacitor Bank for Different Configurations',
@@ -876,7 +874,7 @@ export const conferences: Publication[] = [
     year: '2019',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8755003',
-    abstract: abstractMock
+
   },
   {
     title: 'Method to Reduce Harmonic Voltage Distortion and Improve Harmonic Current Sharing in an islanded AC Microgrid',
@@ -885,7 +883,7 @@ export const conferences: Publication[] = [
     year: '2019',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8754950',
-    abstract: abstractMock
+
   },
   {
     title: 'An Improved Droop Control Method to Enhance Dynamic Performance of AC Microgrid',
@@ -894,7 +892,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8771798',
-    abstract: abstractMock
+
   },
   {
     title: 'Dynamic Overcurrent Saturation of Distributed Sources in a DC Microgrid System',
@@ -903,7 +901,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8771443',
-    abstract: abstractMock
+
   },
   {
     title: 'Coordinated Voltage Control in LV Distribution Systems using OLTC and BESS',
@@ -912,7 +910,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8771772',
-    abstract: abstractMock
+
   },
   {
     title: 'Comparison of Si and GaN Power Devices Based SMPS for Satellite Application',
@@ -921,7 +919,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8707877',
-    abstract: abstractMock
+
   },
   {
     title: 'Partial Unfolding Scheme for Grid Feeding Transformerless PV Inverter',
@@ -930,7 +928,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8707472',
-    abstract: abstractMock
+
   },
   {
     title: 'Active Ripple Compensation Port for Single Phase Transformerless Photovoltaic Inverter',
@@ -939,7 +937,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/abstract/document/8515527',
-    abstract: abstractMock
+
   },
   {
     title: 'A Modified SMS Islanding Detection Technique for Reduced Non Detection Zone',
@@ -948,7 +946,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8515538',
-    abstract: abstractMock
+
   },
   {
     title: 'Development of an R&D platform for smart city projects in the Indian context',
@@ -957,7 +955,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://e-cigre.org/publication/SESSION2018_C6-313',
-    abstract: abstractMock
+
   },
   {
     title: 'Performance Analysis of Reduced Communication Network in DC Microgrid',
@@ -966,7 +964,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8467839',
-    abstract: abstractMock
+
   },
   {
     title: 'CLPSO based droop optimization technique for DC Microgrid',
@@ -975,7 +973,7 @@ export const conferences: Publication[] = [
     year: '2018',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8307973',
-    abstract: abstractMock
+
   },
   {
     title: 'Mission Profile Based Evaluation Of Capacitor Reliability In Two Stage Grid Feeding Photovoltaic Inverter',
@@ -984,7 +982,7 @@ export const conferences: Publication[] = [
     year: '2017',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8310426',
-    abstract: abstractMock
+
   },
   {
     title: 'Reduced Communication based Local Averaging Method for Low Voltage DC Microgrid',
@@ -993,7 +991,7 @@ export const conferences: Publication[] = [
     year: '2017',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8387344',
-    abstract: abstractMock
+
   },
   {
     title: 'Estimation and Utilization of Aggregate Harmonic Load Model',
@@ -1002,7 +1000,7 @@ export const conferences: Publication[] = [
     year: '2017',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/8308988',
-    abstract: abstractMock
+
   },
   {
     title: 'Optimal Utilization of Storage Systems under Real-time Pricing',
@@ -1011,7 +1009,7 @@ export const conferences: Publication[] = [
     year: '2017',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7962812',
-    abstract: abstractMock
+
   },
   {
     title: 'Dynamic Droop Gain Adjustment for Proportional Power Sharing in Low Voltage DC Microgrid',
@@ -1020,7 +1018,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7914314',
-    abstract: abstractMock
+
   },
   {
     title: 'Adaptive Reactive Power Injection by Solar PV Inverter to Minimize Tap Changes and Line Losses',
@@ -1029,7 +1027,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7858955',
-    abstract: abstractMock
+
   },
   {
     title: 'Frequency Response Improvement in Microgrid Using Optimized VSG Control',
@@ -1038,7 +1036,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7858916',
-    abstract: abstractMock
+
   },
   {
     title: 'Correlation of Accelerated Lifetime in Punctured Capacitor with Normal Operating Lifetime',
@@ -1047,7 +1045,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7544213',
-    abstract: abstractMock
+
   },
   {
     title: 'Condition Monitoring of DC-Link Capacitor Utilizing Zero State of Solar PV H5 Inverter',
@@ -1056,7 +1054,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7544180',
-    abstract: abstractMock
+
   },
   {
     title: 'Comparative Analysis of Power Density in Si MOSFET and GaN HEMT based Flyback Converters',
@@ -1065,7 +1063,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7544212',
-    abstract: abstractMock
+
   },
   {
     title: 'Simulation of Low Voltage Ride Through Scheme for Distribution System with High R/X Ratio',
@@ -1074,7 +1072,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7544185',
-    abstract: abstractMock
+
   },
   {
     title: 'Distributed Secondary Control with Reduced Communication in Low-Voltage DC Microgrid',
@@ -1083,7 +1081,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7544171',
-    abstract: abstractMock
+
   },
   {
     title: 'Power Decoupling in Solar PV System using Partial Power Processing Converter',
@@ -1092,7 +1090,7 @@ export const conferences: Publication[] = [
     year: '2016',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7544184',
-    abstract: abstractMock
+
   },
   {
     title: 'Design and Control of Single Phase Dynamic Voltage Restorer',
@@ -1101,7 +1099,7 @@ export const conferences: Publication[] = [
     year: '2015',
     type: 'conference',
     link: 'https://www.ee.iitb.ac.in/npec/Papers/Program/NPEC_2015_paper_57.pdf',
-    abstract: abstractMock
+
   },
   {
     title: 'Accelerated Ageing of Aluminum Electrolytic Capacitor',
@@ -1110,7 +1108,7 @@ export const conferences: Publication[] = [
     year: '2015',
     type: 'conference',
     link: 'https://www.ee.iitb.ac.in/npec/Papers/Program/NPEC_2015_paper_55.pdf',
-    abstract: abstractMock
+
   },
   {
     title: 'An Online Technique For Condition Monitoring Of Capacitor In PV System',
@@ -1119,7 +1117,7 @@ export const conferences: Publication[] = [
     year: '2015',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7125215',
-    abstract: abstractMock
+
   },
   {
     title: 'Online Monitoring of Power Extraction Efficiency for Minimizing Payback Period of Solar PV System',
@@ -1128,7 +1126,7 @@ export const conferences: Publication[] = [
     year: '2015',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7125520',
-    abstract: abstractMock
+
   },
   {
     title: 'Eigenvalue Sensitivity Analysis of Microgrid with Constant Power Loads',
@@ -1137,7 +1135,7 @@ export const conferences: Publication[] = [
     year: '2014',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7041967',
-    abstract: abstractMock
+
   },
   {
     title: 'Power Management Control for Solar Photovoltaic Based DC System',
@@ -1146,7 +1144,7 @@ export const conferences: Publication[] = [
     year: '2014',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/7049159',
-    abstract: abstractMock
+
   },
   {
     title: 'Multilevel Open-ended Transformer Based Grid Feeding Inverter for Solar Photovoltaic Application',
@@ -1155,7 +1153,7 @@ export const conferences: Publication[] = [
     year: '2012',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/6389047',
-    abstract: abstractMock
+
   },
   {
     title: 'Optimal Charging of Battery using Solar PV in Standalone DC System',
@@ -1164,7 +1162,7 @@ export const conferences: Publication[] = [
     year: '2012',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/6242191',
-    abstract: abstractMock
+
   },
   {
     title: 'Steady State Performance Analysis for Load Sharing in DC Distributed Generation System',
@@ -1173,7 +1171,7 @@ export const conferences: Publication[] = [
     year: '2011',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/5874577',
-    abstract: abstractMock
+
   },
   {
     title: 'A New 4-level Open-Ended Transformer based STATCOM for High Power Applications',
@@ -1182,7 +1180,7 @@ export const conferences: Publication[] = [
     year: '2010',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/5675316',
-    abstract: abstractMock
+
   },
   {
     title: 'Optimal Voltage Level for DC Microgrids',
@@ -1191,7 +1189,7 @@ export const conferences: Publication[] = [
     year: '2010',
     type: 'conference',
     link: 'https://ieeexplore.ieee.org/document/5674947',
-    abstract: abstractMock
+
   },
   {
     title: 'A New Differential VRM Topology for Microprocessor Applications',
@@ -1200,7 +1198,7 @@ export const conferences: Publication[] = [
     year: '2007',
     type: 'conference',
     link: '—',
-    abstract: abstractMock
+
   },
 ];
 
@@ -1213,7 +1211,7 @@ export const patents: Publication[] = [
     year: "2016",
     status: "Granted (10/01/2024)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "A voltage measurement circuit and method thereof",
@@ -1223,7 +1221,7 @@ export const patents: Publication[] = [
     year: "2018",
     status: "Granted (08/12/2023)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "Control Device",
@@ -1233,7 +1231,7 @@ export const patents: Publication[] = [
     year: "2018",
     status: "Granted (13/01/2022)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "Method for Monitoring the health of Aluminum Electrolytic Capacitor",
@@ -1243,7 +1241,7 @@ export const patents: Publication[] = [
     year: "2016",
     status: "Granted (20/06/2022)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "Regenerative snubber circuit for flyback and other converters and method thereof",
@@ -1253,7 +1251,7 @@ export const patents: Publication[] = [
     year: "2019",
     status: "Granted (17/10/2022)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "A method for monitoring of bond wire degradation in Insulated Gate Bipolar Transistor",
@@ -1263,7 +1261,7 @@ export const patents: Publication[] = [
     year: "2016",
     status: "Granted (13/01/2023)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "Wall mounted speed regulator for a BLDC motor driven ceiling fan",
@@ -1273,7 +1271,7 @@ export const patents: Publication[] = [
     year: "2011",
     status: "Granted (30/04/2024)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "An ultrafast self-powered circuit for gate driving of normally-ON transistors",
@@ -1283,7 +1281,7 @@ export const patents: Publication[] = [
     year: "2023",
     status: "Published (June 2023)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: "On-board charging system for electric vehicles",
@@ -1293,7 +1291,7 @@ export const patents: Publication[] = [
     year: "2022",
     status: "Published (Nov 2022)",
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: 'Methods and Systems for Controlling Permanent Magnet Synchronous Machine (PMSM) Motor',
@@ -1303,7 +1301,7 @@ export const patents: Publication[] = [
     year: '2025',
     status: 'Application Date: 03/April/2025',
     type: 'patent',
-    abstract: abstractMock
+
   },
   {
     title: 'Brush-less axial flux dual rotor wound field synchronous machine',
@@ -1313,6 +1311,6 @@ export const patents: Publication[] = [
     year: '2025',
     status: 'Application Date: 29/Dec/2025 (Additional 3 design patents: 485462-001, 485463-001, 485464-001)',
     type: 'patent',
-    abstract: abstractMock
+
   }
 ];

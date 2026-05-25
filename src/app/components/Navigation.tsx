@@ -130,8 +130,7 @@ export function Navigation() {
                 IIT Bombay
               </span>
               <span className="text-xs md:text-sm font-medium text-[#64748b]">
-                HiPER Lab
-              </span>
+                HiPER Lab              </span>
             </div>
           </button>
 

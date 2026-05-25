@@ -108,7 +108,7 @@ export default function HomePage() {
         },
         {
             title: 'Achievements',
-            desc: 'Our faculty and students have been recognized with numerous prestigious awards and fellowships, including the INSA Associate Fellowship and several Best Paper Awards at international conferences, reflecting our commitment to research excellence.',
+            desc: 'Our faculty and students have been recognized with numerous prestigious awards and fellowships, including the INSA Associate Fellowship and several international student competitions, reflecting our commitment to research excellence.',
             icon: Trophy,
             link: '/achievements',
             color: 'text-amber-500',
