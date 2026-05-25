@@ -1,5 +1,5 @@
-import { HeroSection } from '@/app/components/HeroSection';
-import { ContactSection } from '@/app/components/ContactSection';
+import { HeroSection } from '../components/HeroSection';
+import { ContactSection } from '../components/ContactSection';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, BookOpen, Users, FolderKanban, FlaskConical, GraduationCap, ChevronLeft, ChevronRight, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -25,7 +25,7 @@ function Slideshow({ images }: { images: string[] }) {
         if (images.length <= 1) return;
         const timer = setInterval(() => {
             nextSlide();
-        }, 5000);
+        }, 8000);
         return () => clearInterval(timer);
     }, [images.length]);
 

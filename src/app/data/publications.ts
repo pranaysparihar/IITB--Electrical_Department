@@ -8,6 +8,7 @@ export interface Publication {
   link?: string;
   number?: string;
   status?: string;
+  abstract?: string;
 }
 
 

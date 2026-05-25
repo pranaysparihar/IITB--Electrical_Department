@@ -567,9 +567,9 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        {/* Closed Projects */}
+        {/* Completed Projects */}
         <div id="projects-closed" className="scroll-mt-28">
-          <h3 className="text-3xl font-bold text-[#0f172a] mb-8 border-l-4 border-[#06b6d4] pl-4">Closed Projects</h3>
+          <h3 className="text-3xl font-bold text-[#0f172a] mb-8 border-l-4 border-[#06b6d4] pl-4">Completed Projects</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {closedProjects.map((project, index) => (
               <ProjectCard key={index} project={project} index={index} />

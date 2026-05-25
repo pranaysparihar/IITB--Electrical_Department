@@ -269,12 +269,14 @@ export function PublicationsSection() {
                   )}
                 </div>
 
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-[#0f172a] mb-3">Abstract</h4>
-                  <p className="text-gray-600 leading-relaxed">
-                    {selectedPub.abstract}
-                  </p>
-                </div>
+                {selectedPub.abstract && (
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-[#0f172a] mb-3">Abstract</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {selectedPub.abstract}
+                    </p>
+                  </div>
+                )}
 
                 <div className="flex justify-end gap-4 mt-8 pt-6 border-t border-gray-100">
                   <button
