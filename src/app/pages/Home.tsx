@@ -81,7 +81,7 @@ export default function HomePage() {
     const sections = [
         {
             title: 'About Group',
-            desc: 'The research group led by Prof. Sandeep Anand at IIT Bombay focuses on advanced power electronics with applications in electric mobility and sustainable energy systems. The group’s work spans electric vehicle drivertrain and charging technologies, wide bandgap (GaN and SiC)–based power converters, and circuits for integrating renewable and alternate energy sources such as solar PV, batteries, and fuel cells. The group combines fundamental research with practical, industry-relevant solutions.',
+            desc: 'Our research group actively collaborates with industry and undertakes projects funded by the Department of Science and Technology (DST) in the domains of electric mobility and renewable energy systems. Our work focuses on the development of power electronic converters, electric motors, and their control systems. This includes BLDC motors, motor controllers, and advanced control algorithms for electric vehicles, as well as GaN- and SiC-based inverters. We are also working on the development of solid-state transformers that offer significant reductions in size and improvements in efficiency compared to conventional low-frequency transformers. In addition, we conduct extensive reliability studies on power electronic converters to enhance their lifetime, robustness, and suitability for demanding operating environments.',
             icon: GraduationCap,
             link: '/about',
             color: 'text-indigo-500',
