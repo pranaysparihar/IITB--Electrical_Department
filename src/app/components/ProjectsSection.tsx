@@ -27,7 +27,7 @@ export function ProjectsSection() {
     // PI PROJECTS - ACTIVE
     {
       title: 'E-RIDES (e-node for EVs at IITB)',
-      description: 'Establishment of a PEMD theme e-node for EVs at IITB under ANRF. Leading IITB team and 3 work packages.',
+      description: 'Our research group actively collaborates with industry and undertakes projects funded by the Department of Science and Technology (DST) in the domains of electric mobility and renewable energy systems. Our work focuses on the development of power electronic converters, electric motors, and their control systems. This includes BLDC motors, motor controllers, and advanced control algorithms for electric vehicles, as well as GaN- and SiC-based inverters. We are also working on the development of solid-state transformers that offer significant reductions in size and improvements in efficiency compared to conventional low-frequency transformers. In addition, we conduct extensive reliability studies on power electronic converters to enhance their lifetime, robustness, and suitability for demanding operating environments.',
       status: 'ongoing',
       tags: ['EV', 'PEMD', 'Principal Investigator'],
       funding: 'ANRF',
@@ -553,7 +553,7 @@ export function ProjectsSection() {
             Projects
           </h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto mb-8">
-            Funded research projects driving innovation in electric machines and power systems
+            Developing commercially viable clean energy technologies backed by strategic industry partnerships and robust research funding
           </p>
         </motion.div>
 

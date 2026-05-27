@@ -39,7 +39,7 @@ export default function NewsPage() {
                 >
                     <h1 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6">Lab News</h1>
                     <p className="text-xl text-[#64748b] max-w-3xl">
-                        Stay updated with the latest announcements, publications, and milestones from the HiPER Laboratory on our <a href="https://www.linkedin.com/company/c1973-ev-powertrain-lab/" target="_blank" rel="noopener noreferrer" className="text-[#06b6d4] hover:underline font-medium">LinkedIn</a>.
+                        Stay updated with the latest announcements, publications, and milestones from the Prof. Sandeep Anand's Research Group Laboratory on our <a href="https://www.linkedin.com/company/c1973-ev-powertrain-lab/" target="_blank" rel="noopener noreferrer" className="text-[#06b6d4] hover:underline font-medium">LinkedIn</a>.
                     </p>
                 </motion.div>
 

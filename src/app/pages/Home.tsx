@@ -130,7 +130,7 @@ export default function HomePage() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-[#0f172a] mb-6"
                     >
-                        Welcome HiPER Lab
+                        Welcome Prof. Sandeep Anand's Research Group Lab
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

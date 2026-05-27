@@ -21,7 +21,7 @@ export function ContactSection() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['(O): +91-22-2576-7409'],
+      details: ['(O): +91-22-21593507'],
     },
   ];
 
