@@ -81,7 +81,7 @@ export default function HomePage() {
     const sections = [
         {
             title: 'About Group',
-            desc: 'Our research group actively collaborates with industry and undertakes projects funded by the Department of Science and Technology (DST) in the domains of electric mobility and renewable energy systems. Our work focuses on the development of power electronic converters, electric motors, and their control systems. This includes BLDC motors, motor controllers, and advanced control algorithms for electric vehicles, as well as GaN- and SiC-based inverters. We are also working on the development of solid-state transformers that offer significant reductions in size and improvements in efficiency compared to conventional low-frequency transformers. In addition, we conduct extensive reliability studies on power electronic converters to enhance their lifetime, robustness, and suitability for demanding operating environments.',
+            desc: 'Our research group operates at the forefront of next-generation transportation and power electronics, closely collaborating with the Electric Vehicle (EV) Laboratory and the Medium Voltage (MV) Laboratory. We are dedicated to advancing the efficiency, power density, and sustainability of clean energy systems through cutting-edge hardware design and advanced control topologies.',
             icon: GraduationCap,
             link: '/about',
             color: 'text-indigo-500',
@@ -99,7 +99,7 @@ export default function HomePage() {
         },
         {
             title: 'Projects',
-            desc: 'Our lab focuses on the development and analysis of advanced power electronic converters for efficient energy conversion and control in applications such as electric vehicles, renewable energy systems, and battery-integrated systems. We emphasize the use of modern technologies, including wide bandgap devices (SiC/GaN), to enhance system performance and efficiency. Our work also involves designing reliable power electronic circuits for interfacing energy sources such as solar PV and batteries, with a focus on improving overall system efficiency, power quality, and reliability.',
+            desc: 'E-RIDES (Empowering Research in Indigenous Development of EV Sub-systems) under the ANRFs MAHA-EV Mission to drive innovation in Indias electric mobility sector. Our research group actively collaborates with industry and undertakes projects funded by the Department of Science and Technology (DST) in the domains of electric mobility and renewable energy systems. Our work focuses on the development of power electronic converters, electric motors, and their control systems. This includes BLDC motors, motor controllers, and advanced control algorithms for electric vehicles, as well as GaN- and SiC-based inverters. We are also working on the development of solid-state transformers that offer significant reductions in size and improvements in efficiency compared to conventional low-frequency transformers. In addition, we conduct extensive reliability studies on power electronic converters to enhance their lifetime, robustness, and suitability for demanding operating environments.',
             icon: FolderKanban,
             link: '/projects',
             color: 'text-emerald-500',
