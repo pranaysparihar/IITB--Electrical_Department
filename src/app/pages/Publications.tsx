@@ -57,7 +57,7 @@ function ResearchSlideshow() {
                     transition={{ delay: 0.2 }}
                     className="text-xl text-gray-200 max-w-3xl"
                 >
-                    Pioneering innovations in power electronics, electric machines, and advanced motor control systems.
+                    Notable Research and Developments related to Electric Vehicles such as motors, motor controllers, and advanced control algorithms for electric vehicles are mentioned below
                 </motion.p>
             </div>
 

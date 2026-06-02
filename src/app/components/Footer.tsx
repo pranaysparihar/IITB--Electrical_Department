@@ -48,7 +48,7 @@ export function Footer() {
               <span className="text-xl font-semibold">Prof. Sandeep Anand's Research Group Lab</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Prof. Sandeep Anand's Research Lab<br />
+              Prof. Sandeep Anand's Research Group Lab<br />
               Indian Institute of Technology, Bombay
             </p>
             <div className="flex gap-3">
