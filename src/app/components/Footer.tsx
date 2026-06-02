@@ -47,9 +47,6 @@ export function Footer() {
               </div>
               <span className="text-xl font-semibold">Prof. Sandeep Anand's Research Group Lab</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-2">
-              Electric Machines & Drives Laboratory
-            </p>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Electrical Engineering Department<br />
               Indian Institute of Technology, Bombay
