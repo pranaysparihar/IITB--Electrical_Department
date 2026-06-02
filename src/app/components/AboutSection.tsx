@@ -20,7 +20,7 @@ export function AboutSection() {
             About
           </h2>
           <p className="text-xl text-[#64748b] max-w-3xl mx-auto">
-            Lab Details
+            Welcome
           </p>
         </motion.div>
 

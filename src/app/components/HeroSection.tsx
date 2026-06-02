@@ -44,7 +44,7 @@ export function HeroSection() {
           className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto"
         >
           {[
-            { label: 'Projects', value: '8+' },
+            { label: 'Projects', value: '40+' },
             { label: 'Publications', value: '135+' },
             { label: 'Team Members', value: '16+' },
           ].map((stat, index) => (
