@@ -397,7 +397,7 @@ export const conferences: Publication[] = [
     venue: 'IEEE Energy Conversion Congress and Exposition Europe, ECCE Europe 2026, Valencia, Spain',
     year: '2026',
     type: 'conference',
-    link: '#',
+    link: 'https://www.mdpi.com/1996-1073/17/7/1555?utm_source=researchgate.net&utm_medium=article',
 
   },
   {
@@ -406,7 +406,7 @@ export const conferences: Publication[] = [
     venue: 'International Power Electronics Conference (IPEC) - IEEE ECCE Asia’2026, Nagasaki, Japan',
     year: '2026',
     type: 'conference',
-    link: '#',
+    link: 'http://mdpi.com/1996-1073/17/10/2285',
 
   },
   {
@@ -415,7 +415,7 @@ export const conferences: Publication[] = [
     venue: 'International Exhibition and Conference for Power Electronics, Intelligent Motion, Renewable Energy and Energy Management, PCIM Europe 2026, Nürnberg, Germany',
     year: '2026',
     type: 'conference',
-    link: '#',
+    link: 'https://www.mdpi.com/2079-9292/14/14/2791',
 
   },
   {
@@ -460,7 +460,7 @@ export const conferences: Publication[] = [
     venue: '17th IEEE Energy Conversion Congress and Exposition Asia, ECCE Asia 2025, Bengaluru, India',
     year: '2025',
     type: 'conference',
-    link: '#',
+    link: 'https://ieeexplore.ieee.org/document/11112059/',
 
   },
   {
@@ -469,7 +469,7 @@ export const conferences: Publication[] = [
     venue: 'International Exhibition and Conference for Power Electronics, Intelligent Motion, Renewable Energy and Energy Management, PCIM Europe 2025, Nürnberg, Germany',
     year: '2025',
     type: 'conference',
-    link: '#',
+    link: 'https://ieeexplore.ieee.org/document/11053387',
 
   },
   {
@@ -478,7 +478,7 @@ export const conferences: Publication[] = [
     venue: '40th Annual IEEE Applied Power Electronics Conference & Exposition, APEC’2025, Atlanta, Georgia, USA',
     year: '2025',
     type: 'conference',
-    link: '#',
+    link: 'https://ieeexplore.ieee.org/document/11112059/',
 
   },
   {
@@ -532,7 +532,7 @@ export const conferences: Publication[] = [
     venue: 'IEEE Transportation Electrification Conference and Expo., ITEC’2024, Rosemont, IL, USA',
     year: '2024',
     type: 'conference',
-    link: '#',
+    link: 'https://ieeexplore.ieee.org/document/10598930',
 
   },
   {
