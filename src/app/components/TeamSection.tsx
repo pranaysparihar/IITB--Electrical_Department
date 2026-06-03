@@ -12,6 +12,10 @@ import shazebphoto from '../../assets/Team/Mohd_Shazeb.png';
 import sagnikphoto from '../../assets/Team/Sagnik_Banerjee.jpeg';
 import varunphoto from '../../assets/Team/Varun_Lal.png';
 import priyaphoto from '../../assets/Team/Priya_Sinsinwar.jpeg';
+import rohanphoto from '../../assets/Team/Rohan_Jadhav.png';
+import rhitamphoto from "../../assets/Team/Rhitam_Das.png";
+import srivardhanphoto from "../../assets/Team/Srivardhan.png";
+import littlephoto from "../../assets/Team/Little.png";
 import {
   Dialog,
   DialogContent,
@@ -183,7 +187,7 @@ export function TeamSection() {
       const tab = hash.replace('#', '');
       if (['current', 'graduated', 'prospective'].includes(tab)) {
         setActiveTab(tab as any);
-        
+
         // Scroll to the students section after a small delay to ensure tab is rendered
         setTimeout(() => {
           const element = document.getElementById('team-students');
@@ -284,6 +288,46 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       email: 'shazeb@iitb.ac.in',
       linkedin: 'https://www.linkedin.com/in/mohd-shazeb-6706ba293',
       image: shazebphoto,
+    },
+    {
+      name: 'Rohan Jadhav',
+      role: 'M.Tech Student',
+      type: 'Masters',
+      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
+      about: 'I am an M.Tech student (Class of 2028) in Power Electronics and Power Systems at IIT Bombay. I am currently working on an ANRF-sponsored project focused on the reliability of semiconductor devices. I completed my B.Tech degree in Electrical Engineering from SGGSIE&T, Nanded in 2025.',
+      email: 'rohanc216092@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/rohan-jadhav-264775380',
+      image: rohanphoto,
+    },
+    {
+      name: 'Rhitam Das',
+      role: 'M.Tech Student',
+      type: 'Masters',
+      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
+      about: 'I am a M.Tech student at IIT Bombay, specializing in Power Electronics. My research focuses on the design and control of  DC-DC converters. Prior to this, I completed my undergrad in  Electrical Engineering from the University of Calcutta',
+      email: '24m1101@iitb.ac.in',
+      linkedin: 'https://www.linkedin.com/in/rhitam-das',
+      image: rhitamphoto,
+    },
+    {
+      name: 'Srivardhan',
+      role: 'M.Tech Student',
+      type: 'Masters',
+      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
+      about: 'I am currently pursuing my  PHD in Power Electronics and Power Systems at IIT Bombay, focusing on the design and development of medium-voltage grid-connected converters. I completed my B.Tech in Electrical Engineering from V R Siddhartha Engineering college, Vijayawada in 2024. Prior to joining IIT Bombay, I worked as a junior electronics engineer at OITech Solutions.',
+      email: 'vardhanmachavolu18@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/sri-vardhan-sarma-8104bb235/',
+      image: srivardhanphoto,
+    },
+    {
+      name: 'Little',
+      role: 'M.Tech Student',
+      type: 'Masters',
+      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
+      about: 'I am a Project Scientist II in the Department of Electrical Engineering at the Indian Institute of Technology Bombay, Mumbai, India. I completed my Ph.D. in 2025 from the Department of Electrical, Electronics, and Communication Engineering at the Indian Institute of Technology Dharwad, Karnataka, India. I received my M.Tech. degree in Power Electronics, Control, and Drives from Veer Surendra Sai University of Technology, Burla, Odisha, in 2020. My research interests include grid-connected multilevel inverters and the design and control of medium-voltage solid-state transformers.',
+      email: 'littlepradhan94@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/little-pradhan-844b66252/',
+      image: littlephoto,
     },
     {
       name: 'Sagnik Banerjee',
