@@ -321,7 +321,7 @@ I work in the area of Power Electronics, wherein my research interests are Elect
     },
     {
       name: 'Little',
-      role: 'M.Tech Student',
+      role: "Post Doc",
       type: 'Masters',
       interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
       about: 'I am a Project Scientist II in the Department of Electrical Engineering at the Indian Institute of Technology Bombay, Mumbai, India. I completed my Ph.D. in 2025 from the Department of Electrical, Electronics, and Communication Engineering at the Indian Institute of Technology Dharwad, Karnataka, India. I received my M.Tech. degree in Power Electronics, Control, and Drives from Veer Surendra Sai University of Technology, Burla, Odisha, in 2020. My research interests include grid-connected multilevel inverters and the design and control of medium-voltage solid-state transformers.',
