@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { FlaskConical } from 'lucide-react';
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
@@ -12,8 +12,12 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-[#06b6d4]/20 rounded-2xl mb-6">
-            <FlaskConical className="w-10 h-10 text-[#06b6d4]" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl mb-6 p-2 shadow-md">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/1/1d/Indian_Institute_of_Technology_Bombay_Logo.svg"
+              alt="IIT Bombay Logo"
+              className="w-16 h-16 object-contain"
+            />
           </div>
         </motion.div>
 

@@ -198,7 +198,7 @@ export function ResearchSection() {
                       <div className="flex-1 flex flex-col justify-between h-full">
                         <div>
                           <motion.div layout className="flex items-start justify-between gap-4 mb-2">
-                            <motion.h3 className="text-xl font-semibold text-[#0f172a] group-hover:text-[#06b6d4] transition-colors line-clamp-2">
+                            <motion.h3 className={`text-xl font-semibold text-[#0f172a] group-hover:text-[#06b6d4] transition-colors ${isExpanded ? '' : 'line-clamp-2'}`}>
                               {area.link ? (
                                 <a
                                   href={area.link}
@@ -214,10 +214,12 @@ export function ResearchSection() {
                               )}
                             </motion.h3>
                           </motion.div>
-                          <motion.p layout className="text-sm text-[#06b6d4] font-medium mb-3 line-clamp-2">{area.subtitle}</motion.p>
-                          <motion.p layout className="text-[#475569] text-sm leading-relaxed mb-6">
-                            {area.description}
-                          </motion.p>
+                          <motion.p layout className={`text-sm text-[#06b6d4] font-medium mb-3 ${isExpanded ? '' : 'line-clamp-2'}`}>{area.subtitle}</motion.p>
+                          {!isExpanded && (
+                            <motion.p layout className="text-[#475569] text-sm leading-relaxed mb-6 line-clamp-3">
+                              {area.abstract}
+                            </motion.p>
+                          )}
                         </div>
 
                         <button
