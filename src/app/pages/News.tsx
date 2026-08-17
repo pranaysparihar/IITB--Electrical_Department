@@ -5,6 +5,14 @@ export default function NewsPage() {
     const newsItems = [
         {
             id: 1,
+            title: "Call for Papers: Inaugural IEEE South Asia Power Electronics Conference (SAPEC 2027)",
+            date: "June 3–5, 2027",
+            summary: "We are thrilled to announce the Call for Papers for the inaugural IEEE South Asia Power Electronics Conference (SAPEC), hosted for the very first time by the Indian Institute of Technology Bombay (IIT Bombay) in Mumbai, India from 3 to 5 June, 2027! For more details, please visit us at https://sapec.org/",
+            category: "Conference",
+            link: "https://sapec.org/"
+        },
+        {
+            id: 2,
             title: "Pleased to see E-RIDES featured in RISE@IITB (IRCC Newsletter, 2026 Issue 1)",
             date: "May 1, 2026",
             summary: "The Research and Innovation in Sciences and Engineering (RISE@IITB) newsletter by the Industrial Research & Consultancy Centre highlights the breadth of cutting-edge work at IIT Bombay, and we’re excited to see the E-RIDES initiative showcased as part of this innovation ecosystem.",
@@ -12,7 +20,7 @@ export default function NewsPage() {
             link: "#"
         },
         {
-            id: 2,
+            id: 3,
             title: "Register Now | Power Electronics in Practice: From Magnetics to Gate Drivers",
             date: "April 25, 2026",
             summary: "Hands-on, simulation-based learning with IIT Bombay Faculty. July 4–25, 2026 (Weekends). Earn an IIT Bombay Certificate.",
@@ -20,7 +28,7 @@ export default function NewsPage() {
             link: "#"
         },
         {
-            id: 3,
+            id: 4,
             title: "E-Mobility Industry–Academia Conclave",
             date: "April 24, 2026",
             summary: "Gain insights into 2026 EV powertrain requirements, safety, and power electronics. Registration: https://lnkd.in/gnjq-z4c",
@@ -69,6 +77,17 @@ export default function NewsPage() {
                                         {item.summary}
                                     </p>
                                 </div>
+                                {item.link && item.link !== "#" && (
+                                    <a
+                                        href={item.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#06b6d4]/10 text-[#06b6d4] hover:bg-[#06b6d4] hover:text-white font-medium text-sm transition-all shrink-0"
+                                    >
+                                        Visit Link
+                                        <ExternalLink className="w-4 h-4" />
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}

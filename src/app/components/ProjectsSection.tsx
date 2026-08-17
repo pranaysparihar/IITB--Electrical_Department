@@ -72,7 +72,7 @@ export function ProjectsSection() {
     {
       title: 'PMSM Controllers for Electric 2/3 Wheelers',
       description: 'Design and development of efficient PMSM controllers specifically for light electric vehicles.',
-      status: 'ongoing',
+      status: 'completed',
       tags: ['PMSM', 'EV', 'Motor Control', 'Principal Investigator'],
       funding: 'TRC Deeptech, IIT Bombay',
       year: '2024-2025',

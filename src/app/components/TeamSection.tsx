@@ -94,9 +94,9 @@ const graduatedStudents = {
   postdocs: [
     { name: 'Dr. Abhinav Arya', topic: 'Reliability of power electronic, EV chargers, EV motor drive', degree: 'Institute Post-Doc', year: 'Nov 2023 – July 2024', placement: 'IIT-BBS (Assistant Professor)' },
     { name: 'Dr. Martin Cheerangal', topic: 'Motor Drive, EV Powertrain', degree: 'Project Research Scientist', year: 'Sep 2023 – Feb 2024', placement: 'Khalifa University (post-doc)' },
+    { name: 'Waseem Ahmad', topic: "Health Monitoring of AEC's for Power Electronic Applications", degree: 'Ph.D.', year: '2018', placement: 'NUS (Post-Doc), Assistant Prof. at NIT Surathkal' },
   ],
   phd: [
-    { name: 'Waseem Ahmad', topic: "Health Monitoring of AEC's for Power Electronic Applications", degree: 'Ph.D.', year: '2018', placement: 'NUS (Post-Doc), Assistant Prof. at NIT Surathkal' },
     { name: 'Shirazul Islam', topic: 'Stability Analysis and Control of AC and DC Microgrids with Constant Power Loads', degree: 'Ph.D.', year: '2021', coAdvisor: 'Dr. S. R. Sahoo', placement: 'Research Associate at Qatar University' },
     { name: 'Anubrata Das', topic: 'Inverter Based Resource: Control Towards Grid Support Functionalities and Improved Reliability', degree: 'Ph.D.', year: '2022', coAdvisor: 'Dr. S. R. Sahoo', placement: 'Post-Doc at University of Tennessee at Knoxville, USA' },
     { name: 'Shyam AB', topic: 'Analyzing The Effect Of Data Exchange Among Secondary Controllers In Dc Microgrid', degree: 'Ph.D.', year: 'June 2023', coAdvisor: 'Dr. S. R. Sahoo', placement: 'Assistant Prof. at IIT (ISM) Dhanbad' },
@@ -129,7 +129,6 @@ const graduatedStudents = {
     { name: 'Saumya Bohra', topic: 'Regenerative Snubber Circuit for GaN HEMT Based Flyback Converter', degree: 'M.Tech', year: '2019', placement: 'Intel' },
     { name: 'Siddharth Jain', topic: 'Design of LCL Filter for Wide Bandgap Devices Based Grid-Connected Inverter', degree: 'M.Tech', year: '2020', placement: 'Maxlinear' },
     { name: 'Akshata Rajput', topic: 'A LLC resonant converter with wide output voltage range for USB - power delivery', degree: 'MS(R)', year: '2021', coAdvisor: 'Dr. S. R. Sahoo', placement: 'Solar Energy Corporation of India (SECI)' },
-    { name: 'Siva Prabhakar', topic: 'Stability Improvement of Series Stacked Buffer Circuit in Single Phase Solar Inverter', degree: 'M.Tech', year: 'Oct 2020', coAdvisor: 'Dr. S. Chakrabarti', placement: 'Joined IITB for Ph.D.' },
     { name: 'Bhismadev Meher', topic: 'Accurate Flux Estimation of the Transformer and Development of Control Switching Device for Inrush Current Minimization', degree: 'M.Tech', year: 'July 2020', coAdvisor: 'Dr. S. Chakrabarti', placement: 'Qualcomm' },
     { name: 'Sai Sowmya Nagam', topic: 'Gaussian Process Regression based Fault Location in DC Microgrid', degree: 'M.Tech', year: 'Dec 2019', coAdvisor: 'Dr. Abheejeet Mohapatra', placement: 'Joined Imperial College London for Ph.D.' },
     { name: 'Pankaj Kumar', topic: 'Collector-Emitter Voltage Based Health Monitoring of Bond Wire in IGBT at Low Gate Voltage', degree: 'BT-MT', year: 'June 2020', coAdvisor: 'Dr. S. Chakrabarti', placement: 'Qualcomm' },
@@ -146,6 +145,8 @@ const graduatedStudents = {
     { name: 'Mohd Ismail', topic: 'Gate Driver Integrated Online Health Monitoring of SiC MOSFETs', degree: 'M.Tech (RA)', year: 'June 2025', placement: 'Tesla, Germany' },
     { name: 'Sagar De', topic: 'Active Power Decoupling Techniques for Single-Phase Power Converters', degree: 'M.Tech (RA)', year: 'June 2025', placement: 'Ultraviolet' },
     { name: 'Yajush Sihag', topic: 'Comparative Study of Dynamic Ron in GaN Power Transistor Under Voltage and Short Circuit Stress', degree: 'M.Tech', year: 'June 2025', placement: 'Hind Rectifiers' },
+    { name: 'Rhitam Das', topic: 'Design and control of DC-DC converters.', degree: 'M.Tech', placement: 'Renesas Electronics' },
+    { name: 'Ratindranath Mal', topic: 'Series connection of GaN', degree: 'M.Tech', placement: 'Reliance Power' },
   ]
 };
 
@@ -260,14 +261,14 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       image: varunphoto,
     },
     {
-      name: 'Priya Sinsinwar',
+      name: 'Srivardhan',
       role: 'PhD Student',
       type: 'PhD',
-      interests: 'Medium-frequency transformers, isolated DC–DC converters, soft-switching estimation, and magnetic integration.',
-      about: 'I am currently pursuing my Ph.D. in the Department of Electrical Engineering at the Indian Institute of Technology Bombay (IIT Bombay), India. My research interests include the design and optimization of medium-frequency transformers, magnetic component integration for DC–DC converters to enhance power density, and accurate soft-switching estimation methods for isolated DC–DC converters. I earned my B.Tech degree in Electrical and Electronics Engineering from Banasthali Vidyapith, India, in 2017. I have been honored with the Innovative Concept Award at the International Future Energy Challenge (IFEC) 2023 and received the Outstanding Teaching Assistant Award at IIT Bombay.',
-      email: 'priyasinsinwar@iitb.ac.in',
-      linkedin: 'https://www.linkedin.com/in/priya-sinsinwar-b7302391/',
-      image: priyaphoto,
+      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
+      about: 'I am currently pursuing my PHD in Power Electronics and Power Systems at IIT Bombay, focusing on the design and development of medium-voltage grid-connected converters. I completed my B.Tech in Electrical Engineering from V R Siddhartha Engineering college, Vijayawada in 2024. Prior to joining IIT Bombay, I worked as a junior electronics engineer at OITech Solutions.',
+      email: 'vardhanmachavolu18@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/sri-vardhan-sarma-8104bb235/',
+      image: srivardhanphoto,
     },
     {
       name: 'Narendra Muley',
@@ -280,16 +281,6 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       image: narendraphoto,
     },
     {
-      name: 'Mohd Shazeb',
-      role: 'M.Tech Student',
-      type: 'Masters',
-      interests: 'Power Electronics, motor drive systems, and SiC-based high-power converter design.',
-      about: 'I am an M.Tech student in Power Electronics at the Indian Institute of Technology Bombay (IIT Bombay). My research interests lie in Power Electronics, with a focus on motor drive systems and high-power converter design. I have worked on the design and development of a 5 kW motor controller and am currently involved in the design and development of a SiC-based 20 kW motor controller aimed at achieving high efficiency and high-performance operation. I completed my B.Tech in Electrical Engineering from Aligarh Muslim University in 2024.',
-      email: 'shazeb@iitb.ac.in',
-      linkedin: 'https://www.linkedin.com/in/mohd-shazeb-6706ba293',
-      image: shazebphoto,
-    },
-    {
       name: 'Rohan Jadhav',
       role: 'M.Tech Student',
       type: 'Masters',
@@ -298,26 +289,6 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       email: 'rohanc216092@gmail.com',
       linkedin: 'https://www.linkedin.com/in/rohan-jadhav-264775380',
       image: rohanphoto,
-    },
-    {
-      name: 'Rhitam Das',
-      role: 'M.Tech Student',
-      type: 'Masters',
-      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
-      about: 'I am a M.Tech student at IIT Bombay, specializing in Power Electronics. My research focuses on the design and control of  DC-DC converters. Prior to this, I completed my undergrad in  Electrical Engineering from the University of Calcutta',
-      email: '24m1101@iitb.ac.in',
-      linkedin: 'https://www.linkedin.com/in/rhitam-das',
-      image: rhitamphoto,
-    },
-    {
-      name: 'Srivardhan',
-      role: 'M.Tech Student',
-      type: 'Masters',
-      interests: 'Medium-voltage grid-connected converters, power electronics, and power systems.',
-      about: 'I am currently pursuing my  PHD in Power Electronics and Power Systems at IIT Bombay, focusing on the design and development of medium-voltage grid-connected converters. I completed my B.Tech in Electrical Engineering from V R Siddhartha Engineering college, Vijayawada in 2024. Prior to joining IIT Bombay, I worked as a junior electronics engineer at OITech Solutions.',
-      email: 'vardhanmachavolu18@gmail.com',
-      linkedin: 'https://www.linkedin.com/in/sri-vardhan-sarma-8104bb235/',
-      image: srivardhanphoto,
     },
     {
       name: 'Little',
