@@ -16,6 +16,8 @@ import rohanphoto from '../../assets/Team/Rohan_Jadhav.png';
 import rhitamphoto from "../../assets/Team/Rhitam_Das.png";
 import srivardhanphoto from "../../assets/Team/Srivardhan.png";
 import littlephoto from "../../assets/Team/Little.png";
+import tuhinphoto from "../../assets/Team/Tuhin.png";
+import sivaphoto from "../../assets/Team/Siva.JPG";
 import {
   Dialog,
   DialogContent,
@@ -269,6 +271,26 @@ I work in the area of Power Electronics, wherein my research interests are Elect
       email: 'vardhanmachavolu18@gmail.com',
       linkedin: 'https://www.linkedin.com/in/sri-vardhan-sarma-8104bb235/',
       image: srivardhanphoto,
+    },
+    {
+      name: 'Tuhin Mitra',
+      role: 'PhD Student',
+      type: 'PhD',
+      interests: 'Power semiconductor reliability, physics-based degradation modelling, accelerated reliability testing, condition monitoring, PHM, and reliability-oriented design of power electronic converters.',
+      about: 'I am a PhD student in the Department of Electrical Engineering at the Indian Institute of Technology Bombay (IIT Bombay), India. My research focuses on the application of reliability engineering in power electronics. I received my M.Tech. degree in Power Electronics and Drives from the Indian Institute of Technology Mandi (IIT Mandi), India, and my B.Tech. degree in Electrical Engineering from Jalpaiguri Government Engineering College, India. Before joining IIT Bombay as a PhD candidate, I accumulated four years of professional experience spanning both industry and academia. My research interests include power semiconductor reliability, physics-based degradation modelling, accelerated reliability testing, condition monitoring, prognostics and health management (PHM), and reliability-oriented design of power electronic converters.',
+      email: 'tmitra.tuhin.07@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/tuhin-mitra-610538161/',
+      image: tuhinphoto,
+    },
+    {
+      name: 'Siva Prabhakar',
+      role: 'PhD Student',
+      type: 'PhD',
+      interests: 'High-efficiency power electronic converters for electric vehicle applications, isolated DC-DC converters, onboard chargers, auxiliary power modules, and integrated power converter topologies.',
+      about: 'I am a Ph.D. student in the Department of Electrical Engineering at the Indian Institute of Technology Bombay (IIT Bombay), India. My research interests include high-efficiency power electronic converters for electric vehicle applications, with a particular focus on isolated DC-DC converters, onboard chargers, auxiliary power modules, and integrated power converter topologies. I received my M.Tech in Power Engineering from the Indian Institute of Technology Kanpur (IIT Kanpur), India, in 2020 and my B.Tech in Electrical and Electronics Engineering from the National Institute of Technology Calicut (NIT Calicut), India, in 2017.',
+      email: 'sivaprabhakar123@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/siva-prabhakar-985b01117/',
+      image: sivaphoto,
     },
     {
       name: 'Narendra Muley',
