@@ -43,7 +43,6 @@ export function Navigation() {
       children: [
         { label: 'C1973 EV Lab', id: '/facilities#facilities-ev' },
         { label: 'Medium Voltage Lab', id: '/facilities#facilities-medium' },
-        { label: 'Power Electronics Lab', id: '/facilities#facilities-power' },
       ]
     },
     {

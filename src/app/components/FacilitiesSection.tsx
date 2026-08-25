@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
-import { ArrowRight, Car, Zap, Battery, X } from 'lucide-react';
+import { ArrowRight, Car, Zap, X } from 'lucide-react';
 import evlImage from '../../assets/Facilities/EVLinterior.jpeg';
 import mvImage from '../../assets/Facilities/MediumVoltageLab.png';
 
@@ -94,33 +94,6 @@ export function FacilitiesSection() {
                         'Equipped with High Tension (HT) and Low Tension (LT) panels.',
                         'Includes auto-transformers and step-up transformers for flexible operation.',
                         'Designed with strong emphasis on safety, operational flexibility, and efficient workflow.'
-                    ]
-                }
-            ]
-        },
-        {
-            id: 'facilities-power',
-            title: 'Power Electronics Lab',
-            imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&h=800&fit=crop',
-            icon: Battery,
-            sections: [
-                {
-                    title: 'About the Lab',
-                    content: 'The Power Electronics Laboratory at IIT Bombay supports research and development through simulation, design, prototyping, and experimental validation.'
-                },
-                {
-                    title: 'Research & Simulation',
-                    content: 'Power electronic circuit simulation, magnetic design, thermal modelling, and 3D modelling of heat sinks and related structures. Reliability analysis of power electronic devices and passive components.'
-                },
-                {
-                    title: 'Hardware & Prototyping',
-                    content: 'Facilities for soldering, hardware development, prototype assembly, and experimental testing.'
-                },
-                {
-                    title: 'Applications & Outcomes',
-                    bullets: [
-                        'Investigation of converter operation, thermal behaviour, magnetic design, and reliability aspects.',
-                        'Development of efficient and reliable systems for electric vehicles, photovoltaic systems, battery charging, and related energy applications.'
                     ]
                 }
             ]
