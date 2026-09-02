@@ -1,20 +1,86 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef, useState } from 'react';
-import { ArrowRight, Car, Zap, X } from 'lucide-react';
-import evlImage from '../../assets/Facilities/EVLinterior.jpeg';
-import mvImage from '../../assets/Facilities/MediumVoltageLab.png';
+import { useRef, useState, useEffect } from 'react';
+import { ArrowRight, Car, Zap, X, ChevronLeft, ChevronRight } from 'lucide-react';
+
+import evLabImage1 from '../../assets/Facilities/EV Lab/EV Lab.png';
+import evLabImage2 from '../../assets/Facilities/EV Lab/IMG20240215163246.jpg.jpeg';
+import evLabImage3 from '../../assets/Facilities/EV Lab/IMG20240426104709.jpg.jpeg';
+import evLabImage4 from '../../assets/Facilities/EV Lab/WhatsApp Image 2024-04-30 at 3.48.30 PM.jpeg';
+import evLabImage5 from '../../assets/Facilities/EV Lab/WhatsApp Image 2024-04-30 at 3.48.39 PM.jpeg';
+import evLabImage6 from '../../assets/Facilities/EV Lab/WhatsApp Image 2024-04-30 at 3.59.05 PM.jpeg';
+
+import mvEvLabImage from '../../assets/Facilities/MV Lab/EV Lab.png';
+import mvEvlInterior from '../../assets/Facilities/MV Lab/EVLinterior.jpeg';
+import picture1 from '../../assets/Facilities/MV Lab/Picture1.png';
+import picture2 from '../../assets/Facilities/MV Lab/Picture2.png';
+import picture3 from '../../assets/Facilities/MV Lab/Picture3.png';
+import picture4 from '../../assets/Facilities/MV Lab/Picture4.png';
+import picture5 from '../../assets/Facilities/MV Lab/Picture5.png';
+import picture7 from '../../assets/Facilities/MV Lab/Picture7.png';
+import picture8 from '../../assets/Facilities/MV Lab/Picture8.png';
+import picture9 from '../../assets/Facilities/MV Lab/Picture9.png';
+import picture10 from '../../assets/Facilities/MV Lab/Picture10.png';
+import picture11 from '../../assets/Facilities/MV Lab/Picture11.png';
+import picture12 from '../../assets/Facilities/MV Lab/Picture12.png';
 
 export function FacilitiesSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px' });
     const [selectedGallery, setSelectedGallery] = useState<any>(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const openGallery = (lab: any) => {
+        setSelectedGallery(lab);
+        setCurrentImageIndex(0);
+    };
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!selectedGallery) return;
+            if (e.key === 'ArrowLeft') {
+                setCurrentImageIndex((prev) => (prev === 0 ? selectedGallery.images.length - 1 : prev - 1));
+            } else if (e.key === 'ArrowRight') {
+                setCurrentImageIndex((prev) => (prev === selectedGallery.images.length - 1 ? 0 : prev + 1));
+            } else if (e.key === 'Escape') {
+                setSelectedGallery(null);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedGallery]);
+
+    const evLabImages = [
+        evLabImage1,
+        evLabImage2,
+        evLabImage3,
+        evLabImage4,
+        evLabImage5,
+        evLabImage6,
+    ];
+
+    const mvLabImages = [
+        mvEvLabImage,
+        mvEvlInterior,
+        picture1,
+        picture2,
+        picture3,
+        picture4,
+        picture5,
+        picture7,
+        picture8,
+        picture9,
+        picture10,
+        picture11,
+        picture12,
+    ];
 
     const labs = [
         {
             id: 'facilities-ev',
             title: 'Electric Vehicle Lab',
-            imageUrl: evlImage,
+            imageUrl: evLabImage1,
+            images: evLabImages,
             icon: Car,
             sections: [
                 {
@@ -56,7 +122,8 @@ export function FacilitiesSection() {
         {
             id: 'facilities-medium',
             title: 'Medium Voltage Lab',
-            imageUrl: mvImage,
+            imageUrl: mvEvLabImage,
+            images: mvLabImages,
             icon: Zap,
             sections: [
                 {
@@ -134,7 +201,7 @@ export function FacilitiesSection() {
                         >
                             {/* Image Section - Clickable */}
                             <div 
-                                onClick={() => setSelectedGallery(lab)}
+                                onClick={() => openGallery(lab)}
                                 className="relative md:w-2/5 h-64 md:h-auto overflow-hidden cursor-pointer group"
                             >
                                 <img
@@ -144,7 +211,7 @@ export function FacilitiesSection() {
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                                     <div className="opacity-0 group-hover:opacity-100 bg-white/90 px-4 py-2 rounded-lg font-medium text-slate-900 transition-opacity">
-                                        View Gallery
+                                        View Gallery ({lab.images.length} Photos)
                                     </div>
                                 </div>
                                 <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-lg shadow-sm">
@@ -179,10 +246,10 @@ export function FacilitiesSection() {
 
                                 <div className="mt-12 pt-6 border-t border-gray-100">
                                     <button
-                                        onClick={() => setSelectedGallery(lab)}
+                                        onClick={() => openGallery(lab)}
                                         className="text-[#06b6d4] font-medium inline-flex items-center gap-2 hover:gap-3 transition-all"
                                     >
-                                        View Gallery <ArrowRight className="w-4 h-4" />
+                                        View Gallery ({lab.images.length} Photos) <ArrowRight className="w-4 h-4" />
                                     </button>
                                 </div>
                             </div>
@@ -205,23 +272,82 @@ export function FacilitiesSection() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden z-[101]"
+                            className="relative w-full max-w-4xl bg-slate-900 rounded-2xl shadow-2xl overflow-hidden z-[101] flex flex-col max-h-[90vh]"
                         >
-                            <button
-                                onClick={() => setSelectedGallery(null)}
-                                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-
-                            <div className="relative aspect-video bg-slate-900 flex items-center justify-center">
-                                <img src={selectedGallery.imageUrl} alt={selectedGallery.title} className="max-w-full max-h-full object-contain" />
+                            {/* Gallery Header */}
+                            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/90">
+                                <div>
+                                    <h3 className="text-xl font-bold text-white">{selectedGallery.title} Gallery</h3>
+                                    <p className="text-xs text-slate-400">
+                                        Photo {currentImageIndex + 1} of {selectedGallery.images.length}
+                                    </p>
+                                </div>
+                                <button
+                                    onClick={() => setSelectedGallery(null)}
+                                    className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-full transition-colors"
+                                    aria-label="Close modal"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
                             </div>
 
-                            <div className="p-6">
-                                <h3 className="text-2xl font-bold text-[#0f172a] mb-2">{selectedGallery.title} Gallery</h3>
-                                <p className="text-[#64748b]">More high-resolution lab images would go here. For now, showing the featured image.</p>
+                            {/* Main Image Container */}
+                            <div className="relative flex-1 bg-black flex items-center justify-center min-h-[350px] max-h-[60vh] overflow-hidden group">
+                                <motion.img
+                                    key={currentImageIndex}
+                                    src={selectedGallery.images[currentImageIndex]}
+                                    alt={`${selectedGallery.title} - Photo ${currentImageIndex + 1}`}
+                                    initial={{ opacity: 0, scale: 0.98 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="max-w-full max-h-[60vh] object-contain select-none"
+                                />
+
+                                {/* Navigation Controls */}
+                                {selectedGallery.images.length > 1 && (
+                                    <>
+                                        <button
+                                            onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? selectedGallery.images.length - 1 : prev - 1))}
+                                            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/80 text-white rounded-full transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg"
+                                            aria-label="Previous photo"
+                                        >
+                                            <ChevronLeft className="w-6 h-6" />
+                                        </button>
+                                        <button
+                                            onClick={() => setCurrentImageIndex((prev) => (prev === selectedGallery.images.length - 1 ? 0 : prev + 1))}
+                                            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/80 text-white rounded-full transition-all opacity-80 hover:opacity-100 hover:scale-110 shadow-lg"
+                                            aria-label="Next photo"
+                                        >
+                                            <ChevronRight className="w-6 h-6" />
+                                        </button>
+                                    </>
+                                )}
                             </div>
+
+                            {/* Thumbnail Navigation Strip */}
+                            {selectedGallery.images.length > 1 && (
+                                <div className="p-4 bg-slate-900 border-t border-slate-800">
+                                    <div className="flex gap-2 overflow-x-auto pb-1 max-w-full justify-start md:justify-center">
+                                        {selectedGallery.images.map((img: string, idx: number) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => setCurrentImageIndex(idx)}
+                                                className={`relative flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                                                    idx === currentImageIndex
+                                                        ? 'border-[#06b6d4] scale-105 opacity-100'
+                                                        : 'border-transparent opacity-50 hover:opacity-80'
+                                                }`}
+                                            >
+                                                <img
+                                                    src={img}
+                                                    alt={`Thumbnail ${idx + 1}`}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </motion.div>
                     </div>
                 )}
@@ -229,3 +355,4 @@ export function FacilitiesSection() {
         </section>
     );
 }
+
