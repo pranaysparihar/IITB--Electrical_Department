@@ -3,15 +3,12 @@ import { useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
 import { ArrowRight, Car, Zap, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-import evLabImage1 from '../../assets/Facilities/EV Lab/EV Lab.png';
 import evLabImage2 from '../../assets/Facilities/EV Lab/IMG20240215163246.jpg.jpeg';
 import evLabImage3 from '../../assets/Facilities/EV Lab/IMG20240426104709.jpg.jpeg';
 import evLabImage4 from '../../assets/Facilities/EV Lab/WhatsApp Image 2024-04-30 at 3.48.30 PM.jpeg';
 import evLabImage5 from '../../assets/Facilities/EV Lab/WhatsApp Image 2024-04-30 at 3.48.39 PM.jpeg';
 import evLabImage6 from '../../assets/Facilities/EV Lab/WhatsApp Image 2024-04-30 at 3.59.05 PM.jpeg';
 
-import mvEvLabImage from '../../assets/Facilities/MV Lab/EV Lab.png';
-import mvEvlInterior from '../../assets/Facilities/MV Lab/EVLinterior.jpeg';
 import picture1 from '../../assets/Facilities/MV Lab/Picture1.png';
 import picture2 from '../../assets/Facilities/MV Lab/Picture2.png';
 import picture3 from '../../assets/Facilities/MV Lab/Picture3.png';
@@ -51,7 +48,6 @@ export function FacilitiesSection() {
     }, [selectedGallery]);
 
     const evLabImages = [
-        evLabImage1,
         evLabImage2,
         evLabImage3,
         evLabImage4,
@@ -60,8 +56,6 @@ export function FacilitiesSection() {
     ];
 
     const mvLabImages = [
-        mvEvLabImage,
-        mvEvlInterior,
         picture1,
         picture2,
         picture3,
@@ -79,7 +73,7 @@ export function FacilitiesSection() {
         {
             id: 'facilities-ev',
             title: 'Electric Vehicle Lab',
-            imageUrl: evLabImage1,
+            imageUrl: evLabImage2,
             images: evLabImages,
             icon: Car,
             sections: [
@@ -122,7 +116,7 @@ export function FacilitiesSection() {
         {
             id: 'facilities-medium',
             title: 'Medium Voltage Lab',
-            imageUrl: mvEvLabImage,
+            imageUrl: picture1,
             images: mvLabImages,
             icon: Zap,
             sections: [
@@ -200,7 +194,7 @@ export function FacilitiesSection() {
                             className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow min-h-[500px]"
                         >
                             {/* Image Section - Clickable */}
-                            <div 
+                            <div
                                 onClick={() => openGallery(lab)}
                                 className="relative md:w-2/5 h-64 md:h-auto overflow-hidden cursor-pointer group"
                             >
@@ -222,7 +216,7 @@ export function FacilitiesSection() {
                             {/* Content Section */}
                             <div className="p-8 md:p-12 flex flex-col flex-1">
                                 <h3 className="text-3xl font-bold text-[#0f172a] mb-8">{lab.title}</h3>
-                                
+
                                 <div className="space-y-8">
                                     {lab.sections.map((section, sIdx) => (
                                         <div key={sIdx}>
@@ -332,11 +326,10 @@ export function FacilitiesSection() {
                                             <button
                                                 key={idx}
                                                 onClick={() => setCurrentImageIndex(idx)}
-                                                className={`relative flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
-                                                    idx === currentImageIndex
+                                                className={`relative flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${idx === currentImageIndex
                                                         ? 'border-[#06b6d4] scale-105 opacity-100'
                                                         : 'border-transparent opacity-50 hover:opacity-80'
-                                                }`}
+                                                    }`}
                                             >
                                                 <img
                                                     src={img}

@@ -147,8 +147,8 @@ const graduatedStudents = {
     { name: 'Mohd Ismail', topic: 'Gate Driver Integrated Online Health Monitoring of SiC MOSFETs', degree: 'M.Tech (RA)', year: 'June 2025', placement: 'Tesla, Germany' },
     { name: 'Sagar De', topic: 'Active Power Decoupling Techniques for Single-Phase Power Converters', degree: 'M.Tech (RA)', year: 'June 2025', placement: 'Ultraviolet' },
     { name: 'Yajush Sihag', topic: 'Comparative Study of Dynamic Ron in GaN Power Transistor Under Voltage and Short Circuit Stress', degree: 'M.Tech', year: 'June 2025', placement: 'Hind Rectifiers' },
-    { name: 'Rhitam Das', topic: 'Design and control of DC-DC converters.', degree: 'M.Tech', placement: 'Renesas Electronics' },
-    { name: 'Ratindranath Mal', topic: 'Series connection of GaN', degree: 'M.Tech', placement: 'Reliance Power' },
+    { name: 'Rhitam Das', topic: 'Design and control of DC-DC converters.', degree: 'M.Tech', year: '2026', placement: 'Renesas Electronics' },
+    { name: 'Ratindranath Mal', topic: 'Series connection of GaN', degree: 'M.Tech', year: '2026', placement: 'Reliance Power' },
   ]
 };
 
