@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef, useState } from 'react';
-import { ChevronRight, PlayCircle } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { ChevronRight, PlayCircle, ZoomIn, X, ExternalLink } from 'lucide-react';
 import UltrafastSelfPoweredCircuit from '../../../src/assets/R&D/UltrafastSelf-PoweredCircuitforGateDrivingofNormallyOnWide-BandgapTransistors.gif';
 import GateVoltageBasedActiveThermalControl from '../../../src/assets/R&D/GateVoltage-BasedActiveThermalControlofPowerSemiconductorDevices.gif';
 import MultiplePointsMeasurement from '../../../src/assets/R&D/MultiplePointsMeasurement-BasedJunctionTemperatureEstimationofIGBTModule.gif';
@@ -18,6 +18,17 @@ export function ResearchSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<any>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const researchGifs = [
     UltrafastSelfPoweredCircuit, // April 2024
@@ -181,16 +192,35 @@ export function ResearchSection() {
                       }
                     }}
                   >
-                    {/* Image */}
+                    {/* Image Container */}
                     <motion.div
                       layout
-                      className={`relative overflow-hidden shrink-0 ${isExpanded ? 'md:w-[35%]' : 'w-full h-48'}`}
+                      className={`relative overflow-hidden shrink-0 flex items-center justify-center bg-slate-50 border-b group/img ${
+                        isExpanded
+                          ? 'md:w-[38%] md:border-b-0 md:border-r border-gray-100 p-4 min-h-[280px] max-h-[420px]'
+                          : 'w-full h-52 p-3 border-gray-100'
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setLightboxImage(area);
+                      }}
                     >
                       <img
                         src={area.image}
-                        alt="R&D cover"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt={area.title}
+                        className="w-full h-full object-contain group-hover/img:scale-105 transition-transform duration-300 select-none"
                       />
+
+                      {/* Enlarge trigger badge */}
+                      <div
+                        className={`absolute bottom-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-black/65 hover:bg-black/85 backdrop-blur-sm text-white text-xs font-medium rounded-lg shadow-sm transition-all duration-200 ${
+                          isExpanded ? 'opacity-90 hover:opacity-100' : 'opacity-0 group-hover/img:opacity-100'
+                        }`}
+                        title="Click to inspect full schematic"
+                      >
+                        <ZoomIn className="w-3.5 h-3.5 text-[#06b6d4]" />
+                        <span>Enlarge</span>
+                      </div>
                     </motion.div>
 
                     {/* Content Container */}
@@ -328,6 +358,83 @@ export function ResearchSection() {
         </div>
 
       </div>
+
+      {/* Fullscreen Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 sm:p-6 md:p-8">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setLightboxImage(null)}
+              className="absolute inset-0 bg-black/85 backdrop-blur-md"
+            />
+
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="relative w-full max-w-5xl max-h-[92vh] bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col z-10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/90 shrink-0">
+                <div className="pr-4 max-w-[85%]">
+                  <h3 className="text-base sm:text-lg font-semibold text-white truncate">
+                    {lightboxImage.title}
+                  </h3>
+                  {lightboxImage.subtitle && (
+                    <p className="text-xs text-[#06b6d4] truncate mt-0.5">
+                      {lightboxImage.subtitle}
+                    </p>
+                  )}
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  {lightboxImage.link && (
+                    <a
+                      href={lightboxImage.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-1.5 text-xs font-medium"
+                      title="Open IEEE paper"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="hidden sm:inline">Paper</span>
+                    </a>
+                  )}
+                  <button
+                    onClick={() => setLightboxImage(null)}
+                    className="p-2 text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 rounded-lg transition-colors"
+                    aria-label="Close image modal"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Full Image Display */}
+              <div className="relative flex-1 bg-[#0b0f19] flex items-center justify-center p-4 sm:p-8 min-h-[300px] overflow-auto">
+                <img
+                  src={lightboxImage.image}
+                  alt={lightboxImage.title}
+                  className="max-w-full max-h-[72vh] object-contain rounded select-none shadow-2xl"
+                />
+              </div>
+
+              {/* Footer */}
+              <div className="px-6 py-2.5 bg-slate-900/95 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                <span>Full-resolution technical schematic / diagram</span>
+                <span className="hidden sm:inline">Press <kbd className="px-1.5 py-0.5 text-[10px] bg-slate-800 border border-slate-700 rounded text-slate-300 font-mono">Esc</kbd> or click outside to close</span>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
